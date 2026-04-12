@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Download, Shield, Target, Cpu, Zap, ArrowRight, Youtube, Instagram } from "lucide-react";
+import { Download, Shield, Target, Cpu, Zap, ArrowRight } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -55,44 +55,40 @@ export default function AboutPage() {
           ))}
         </div>
 
-        {/* The ARC Engine Details */}
+        {/* From Our Management */}
         <div className="mb-32">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 gradient-text">The ARC Engine Architecture</h2>
-            <p className="font-mono tracking-widest uppercase gradient-text-muted">Context • Depth • Velocity²</p>
+            <h2 className="text-4xl font-bold mb-4 gradient-text">From Our Management</h2>
+            <p className="font-mono tracking-widest uppercase gradient-text-muted">Insights & Vision</p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="p-6 rounded-2xl bg-brand-primary/5 gradient-border-muted">
-                <h4 className="text-xl font-bold mb-2 uppercase tracking-tight gradient-text">Step 01: Private Environment</h4>
-                <p className="gradient-text-muted">Architecting a private operational environment where your business logic lives exclusively.</p>
-              </div>
-              <div className="p-6 rounded-2xl bg-brand-primary/5 gradient-border-muted">
-                <h4 className="text-xl font-bold mb-2 uppercase tracking-tight gradient-text">Step 02: Institutional Memory</h4>
-                <p className="gradient-text-muted">Capturing the specific know-how, effort, and years of experience of your best people.</p>
-              </div>
-              <div className="p-6 rounded-2xl bg-brand-primary/5 gradient-border-muted">
-                <h4 className="text-xl font-bold mb-2 uppercase tracking-tight gradient-text">Step 03: Verified Execution</h4>
-                <p className="gradient-text-muted">Delivering deterministic, safe, and verified autonomous execution through the Parallel Audit Layer.</p>
-              </div>
-            </div>
-            <div className="relative aspect-square rounded-[3rem] overflow-hidden border border-brand-primary/10 bg-black flex items-center justify-center">
-              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--color-brand-primary)_0%,_transparent_70%)]" />
-              <Zap className="w-32 h-32 text-brand-primary animate-pulse" />
-            </div>
-          </div>
-        </div>
-
-        {/* Socials */}
-        <div className="mt-32 pt-16 border-t border-brand-primary/10 text-center">
-          <h3 className="text-2xl font-bold mb-8 gradient-text uppercase tracking-widest">Connect With Us</h3>
-          <div className="flex justify-center gap-8">
-            <a href="https://www.youtube.com/channel/UCsXh4lFKLMXeC9S6sdkP5RA" target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-brand-primary/5 gradient-border hover:scale-110 transition-transform text-brand-primary">
-              <Youtube className="w-6 h-6" />
-            </a>
-            <a href="https://www.instagram.com/alrigs.aus" target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-brand-primary/5 gradient-border hover:scale-110 transition-transform text-brand-primary">
-              <Instagram className="w-6 h-6" />
-            </a>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Business AI: A Global Asset Class",
+                url: "https://www.linkedin.com/pulse/business-ai-global-asset-class-geetika-chawla-lamba-fjjoc"
+              },
+              {
+                title: "The Alrigs Continuum and the 'Born a Unicorn' Vision",
+                url: "https://www.linkedin.com/pulse/alrigs-continuum-born-unicorn-vision-geetika-chawla-lamba-q7s1c"
+              },
+              {
+                title: "When Owners Feel Anxious | They Buy Clarity",
+                url: "https://www.linkedin.com/pulse/when-owners-feel-anxious-buy-clarity-geetika-chawla-lamba-vaeac"
+              }
+            ].map((article, i) => (
+              <a 
+                key={i}
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-8 rounded-3xl bg-glass gradient-border hover:border-brand-primary/40 transition-all duration-300 group flex flex-col justify-between h-full"
+              >
+                <h3 className="text-xl font-bold mb-6 leading-relaxed gradient-text group-hover:text-white transition-colors">{article.title}</h3>
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-primary/60 group-hover:text-brand-primary transition-colors">
+                  Read Article <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </div>

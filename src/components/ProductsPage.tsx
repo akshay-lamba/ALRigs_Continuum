@@ -28,7 +28,7 @@ export default function ProductsPage() {
       ],
       icon: <Building2 className="w-12 h-12" />,
       gradient: "from-brand-secondary/20 to-brand-primary/20",
-      videoUrl: "https://www.youtube.com/embed/D8NXiYFQWI0"
+      videoUrl: "https://video.wixstatic.com/video/b20068_d4e8b3a8131b430585909fa012998467/1080p/mp4/file.mp4"
     },
     {
       id: "transparency",
@@ -93,15 +93,19 @@ export default function ProductsPage() {
                 </div>
               </div>
               
-              <div className={`relative ${product.videoUrl ? 'aspect-video' : 'aspect-square'} rounded-[4rem] overflow-hidden gradient-border bg-glass flex items-center justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
+              <div className={`relative aspect-square rounded-[4rem] overflow-hidden gradient-border bg-glass flex items-center justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
                 {product.videoUrl ? (
-                  <iframe 
-                    src={product.videoUrl} 
-                    title={product.name}
-                    className="absolute inset-0 w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                  <>
+                    <video 
+                      src={product.videoUrl} 
+                      className="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-screen"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-brand-secondary/40 via-transparent to-brand-primary/40 mix-blend-overlay pointer-events-none" />
+                  </>
                 ) : (
                   <>
                     <div className={`absolute inset-0 opacity-20 bg-gradient-to-br ${product.gradient}`} />
