@@ -26,7 +26,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-6 uppercase tracking-[0.2em] text-[10px] text-brand-primary/50">Platform</h4>
             <ul className="space-y-4 text-[11px] font-bold uppercase tracking-widest">
-              <li><a href="#" className="hover:gradient-text transition-all gradient-text-muted">ARC Engine</a></li>
+              <li><button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="hover:gradient-text transition-all gradient-text-muted">ARC Engine</button></li>
               <li><a href="#" className="hover:gradient-text transition-all gradient-text-muted">Sovereign Logic</a></li>
               <li><a href="#" className="hover:gradient-text transition-all gradient-text-muted">Factorial Synthesis</a></li>
               <li><a href="#" className="hover:gradient-text transition-all gradient-text-muted">Security</a></li>

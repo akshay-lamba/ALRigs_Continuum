@@ -15,6 +15,8 @@ import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import AboutPage from "./components/AboutPage";
 import ImpactPage from "./components/ImpactPage";
+import ArcEnginePage from "./components/ArcEnginePage";
+import ProductShowcase from "./components/ProductShowcase";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -26,7 +28,8 @@ export default function App() {
     const titles: Record<string, string> = {
       home: "ALRigs Continuum | Sovereign AI ARC Engine",
       about: "About Us | ALRigs Continuum - Corporate Intelligence",
-      impact: "Impact & Outcomes | ALRigs Continuum - 90-Day Pilot"
+      impact: "Impact & Outcomes | ALRigs Continuum - 90-Day Pilot",
+      "arc-engine": "ARC Engine Architecture | ALRigs Continuum"
     };
     document.title = titles[currentPage] || "ALRigs Continuum";
   }, [currentPage]);
@@ -39,16 +42,27 @@ export default function App() {
         {currentPage === 'home' && (
           <>
             <Hero />
-            <Problem />
-            <ValueProp />
-            <Comparison />
-            <GlobalMap />
-            <CTASection />
+            <ProductShowcase />
           </>
         )}
         
-        {currentPage === 'about' && <AboutPage />}
-        {currentPage === 'impact' && <ImpactPage />}
+        {currentPage === 'about' && (
+          <>
+            <AboutPage />
+            <Problem />
+            <GlobalMap />
+          </>
+        )}
+        
+        {currentPage === 'impact' && (
+          <>
+            <ImpactPage />
+            <Comparison />
+            <CTASection />
+          </>
+        )}
+
+        {currentPage === 'arc-engine' && <ArcEnginePage />}
       </main>
       
       <Footer />

@@ -33,82 +33,50 @@ export default function Hero() {
       {/* Background Glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none" />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch min-h-[70vh]">
+          {/* Left Card: Tagline & Messaging */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="relative"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative p-12 lg:p-16 rounded-[3rem] bg-black/40 gradient-border-muted overflow-hidden flex flex-col justify-center"
           >
-            {/* Feature Card */}
-            <div className="p-10 md:p-16 rounded-[3rem] bg-glass gradient-border relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-secondary/10 via-transparent to-brand-primary/10 opacity-50" />
-              
-              <div className="relative z-10">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="mb-8"
-                >
-                  <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-none mb-2">
-                    ALRigs <br />
-                    <span className="gradient-text uppercase">ARC Engine</span>
-                  </h1>
-                  <div className="h-1 w-20 bg-brand-primary rounded-full" />
-                </motion.div>
-
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-xs font-bold tracking-[0.3em] uppercase text-brand-primary/40 mb-4">Key Features:</h3>
-                    <ul className="space-y-4">
-                      {[
-                        "Sovereign",
-                        "Structural Margin Expansion",
-                        "The last business moat"
-                      ].map((feature, i) => (
-                        <motion.li 
-                          key={i}
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.5 + (i * 0.1) }}
-                          className="flex items-center gap-4 text-xl md:text-2xl font-bold tracking-tight"
-                        >
-                          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-brand-secondary to-brand-primary shadow-[0_0_10px_rgba(0,229,255,0.5)]" />
-                          <span className="gradient-text">{feature}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
+            {/* Background Glow for Card */}
+            <div className="absolute -top-24 -left-24 w-64 h-64 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none" />
+            
+            <div className="relative z-10">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.1] gradient-text uppercase mb-8">
+                Sovereign | Business AI | Humanely
+              </h1>
+              <p className="text-lg font-light tracking-[0.2em] uppercase gradient-text-muted max-w-md leading-relaxed">
+                The ARC Engine: Structural Margin Expansion for the Global Enterprise.
+              </p>
             </div>
+
+            {/* Decorative Corner Accent */}
+            <div className="absolute bottom-8 right-8 w-16 h-16 border-r border-b border-brand-primary/20 rounded-br-3xl pointer-events-none" />
           </motion.div>
 
+          {/* Right Card: Hero Video */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, x: 30 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-            className="relative"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="relative rounded-[3rem] overflow-hidden gradient-border-muted bg-black/20 group"
           >
-            {/* Hero Video - Half width layout */}
-            <div className="rounded-[3rem] overflow-hidden gradient-border shadow-[0_0_50px_rgba(0,210,255,0.1)] aspect-video bg-black relative group">
-              <video 
-                autoPlay 
-                loop 
-                muted 
-                playsInline 
-                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
-              >
-                <source src="https://video.wixstatic.com/video/b20068_fa128b75ad3a466e8b648cedc0cdaf32/1080p/mp4/file.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-40" />
-            </div>
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="w-full h-full object-cover object-center opacity-70 group-hover:opacity-90 transition-opacity duration-1000"
+            >
+              <source src="https://video.wixstatic.com/video/b20068_fa128b75ad3a466e8b648cedc0cdaf32/1080p/mp4/file.mp4" type="video/mp4" />
+            </video>
             
-            {/* Decorative Elements */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-primary/10 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-brand-secondary/10 rounded-full blur-[100px] animate-pulse" />
+            {/* Subtle Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
           </motion.div>
         </div>
       </div>
