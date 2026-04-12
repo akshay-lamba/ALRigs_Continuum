@@ -17,6 +17,7 @@ import AboutPage from "./components/AboutPage";
 import ImpactPage from "./components/ImpactPage";
 import ArcEnginePage from "./components/ArcEnginePage";
 import ProductShowcase from "./components/ProductShowcase";
+import ProductsPage from "./components/ProductsPage";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -27,6 +28,7 @@ export default function App() {
     // Dynamic Title for SEO
     const titles: Record<string, string> = {
       home: "ALRigs Continuum | Sovereign AI ARC Engine",
+      products: "Our Products | ALRigs Continuum - Sovereign AI Solutions",
       about: "About Us | ALRigs Continuum - Corporate Intelligence",
       impact: "Impact & Outcomes | ALRigs Continuum - 90-Day Pilot",
       "arc-engine": "ARC Engine Architecture | ALRigs Continuum"
@@ -42,9 +44,11 @@ export default function App() {
         {currentPage === 'home' && (
           <>
             <Hero />
-            <ProductShowcase />
+            <ProductShowcase onNavigate={setCurrentPage} />
           </>
         )}
+        
+        {currentPage === 'products' && <ProductsPage />}
         
         {currentPage === 'about' && (
           <>

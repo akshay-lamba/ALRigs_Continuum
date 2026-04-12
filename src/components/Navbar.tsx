@@ -22,6 +22,7 @@ export default function Navbar({ onNavigate, currentPage }: { onNavigate: (page:
 
         <div className="hidden md:flex items-center gap-8 text-[10px] font-bold tracking-[0.2em] uppercase">
           <button onClick={() => onNavigate('home')} className={`hover:gradient-text transition-all ${currentPage === 'home' ? 'gradient-text' : 'gradient-text-muted'}`}>Home</button>
+          <button onClick={() => onNavigate('products')} className={`hover:gradient-text transition-all ${currentPage === 'products' ? 'gradient-text' : 'gradient-text-muted'}`}>Our Products</button>
           <button onClick={() => onNavigate('arc-engine')} className={`hover:gradient-text transition-all ${currentPage === 'arc-engine' ? 'gradient-text' : 'gradient-text-muted'}`}>ARC Engine</button>
           <button onClick={() => onNavigate('impact')} className={`hover:gradient-text transition-all ${currentPage === 'impact' ? 'gradient-text' : 'gradient-text-muted'}`}>Impact</button>
           <button onClick={() => onNavigate('about')} className={`hover:gradient-text transition-all ${currentPage === 'about' ? 'gradient-text' : 'gradient-text-muted'}`}>About Us</button>
@@ -43,6 +44,7 @@ export default function Navbar({ onNavigate, currentPage }: { onNavigate: (page:
             className="md:hidden absolute top-20 left-0 right-0 bg-black border-b border-brand-primary/10 p-6 flex flex-col gap-4"
           >
             <button onClick={() => { onNavigate('home'); setIsOpen(false); }} className="text-brand-primary/60 font-bold uppercase tracking-widest text-sm text-left">Home</button>
+            <button onClick={() => { onNavigate('products'); setIsOpen(false); }} className="text-brand-primary/60 font-bold uppercase tracking-widest text-sm text-left">Our Products</button>
             <button onClick={() => { onNavigate('arc-engine'); setIsOpen(false); }} className="text-brand-primary/60 font-bold uppercase tracking-widest text-sm text-left">ARC Engine</button>
             <button onClick={() => { onNavigate('impact'); setIsOpen(false); }} className="text-brand-primary/60 font-bold uppercase tracking-widest text-sm text-left">Impact</button>
             <button onClick={() => { onNavigate('about'); setIsOpen(false); }} className="text-brand-primary/60 font-bold uppercase tracking-widest text-sm text-left">About Us</button>

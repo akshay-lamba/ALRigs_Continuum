@@ -34,49 +34,46 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch min-h-[70vh]">
-          {/* Left Card: Tagline & Messaging */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
+          {/* Left Side: Tagline & Messaging */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative p-12 lg:p-16 rounded-[3rem] bg-black/40 gradient-border-muted overflow-hidden flex flex-col justify-center"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="relative z-20"
           >
-            {/* Background Glow for Card */}
-            <div className="absolute -top-24 -left-24 w-64 h-64 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none" />
-            
-            <div className="relative z-10">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.1] gradient-text uppercase mb-8">
-                Sovereign | Business AI | Humanely
-              </h1>
-              <p className="text-lg font-light tracking-[0.2em] uppercase gradient-text-muted max-w-md leading-relaxed">
-                The ARC Engine: Structural Margin Expansion for the Global Enterprise.
-              </p>
-            </div>
-
-            {/* Decorative Corner Accent */}
-            <div className="absolute bottom-8 right-8 w-16 h-16 border-r border-b border-brand-primary/20 rounded-br-3xl pointer-events-none" />
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-tight gradient-text uppercase mb-8">
+              Sovereign | Business AI | Humanely
+            </h1>
+            <p className="text-xl font-light tracking-[0.2em] uppercase gradient-text-muted max-w-md leading-relaxed">
+              The ARC Engine: Structural Margin Expansion for the Global Enterprise.
+            </p>
           </motion.div>
 
-          {/* Right Card: Hero Video */}
+          {/* Right Side: Hero Video */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="relative rounded-[3rem] overflow-hidden gradient-border-muted bg-black/20 group"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            className="relative w-full flex items-center justify-center lg:justify-end"
           >
-            <video 
-              autoPlay 
-              loop 
-              muted 
-              playsInline 
-              className="w-full h-full object-cover object-center opacity-70 group-hover:opacity-90 transition-opacity duration-1000"
-            >
-              <source src="https://video.wixstatic.com/video/b20068_fa128b75ad3a466e8b648cedc0cdaf32/1080p/mp4/file.mp4" type="video/mp4" />
-            </video>
-            
-            {/* Subtle Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            <div className="relative w-full aspect-video lg:w-[120%] lg:-mr-[10%] overflow-hidden">
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full h-full object-cover object-center opacity-70"
+              >
+                <source src="https://video.wixstatic.com/video/b20068_fa128b75ad3a466e8b648cedc0cdaf32/1080p/mp4/file.mp4" type="video/mp4" />
+              </video>
+              
+              {/* Seamless Blending Gradients - No Frame */}
+              {/* Stronger left fade to merge with text */}
+              <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-black via-black/40 to-transparent z-10" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
+            </div>
           </motion.div>
         </div>
       </div>

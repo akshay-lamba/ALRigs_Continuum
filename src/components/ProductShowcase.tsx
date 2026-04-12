@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Users, Building2, Landmark, ArrowRight } from "lucide-react";
 
-export default function ProductShowcase() {
+export default function ProductShowcase({ onNavigate }: { onNavigate: (page: string) => void }) {
   const products = [
     {
       id: "pro",
@@ -39,7 +39,7 @@ export default function ProductShowcase() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-bold mb-6 tracking-tighter"
           >
-            Sovereign <span className="gradient-text uppercase">Intelligence</span> Solutions
+            OUR <span className="gradient-text uppercase">PRODUCTS</span>
           </motion.h2>
           <p className="text-xl font-light tracking-widest uppercase gradient-text-muted">
             Tailored for the specific needs of your organization
@@ -77,6 +77,7 @@ export default function ProductShowcase() {
                 </p>
                 
                 <motion.button 
+                  onClick={() => onNavigate('products')}
                   whileHover={{ x: 5 }}
                   className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest gradient-text group/btn"
                 >
