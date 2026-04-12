@@ -14,8 +14,8 @@ export default function Footer() {
                 className="h-12 w-auto object-contain mix-blend-screen"
                 referrerPolicy="no-referrer"
               />
-              <span className="font-display font-bold text-2xl tracking-tighter uppercase text-brand-primary/90">
-                ALRigs <span className="text-brand-primary">Continuum</span>
+              <span className="font-display font-bold text-2xl tracking-tighter uppercase gradient-text">
+                ALRigs Continuum
               </span>
             </div>
             <p className="text-brand-primary/30 max-w-sm leading-relaxed text-sm">
@@ -46,7 +46,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-brand-primary/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] text-brand-primary/10 font-mono uppercase tracking-widest">
-            © 2026 ALRigs Continuum. Sovereign | Business AI | Humanely.
+            © 2026 ALRigs Continuum. Registered in DIFC, UAE. Sovereign | Business AI | Humanely.
           </p>
           <div className="flex gap-6 text-brand-primary/20">
             <a href="#" className="hover:text-brand-primary transition-colors"><Twitter className="w-4 h-4" /></a>

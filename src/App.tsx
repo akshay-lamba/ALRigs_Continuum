@@ -21,6 +21,14 @@ export default function App() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Dynamic Title for SEO
+    const titles: Record<string, string> = {
+      home: "ALRigs Continuum | Sovereign AI ARC Engine",
+      about: "About Us | ALRigs Continuum - Corporate Intelligence",
+      impact: "Impact & Outcomes | ALRigs Continuum - 90-Day Pilot"
+    };
+    document.title = titles[currentPage] || "ALRigs Continuum";
   }, [currentPage]);
 
   return (
@@ -32,7 +40,6 @@ export default function App() {
           <>
             <Hero />
             <Problem />
-            <Solution />
             <ValueProp />
             <Comparison />
             <GlobalMap />
