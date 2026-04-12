@@ -101,42 +101,6 @@ export default function ImpactPage() {
             ))}
           </div>
         </div>
-
-        {/* Download Deck */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="p-12 rounded-[4rem] bg-gradient-to-br from-brand-primary/10 to-transparent gradient-border flex flex-col md:flex-row items-center gap-12"
-        >
-          <div className="w-full md:w-1/3 aspect-[4/3] rounded-3xl bg-black gradient-border overflow-hidden shadow-2xl relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 to-brand-secondary/20 opacity-50 group-hover:opacity-100 transition-opacity" />
-            <div className="absolute inset-0 flex items-center justify-center p-8 text-center">
-              <span className="text-2xl font-bold tracking-tighter uppercase leading-none gradient-text">
-                ALRigs <br /> Customer Outcomes
-              </span>
-            </div>
-            <div className="absolute bottom-4 right-4 p-3 bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full text-black">
-              <Download className="w-6 h-6" />
-            </div>
-          </div>
-          <div className="flex-1">
-            <h3 className="text-3xl font-bold mb-4 gradient-text">The Commercial Proposal</h3>
-            <p className="mb-8 text-lg gradient-text-muted">
-              Download our customer outcomes deck to see the 10x guarantee details, 
-              pilot structure, and how we deliver measurable P&L impact for the CEO, CFO, and Board.
-            </p>
-            <a 
-              href="https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_1da6490a296141048d7fd869837b36c9.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-brand-secondary to-brand-primary text-black font-bold hover:scale-105 transition-all"
-            >
-              Download Outcomes Deck
-              <Download className="w-5 h-5" />
-            </a>
-          </div>
-        </motion.div>
       </div>
     </div>
   );

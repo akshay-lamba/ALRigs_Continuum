@@ -16,7 +16,7 @@ export default function Hero({ onNavigate }: { onNavigate?: (page: string) => vo
           <div className="inline-block px-4 py-1.5 rounded-full border border-brand-primary/20 bg-brand-secondary/40 text-xs font-bold tracking-[0.2em] uppercase mb-8 text-brand-primary">
             The ARC Engine
           </div>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter leading-tight gradient-text uppercase mb-8 whitespace-nowrap">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter leading-tight gradient-text uppercase mb-8 whitespace-nowrap">
             Sovereign | Business AI | Humanely
           </h1>
           <p className="text-lg md:text-xl font-light tracking-[0.1em] uppercase text-brand-primary/60 max-w-3xl mx-auto leading-relaxed">
@@ -43,10 +43,7 @@ export default function Hero({ onNavigate }: { onNavigate?: (page: string) => vo
                 {prod.icon}
               </div>
               <h3 className="text-2xl font-bold uppercase tracking-tight text-white mb-2 group-hover:text-brand-primary transition-colors">{prod.name}</h3>
-              <p className="text-sm font-mono uppercase tracking-widest text-brand-primary/50 mb-8 flex-grow">{prod.desc}</p>
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-primary group-hover:text-white transition-colors">
-                Explore Product <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </div>
+              <p className="text-sm font-mono uppercase tracking-widest text-brand-primary/50 flex-grow">{prod.desc}</p>
             </motion.div>
           ))}
         </div>

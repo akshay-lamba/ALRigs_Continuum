@@ -11,7 +11,6 @@ import Solution from "./components/Solution";
 import ValueProp from "./components/ValueProp";
 import Comparison from "./components/Comparison";
 import GlobalMap from "./components/GlobalMap";
-import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import AboutPage from "./components/AboutPage";
 import ImpactPage from "./components/ImpactPage";
@@ -62,7 +61,6 @@ export default function App() {
           <>
             <ImpactPage />
             <Comparison />
-            <CTASection />
           </>
         )}
 

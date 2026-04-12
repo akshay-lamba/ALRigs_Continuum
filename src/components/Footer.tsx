@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Twitter, Linkedin, Github, Mail } from "lucide-react";
+import { Twitter, Linkedin, Github, Mail, Youtube, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -49,9 +49,10 @@ export default function Footer() {
             © 2026 ALRigs Continuum. Registered in DIFC, UAE. Sovereign | Business AI | Humanely.
           </p>
           <div className="flex gap-6 text-brand-primary/20">
+            <a href="https://www.youtube.com/channel/UCsXh4lFKLMXeC9S6sdkP5RA" target="_blank" rel="noopener noreferrer" className="hover:text-brand-primary transition-colors"><Youtube className="w-4 h-4" /></a>
+            <a href="https://www.instagram.com/alrigs.aus" target="_blank" rel="noopener noreferrer" className="hover:text-brand-primary transition-colors"><Instagram className="w-4 h-4" /></a>
             <a href="#" className="hover:text-brand-primary transition-colors"><Twitter className="w-4 h-4" /></a>
             <a href="#" className="hover:text-brand-primary transition-colors"><Linkedin className="w-4 h-4" /></a>
-            <a href="#" className="hover:text-brand-primary transition-colors"><Github className="w-4 h-4" /></a>
             <a href="#" className="hover:text-brand-primary transition-colors"><Mail className="w-4 h-4" /></a>
           </div>
         </div>

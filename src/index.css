@@ -8,12 +8,12 @@
 
   /* Cold Space Blue Palette (Darker Spectrum) */
   --color-brand-primary: #60A5FA; /* Light Cold Blue for highlights/readability */
-  --color-brand-accent: #2563EB; /* Mid Cold Blue */
-  --color-brand-secondary: #0F172A; /* Deep Space Blue */
+  --color-brand-accent: #3B82F6; /* Mid Cold Blue */
+  --color-brand-secondary: #1D4ED8; /* Deep Space Blue - Brighter */
   --color-brand-dark: #000000; /* Matte Black */
   
-  --gradient-brand: linear-gradient(to right, #93C5FD, #3B82F6, #1E3A8A);
-  --gradient-brand-muted: linear-gradient(to right, rgba(147, 197, 253, 0.7), rgba(59, 130, 246, 0.7), rgba(30, 58, 138, 0.7));
+  --gradient-brand: linear-gradient(to right, #93C5FD, #3B82F6, #1D4ED8);
+  --gradient-brand-muted: linear-gradient(to right, rgba(147, 197, 253, 0.7), rgba(59, 130, 246, 0.7), rgba(29, 78, 216, 0.7));
 }
 
 @layer base {

@@ -27,7 +27,8 @@ export default function ProductsPage() {
         "Margin Expansion: Reducing operational friction at scale."
       ],
       icon: <Building2 className="w-12 h-12" />,
-      gradient: "from-brand-secondary/20 to-brand-primary/20"
+      gradient: "from-brand-secondary/20 to-brand-primary/20",
+      videoUrl: "https://www.youtube.com/embed/D8NXiYFQWI0"
     },
     {
       id: "transparency",
@@ -92,14 +93,26 @@ export default function ProductsPage() {
                 </div>
               </div>
               
-              <div className={`relative aspect-square rounded-[4rem] overflow-hidden gradient-border bg-glass flex items-center justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                <div className={`absolute inset-0 opacity-20 bg-gradient-to-br ${product.gradient}`} />
-                <div className="relative z-10 scale-150 opacity-20">
-                  {product.icon}
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="w-32 h-32 bg-brand-primary/20 rounded-full blur-3xl animate-pulse" />
-                </div>
+              <div className={`relative ${product.videoUrl ? 'aspect-video' : 'aspect-square'} rounded-[4rem] overflow-hidden gradient-border bg-glass flex items-center justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
+                {product.videoUrl ? (
+                  <iframe 
+                    src={product.videoUrl} 
+                    title={product.name}
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <>
+                    <div className={`absolute inset-0 opacity-20 bg-gradient-to-br ${product.gradient}`} />
+                    <div className="relative z-10 scale-150 opacity-20">
+                      {product.icon}
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                       <div className="w-32 h-32 bg-brand-primary/20 rounded-full blur-3xl animate-pulse" />
+                    </div>
+                  </>
+                )}
               </div>
             </motion.div>
           ))}

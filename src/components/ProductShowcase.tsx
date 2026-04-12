@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Users, Building2, Landmark, ArrowRight } from "lucide-react";
+import { Users, Building2, Landmark } from "lucide-react";
 
 export default function ProductShowcase({ onNavigate }: { onNavigate: (page: string) => void }) {
   const products = [
@@ -72,18 +72,9 @@ export default function ProductShowcase({ onNavigate }: { onNavigate: (page: str
                   {product.target}
                 </div>
                 
-                <p className="text-lg leading-relaxed mb-8 gradient-text-muted font-light">
+                <p className="text-lg leading-relaxed gradient-text-muted font-light">
                   {product.description}
                 </p>
-                
-                <motion.button 
-                  onClick={() => onNavigate('products')}
-                  whileHover={{ x: 5 }}
-                  className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest gradient-text group/btn"
-                >
-                  Learn More 
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </motion.button>
               </div>
 
               {/* Decorative Lines */}

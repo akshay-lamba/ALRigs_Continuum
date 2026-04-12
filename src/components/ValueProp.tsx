@@ -26,7 +26,7 @@ export default function ValueProp() {
   ];
 
   return (
-    <section id="value-prop" className="py-24 relative overflow-hidden space-bg border-y border-brand-primary/5">
+    <section id="value-prop" className="py-24 relative overflow-hidden bg-black border-y border-brand-primary/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -68,12 +68,6 @@ export default function ValueProp() {
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-            </div>
-            
-            {/* Floating Badge */}
-            <div className="absolute -bottom-6 -right-6 p-6 bg-glass rounded-2xl gradient-border shadow-xl backdrop-blur-2xl hidden md:block">
-              <div className="text-xs font-mono mb-1 uppercase tracking-widest gradient-text">Strategic Roadmap</div>
-              <div className="text-lg font-bold gradient-text">Factorial Synthesis v2.0</div>
             </div>
           </motion.div>
         </div>

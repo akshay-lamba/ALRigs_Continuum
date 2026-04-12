@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Download, Shield, Target, Cpu, Zap, ArrowRight } from "lucide-react";
+import { Download, Shield, Target, Cpu, Zap, ArrowRight, Youtube, Instagram } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -83,41 +83,18 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Download Deck */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="p-12 rounded-[4rem] bg-gradient-to-br from-brand-primary/10 to-transparent gradient-border flex flex-col md:flex-row items-center gap-12"
-        >
-          <div className="w-full md:w-1/3 aspect-[4/3] rounded-3xl bg-black gradient-border overflow-hidden shadow-2xl relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 to-brand-secondary/20 opacity-50 group-hover:opacity-100 transition-opacity" />
-            <div className="absolute inset-0 flex items-center justify-center p-8 text-center">
-              <span className="text-2xl font-bold tracking-tighter uppercase leading-none gradient-text">
-                ALRigs <br /> Company Deck
-              </span>
-            </div>
-            <div className="absolute bottom-4 right-4 p-3 bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full text-black">
-              <Download className="w-6 h-6" />
-            </div>
-          </div>
-          <div className="flex-1">
-            <h3 className="text-3xl font-bold mb-4 gradient-text">Deep Dive into Sovereign AI</h3>
-            <p className="mb-8 text-lg gradient-text-muted">
-              Download our full company deck to understand the technical architecture, 
-              financial models, and the roadmap for corporate autonomy.
-            </p>
-            <a 
-              href="https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_469a7ae16f1343f6a5bf5f81c8ba4137.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-brand-secondary to-brand-primary text-black font-bold hover:scale-105 transition-all"
-            >
-              Download Company Deck
-              <Download className="w-5 h-5" />
+        {/* Socials */}
+        <div className="mt-32 pt-16 border-t border-brand-primary/10 text-center">
+          <h3 className="text-2xl font-bold mb-8 gradient-text uppercase tracking-widest">Connect With Us</h3>
+          <div className="flex justify-center gap-8">
+            <a href="https://www.youtube.com/channel/UCsXh4lFKLMXeC9S6sdkP5RA" target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-brand-primary/5 gradient-border hover:scale-110 transition-transform text-brand-primary">
+              <Youtube className="w-6 h-6" />
+            </a>
+            <a href="https://www.instagram.com/alrigs.aus" target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-brand-primary/5 gradient-border hover:scale-110 transition-transform text-brand-primary">
+              <Instagram className="w-6 h-6" />
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
