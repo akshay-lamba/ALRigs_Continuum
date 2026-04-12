@@ -62,17 +62,8 @@ export default function AboutPage() {
             <p className="font-mono tracking-widest uppercase gradient-text-muted">The Vision Behind ALRigs</p>
           </div>
           
-          <div className="max-w-4xl mx-auto p-8 md:p-12 rounded-[3rem] bg-glass gradient-border flex flex-col md:flex-row items-center gap-12">
-            <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-full overflow-hidden border-2 border-brand-primary/20 p-2">
-              <img 
-                src="https://static.wixstatic.com/media/b20068_d1e774acf5ef4cf5b9386d374740fa9c~mv2.png" 
-                alt="Geetika Chawla Lamba - CEO" 
-                className="w-full h-full object-cover rounded-full"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            
-            <div className="text-center md:text-left">
+          <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12 justify-between">
+            <div className="text-center md:text-left order-2 md:order-1">
               <h3 className="text-3xl font-bold mb-2 gradient-text uppercase tracking-tight">Geetika Chawla Lamba</h3>
               <p className="text-xl font-mono tracking-widest uppercase gradient-text-muted mb-6">CEO, ALRigs Continuum</p>
               
@@ -94,6 +85,15 @@ export default function AboutPage() {
                   <span>Email</span>
                 </a>
               </div>
+            </div>
+
+            <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-full overflow-hidden order-1 md:order-2">
+              <img 
+                src="https://static.wixstatic.com/media/b20068_d1e774acf5ef4cf5b9386d374740fa9c~mv2.png" 
+                alt="Geetika Chawla Lamba - CEO" 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
             </div>
           </div>
         </div>
