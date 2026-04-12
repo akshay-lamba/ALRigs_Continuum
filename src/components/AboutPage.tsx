@@ -3,7 +3,7 @@ import { Download, Shield, Target, Cpu, Zap, ArrowRight } from "lucide-react";
 
 export default function AboutPage() {
   return (
-    <div className="pt-32 pb-24 space-bg min-h-screen">
+    <div className="pt-32 pb-24 bg-black min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         {/* Hero Section */}
         <motion.div 

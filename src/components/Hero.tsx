@@ -1,93 +1,57 @@
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Users, Building2, Landmark } from "lucide-react";
 
-export default function Hero() {
+export default function Hero({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 space-bg">
-      {/* Space Particles / Stars */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0.1, scale: 0.5 }}
-            animate={{ 
-              opacity: [0.1, 0.3, 0.1],
-              scale: [0.5, 1, 0.5],
-              x: [0, Math.random() * 100 - 50, 0],
-              y: [0, Math.random() * 100 - 50, 0]
-            }}
-            transition={{ 
-              duration: 5 + Math.random() * 5, 
-              repeat: Infinity,
-              delay: Math.random() * 5
-            }}
-            className="absolute w-1 h-1 bg-brand-primary rounded-full"
-            style={{ 
-              top: `${Math.random() * 100}%`, 
-              left: `${Math.random() * 100}%` 
-            }}
-          />
-        ))}
-      </div>
+    <section className="relative min-h-screen flex flex-col justify-center pt-32 pb-20 bg-black">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col items-center text-center">
+        
+        {/* Top: Tagline & Headline */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="max-w-4xl mx-auto mb-16"
+        >
+          <div className="inline-block px-4 py-1.5 rounded-full border border-brand-primary/20 bg-brand-secondary/40 text-xs font-bold tracking-[0.2em] uppercase mb-8 text-brand-primary">
+            The ARC Engine
+          </div>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter leading-tight gradient-text uppercase mb-8 whitespace-nowrap">
+            Sovereign | Business AI | Humanely
+          </h1>
+          <p className="text-lg md:text-xl font-light tracking-[0.1em] uppercase text-brand-primary/60 max-w-3xl mx-auto leading-relaxed">
+            Structural Margin Expansion for the Global Enterprise through Private, Deterministic Intelligence.
+          </p>
+        </motion.div>
 
-      {/* Background Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none" />
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
-          {/* Left Side: Tagline & Messaging */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="relative z-20"
-          >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-tight gradient-text uppercase mb-8">
-              Sovereign | Business AI | Humanely
-            </h1>
-            <p className="text-xl font-light tracking-[0.2em] uppercase gradient-text-muted max-w-md leading-relaxed">
-              The ARC Engine: Structural Margin Expansion for the Global Enterprise.
-            </p>
-          </motion.div>
-
-          {/* Right Side: Hero Video */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="relative w-full flex items-center justify-center lg:justify-end"
-          >
-            <div className="relative w-full aspect-video lg:w-[120%] lg:-mr-[10%] overflow-hidden">
-              <video 
-                autoPlay 
-                loop 
-                muted 
-                playsInline 
-                className="w-full h-full object-cover object-center opacity-70"
-              >
-                <source src="https://video.wixstatic.com/video/b20068_fa128b75ad3a466e8b648cedc0cdaf32/1080p/mp4/file.mp4" type="video/mp4" />
-              </video>
-              
-              {/* Seamless Blending Gradients - No Frame */}
-              {/* Stronger left fade to merge with text */}
-              <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-black via-black/40 to-transparent z-10" />
-              <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
-            </div>
-          </motion.div>
+        {/* Bottom: Product Focus Cards */}
+        <div className="grid md:grid-cols-3 gap-6 w-full max-w-6xl">
+          {[
+            { id: 'pro', name: 'Pro AI', desc: 'Family-Owned Businesses', icon: <Users className="w-6 h-6" /> },
+            { id: 'business', name: 'Business AI', desc: 'Large Commercial Orgs', icon: <Building2 className="w-6 h-6" /> },
+            { id: 'transparency', name: 'Transparency AI', desc: 'Public Sector & Utilities', icon: <Landmark className="w-6 h-6" /> },
+          ].map((prod, i) => (
+            <motion.div
+              key={prod.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 + (i * 0.1), ease: "easeOut" }}
+              onClick={() => onNavigate && onNavigate('products')}
+              className="p-8 rounded-2xl bg-[#050A15] border border-brand-primary/10 hover:border-brand-primary/40 transition-all duration-300 cursor-pointer group text-left flex flex-col"
+            >
+              <div className="mb-6 p-3 rounded-lg bg-brand-secondary/50 inline-block text-brand-primary group-hover:scale-110 transition-transform duration-300">
+                {prod.icon}
+              </div>
+              <h3 className="text-2xl font-bold uppercase tracking-tight text-white mb-2 group-hover:text-brand-primary transition-colors">{prod.name}</h3>
+              <p className="text-sm font-mono uppercase tracking-widest text-brand-primary/50 mb-8 flex-grow">{prod.desc}</p>
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-primary group-hover:text-white transition-colors">
+                Explore Product <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-primary/20">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-brand-primary/30 to-transparent" />
-      </motion.div>
     </section>
   );
 }
+

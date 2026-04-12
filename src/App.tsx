@@ -43,7 +43,7 @@ export default function App() {
       <main>
         {currentPage === 'home' && (
           <>
-            <Hero />
+            <Hero onNavigate={setCurrentPage} />
             <ProductShowcase onNavigate={setCurrentPage} />
           </>
         )}
