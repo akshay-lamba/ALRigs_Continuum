@@ -67,47 +67,6 @@ export default function ImpactPage() {
             </div>
           </motion.div>
         </div>
-
-        {/* The Human Upgrade */}
-        <div className="mb-32">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter uppercase gradient-text">Humanely <br /><span className="text-3xl md:text-4xl gradient-text-muted">Designing the Transformation</span></h2>
-            <p className="max-w-3xl mx-auto text-xl leading-relaxed gradient-text-muted font-light">
-              We define "Humanely" as the intentional upgrade of human capability through sovereign automation.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="p-12 rounded-[4rem] bg-glass gradient-border"
-            >
-              <h3 className="text-3xl font-black mb-6 uppercase tracking-tight gradient-text">For the Global Leader</h3>
-              <p className="text-lg leading-relaxed gradient-text-muted font-light mb-8">
-                Owners and CEOs achieve unprecedented "Sovereign Coordination Velocity". The AI removes the anxiety of information silos, providing deterministic clarity so leadership can focus on high-level growth and legacy preservation.
-              </p>
-              <div className="flex items-center gap-4 text-brand-primary/40 font-mono text-xs uppercase tracking-widest">
-                <CheckCircle className="w-5 h-5" /> Deterministic Execution
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="p-12 rounded-[4rem] bg-glass gradient-border"
-            >
-              <h3 className="text-3xl font-black mb-6 uppercase tracking-tight gradient-text">For the State & Public</h3>
-              <p className="text-lg leading-relaxed gradient-text-muted font-light mb-8">
-                Enabling public leaders with secure, ethical infrastructure. Large-scale utilities and state bodies gain back coordination velocity while ensuring full data ownership—the AI serves the people through transparent and audited systems.
-              </p>
-              <div className="flex items-center gap-4 text-brand-primary/40 font-mono text-xs uppercase tracking-widest">
-                <ShieldCheck className="w-5 h-5" /> Ethical Sovereign Logic
-              </div>
-            </motion.div>
-          </div>
-        </div>
       </div>
     </div>
   );

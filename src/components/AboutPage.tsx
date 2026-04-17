@@ -89,7 +89,7 @@ export default function AboutPage() {
 
             <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-full overflow-hidden order-1 md:order-2">
               <img 
-                src="https://static.wixstatic.com/media/b20068_d1e774acf5ef4cf5b9386d374740fa9c~mv2.png" 
+                src="https://static.wixstatic.com/media/b20068_a5fd8255a66f4b4099e20969ce7e54a4~mv2.jpeg" 
                 alt="Geetika Chawla Lamba - CEO" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

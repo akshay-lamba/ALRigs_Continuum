@@ -6,11 +6,9 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Problem from "./components/Problem";
 import Solution from "./components/Solution";
 import ValueProp from "./components/ValueProp";
 import Comparison from "./components/Comparison";
-import GlobalMap from "./components/GlobalMap";
 import Footer from "./components/Footer";
 import AboutPage from "./components/AboutPage";
 import ImpactPage from "./components/ImpactPage";
@@ -62,8 +60,6 @@ export default function App() {
         {currentPage === 'about' && (
           <>
             <AboutPage />
-            <Problem />
-            <GlobalMap />
           </>
         )}
         

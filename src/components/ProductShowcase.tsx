@@ -113,6 +113,31 @@ export default function ProductShowcase({ onNavigate }: { onNavigate: (page: str
             </motion.div>
           ))}
         </div>
+
+        {/* Blended Video Overview */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20 relative w-full rounded-[3rem] overflow-hidden border border-brand-primary/10 lg:aspect-[21/9] aspect-video flex content-center bg-black"
+        >
+          {/* Blend overlays */}
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-brand-primary/5 mix-blend-overlay pointer-events-none z-10" />
+          
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-full object-cover opacity-80 mix-blend-screen scale-105"
+          >
+            <source src="https://video.wixstatic.com/video/b20068_645cf86a41c342a391b430ea79438259/720p/mp4/file.mp4" type="video/mp4" />
+          </video>
+        </motion.div>
       </div>
     </section>
   );
