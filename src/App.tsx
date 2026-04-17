@@ -8,7 +8,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Solution from "./components/Solution";
 import ValueProp from "./components/ValueProp";
-import Comparison from "./components/Comparison";
 import Footer from "./components/Footer";
 import AboutPage from "./components/AboutPage";
 import ImpactPage from "./components/ImpactPage";
@@ -66,7 +65,6 @@ export default function App() {
         {currentPage === 'impact' && (
           <>
             <ImpactPage />
-            <Comparison />
           </>
         )}
 
