@@ -1,40 +1,37 @@
 import { motion } from "motion/react";
-import { Shield, Lock, Share2, Database, Layers } from "lucide-react";
+import { Shield, Lock, Share2, Database, Layers, Download, FileText } from "lucide-react";
 
 export default function ITFrameworkPage() {
   const principles = [
     {
-      title: "Data Sovereignty",
-      desc: "Zero-leakage architecture ensuring all business logic stays within your physical or digital perimeter.",
-      icon: <Shield className="w-8 h-8" />
-    },
-    {
-      id: "privacy",
-      title: "Encrypted Execution",
-      desc: "Deterministic execution where even the AI models operate within a privacy-hardened shell.",
-      icon: <Lock className="w-8 h-8" />
+      title: "Private Intelligence Layer",
+      desc: "Your business logic is no longer used for public trainer models. It is captured and stored as a permanent balance-sheet asset.",
+      icon: <Database className="w-8 h-8" />
     },
     {
       id: "integration",
       title: "Interoperable Trust",
       desc: "Designed to sit as a bridge between legacy systems and the autonomous age, ensuring safe data flow.",
       icon: <Share2 className="w-8 h-8" />
+    },
+    {
+      title: "Data Sovereignty",
+      desc: "Zero-leakage architecture ensuring all business logic stays within your physical or digital perimeter.",
+      icon: <Shield className="w-8 h-8" />
     }
   ];
 
   return (
-    <div className="pt-32 pb-24 bg-black min-h-screen">
+    <div className="pt-48 pb-32 bg-black min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-24"
+          className="text-center mb-40 mt-16"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter uppercase">
-            THE ARCHITECTURE OF <span className="gradient-text uppercase">SOVEREIGNTY</span>
-          </h1>
-          <p className="max-w-3xl mx-auto text-xl leading-relaxed gradient-text-muted font-light px-4">
-            This is our proprietary system integration framework. It is the foundation for Business and Transparency AI, designed to give large organizations and states absolute ownership over their data and AI logic.
+          <p className="font-mono tracking-[0.3em] uppercase gradient-text-muted mb-12">The .it Framework</p>
+          <p className="max-w-3xl mx-auto text-2xl md:text-3xl leading-relaxed gradient-text-muted font-light px-4">
+            This is our system integration framework. It is the foundation for Business and Transparency AI, designed to give large organizations and states absolute ownership over their data and AI logic.
           </p>
         </motion.div>
 
@@ -55,41 +52,68 @@ export default function ITFrameworkPage() {
           ))}
         </div>
 
-        {/* Deep Dive */}
-        <div className="grid lg:grid-cols-2 gap-20 items-center bg-brand-primary/5 p-12 md:p-20 rounded-[4rem] gradient-border-muted overflow-hidden relative">
-           <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-[120px]" />
-           <div className="relative z-10">
-              <h2 className="text-4xl font-black mb-8 uppercase tracking-tighter gradient-text">Architecture of Ownership</h2>
-              <div className="space-y-8">
-                 <div className="flex gap-6">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-black/40 gradient-border flex items-center justify-center text-brand-primary">
-                       <Database className="w-6 h-6" />
-                    </div>
-                    <div>
-                       <h4 className="text-xl font-bold mb-2 uppercase gradient-text">Private Intelligence Layer</h4>
-                       <p className="gradient-text-muted leading-relaxed">Your business logic is no longer used for public trainer models. It is captured and stored as a permanent balance-sheet asset.</p>
-                    </div>
-                 </div>
-                 <div className="flex gap-6">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-black/40 gradient-border flex items-center justify-center text-brand-primary">
-                       <Layers className="w-6 h-6" />
-                    </div>
-                    <div>
-                       <h4 className="text-xl font-bold mb-2 uppercase gradient-text">Sovereign Coordination</h4>
-                       <p className="gradient-text-muted leading-relaxed">Enabling factor-level coordination across global departments without sacrificing security or privacy.</p>
-                    </div>
-                 </div>
+        {/* Hero PDF Download Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <a
+            href="https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_0b31fb23a22f406083fd1962c51378ae.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative block w-full overflow-hidden rounded-[3rem] bg-brand-primary/5 hover:bg-brand-primary/10 border border-brand-primary/20 hover:border-brand-primary/50 transition-all duration-500 cursor-pointer"
+          >
+            {/* Dynamic Sweep */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-primary/20 to-transparent translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-[1.5s]" />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none" />
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 items-center relative z-10">
+              
+              {/* Product Thumbnail Section */}
+              <div className="col-span-1 lg:col-span-2 p-8 md:p-12 flex items-center justify-center border-b md:border-b-0 md:border-r border-brand-primary/10 bg-black/40">
+                <img 
+                  src="https://static.wixstatic.com/media/b20068_c2e91dd7c1b541c68e66bdf3b0ce6146~mv2.png" 
+                  alt=".it Framework" 
+                  className="w-40 sm:w-48 lg:w-56 object-contain mix-blend-screen drop-shadow-[0_0_25px_rgba(59,130,246,0.2)] group-hover:drop-shadow-[0_0_35px_rgba(59,130,246,0.4)] group-hover:scale-105 transition-all duration-700" 
+                  referrerPolicy="no-referrer"
+                />
               </div>
-           </div>
-           
-           <div className="relative aspect-square bg-black rounded-3xl overflow-hidden border border-brand-primary/10 flex items-center justify-center group">
-              <Database className="w-48 h-48 text-brand-primary/10 group-hover:scale-110 transition-transform duration-1000" />
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 via-transparent to-transparent opacity-50" />
-              <div className="absolute inset-x-0 bottom-0 p-8 text-center bg-black/80 backdrop-blur-md">
-                 <p className="font-mono text-xs uppercase tracking-[0.3em] text-brand-primary underline underline-offset-8">Deterministic Data Pipeline V4.2</p>
+
+              {/* Document Details Section */}
+              <div className="col-span-1 lg:col-span-3 p-8 md:p-12 flex flex-col justify-center">
+                <div className="mb-6 flex items-center gap-3">
+                  <div className="p-3 bg-black rounded-lg border border-brand-primary/30 text-brand-primary shrink-0">
+                    <FileText className="w-6 h-6" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-brand-primary/60 mb-1">
+                      Technical Deep Dive
+                    </span>
+                    <span className="text-xl md:text-2xl font-black uppercase tracking-tight text-white">
+                      The .it Framework Architecture
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-lg font-light text-white/50 mb-8 max-w-lg leading-relaxed">
+                  Explore the foundational mechanics of the proprietary framework enabling deterministic, zero-leakage enterprise intelligence.
+                </p>
+
+                <div className="flex items-center gap-6">
+                  <div className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-brand-primary text-black font-bold uppercase tracking-widest text-xs hover:bg-white transition-colors">
+                    <Download className="w-4 h-4 text-black" />
+                    Download PDF
+                  </div>
+                  <span className="text-xs font-mono tracking-[0.2em] uppercase text-brand-primary/40 hidden md:block">
+                    Size: 1.1 MB
+                  </span>
+                </div>
               </div>
-           </div>
-        </div>
+            </div>
+          </a>
+        </motion.div>
+
       </div>
     </div>
   );

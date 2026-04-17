@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
-import { Users, Building2, Landmark, ArrowRight, Shield, Zap, Cpu, Package } from "lucide-react";
+import { Users, Building2, Landmark, ArrowRight, Shield, Zap, Cpu, Package, Download, FileText, Lock, Activity } from "lucide-react";
 
 export default function ProductsPage({ productId }: { productId?: string }) {
   const products = [
     {
       id: "pro",
       name: "Pro AI",
-      tagline: "Private | Business AI | Humanely",
+      tagline: "Private | Pro AI | Humanely",
       target: "Family-Owned Businesses",
       description: "Built for the heart of the economy—family-owned businesses. Preserving legacy through digital sovereignty.",
       sections: [
@@ -23,9 +23,12 @@ export default function ProductsPage({ productId }: { productId?: string }) {
           content: "Every Pro AI purchase includes dedicated setup time with an ALRigs engineer who handles the implementation and integration for the business."
         }
       ],
-      iconUrl: "https://static.wixstatic.com/media/b20068_a31ff2583fe843b39b8053f8ef067211~mv2.png",
+      iconUrl: "https://static.wixstatic.com/media/b20068_cfb9ed16735b406c8b391af00fd7e084~mv2.png",
       gradient: "from-blue-600/20 to-cyan-400/20",
       videoUrl: "https://video.wixstatic.com/video/b20068_833f83e6b2584376aa3a4e5c1d682afa/720p/mp4/file.mp4",
+      pdfUrl: "https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_e1b7e495f77f4301a8ea8a7c07874706.pdf",
+      pdfName: "Pro AI - Product Details",
+      pdfSize: "2.4 MB",
       aspectRatio: "aspect-video"
     },
     {
@@ -48,15 +51,17 @@ export default function ProductsPage({ productId }: { productId?: string }) {
           content: "Deployment and ongoing success managed by the ARC Consulting, Implementation, and Human Upgrade teams."
         }
       ],
-      iconUrl: "https://static.wixstatic.com/media/b20068_bf1e0b33f8fd4564be8918f7c5e7757a~mv2.jpeg",
+      iconUrl: "https://static.wixstatic.com/media/b20068_f185e9d0ab444966a8cfb62ca8e483ab~mv2.png",
       gradient: "from-brand-secondary/20 to-brand-primary/20",
       videoUrl: "https://video.wixstatic.com/video/b20068_d4e8b3a8131b430585909fa012998467/1080p/mp4/file.mp4",
-      aspectRatio: "aspect-[9/16]"
+      pdfUrl: "https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_1da6490a296141048d7fd869837b36c9.pdf",
+      pdfName: "Business AI - Commercial Outcomes Deck",
+      pdfSize: "3.1 MB"
     },
     {
       id: "transparency",
       name: "Transparency AI",
-      tagline: "Sovereign | State | Humanely",
+      tagline: "Sovereign | State AI | Humanely",
       target: "Public Sector & Government Bodies",
       description: "Empowering state leadership with secure, ethical infrastructure and transparent decision-making processes.",
       sections: [
@@ -75,8 +80,8 @@ export default function ProductsPage({ productId }: { productId?: string }) {
       ],
       icon: <Landmark className="w-12 h-12" />,
       gradient: "from-cyan-500/20 to-indigo-500/20",
-      isComingSoon: true,
-      aspectRatio: "aspect-video"
+      pdfName: "Transparency AI Overview",
+      isComingSoon: true
     }
   ];
 
@@ -84,17 +89,15 @@ export default function ProductsPage({ productId }: { productId?: string }) {
   const displayProducts = currentProduct ? [currentProduct] : products;
 
   return (
-    <div className="pt-32 pb-24 bg-black min-h-screen">
+    <div className="pt-48 pb-32 bg-black min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-24"
+          className="text-center mb-40 mt-16"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">
-            {currentProduct ? <span className="gradient-text uppercase">{currentProduct.name}</span> : <>THE <span className="gradient-text uppercase">CONTINUUM</span></>}
-          </h1>
-          <p className="max-w-3xl mx-auto text-xl leading-relaxed gradient-text-muted">
+          <p className="font-mono tracking-[0.3em] uppercase gradient-text-muted mb-12">The Continuum</p>
+          <p className="max-w-4xl mx-auto text-2xl md:text-3xl leading-relaxed gradient-text-muted font-light px-4">
             {currentProduct ? currentProduct.tagline : "Three tiers of private and sovereign intelligence for family businesses, multinationals, and the public sector."}
           </p>
         </motion.div>
@@ -109,11 +112,11 @@ export default function ProductsPage({ productId }: { productId?: string }) {
               className="grid lg:grid-cols-2 gap-16 items-center"
             >
               <div className={i % 2 === 1 && !currentProduct ? "lg:order-2" : ""}>
-                <div className="mb-8 p-6 rounded-3xl bg-brand-primary/5 inline-block gradient-border">
+                <div className="mb-8">
                   {product.iconUrl ? (
-                    <img src={product.iconUrl} alt={`${product.name} Icon`} className="w-12 h-12 object-cover rounded-lg mix-blend-screen" referrerPolicy="no-referrer" />
+                    <img src={product.iconUrl} alt={`${product.name} Icon`} className="w-20 h-20 md:w-24 md:h-24 object-contain mix-blend-screen" referrerPolicy="no-referrer" />
                   ) : (
-                    <div className="gradient-text">{product.icon}</div>
+                    <div className="gradient-text scale-150 origin-left">{product.icon}</div>
                   )}
                 </div>
                 <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-tighter uppercase gradient-text">
@@ -141,45 +144,91 @@ export default function ProductsPage({ productId }: { productId?: string }) {
                     </div>
                   ))}
                 </div>
+                {(product.pdfUrl || product.isComingSoon) && (
+                  <div className="mt-12">
+                    {product.pdfUrl ? (
+                      <a 
+                        href={product.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative flex items-center p-4 pr-6 rounded-2xl bg-brand-primary/5 border border-brand-primary/20 hover:bg-brand-primary/10 hover:border-brand-primary/40 transition-all duration-300 w-fit cursor-pointer overflow-hidden"
+                      >
+                        {/* Glow effect on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/0 via-brand-primary/10 to-brand-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                        
+                        <div className="w-16 h-20 rounded-lg bg-black border border-brand-primary/30 flex flex-col items-center justify-center mr-6 relative z-10 shadow-[0_0_15px_rgba(59,130,246,0.15)] group-hover:border-brand-primary/50 transition-colors">
+                          <FileText className="w-6 h-6 text-brand-primary mb-2" />
+                          <span className="text-[8px] font-bold tracking-widest text-brand-primary uppercase">PDF</span>
+                        </div>
+
+                        <div className="flex flex-col relative z-10">
+                          <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-brand-primary/60 mb-1">
+                            Technical Document
+                          </span>
+                          <span className="text-sm font-bold tracking-tight uppercase text-white mb-2">
+                            {product.pdfName}
+                          </span>
+                          <div className="flex items-center gap-4">
+                            <span className="text-xs text-brand-primary/50 flex items-center gap-1.5">
+                              <Download className="w-3.5 h-3.5" />
+                              {product.pdfSize}
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    ) : (
+                      <div className="relative flex items-center p-4 pr-8 rounded-2xl bg-white/5 border border-white/10 w-fit opacity-60">
+                        <div className="w-16 h-20 rounded-lg bg-black border border-white/20 flex flex-col items-center justify-center mr-6 relative z-10">
+                          <Lock className="w-5 h-5 text-white/50 mb-2" />
+                        </div>
+
+                        <div className="flex flex-col relative z-10">
+                          <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/40 mb-1">
+                            Technical Document
+                          </span>
+                          <span className="text-sm font-bold tracking-tight uppercase text-white/60 mb-2">
+                            {product.pdfName}
+                          </span>
+                          <div className="flex items-center gap-4">
+                            <span className="text-[9px] font-bold tracking-widest uppercase text-brand-primary opacity-80 flex items-center gap-1.5">
+                              <Activity className="w-3.5 h-3.5" />
+                              In Development
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
               
-              <div className={`relative ${product.aspectRatio} rounded-[4rem] overflow-hidden gradient-border bg-glass flex items-center justify-center ${i % 2 === 1 && !currentProduct ? "lg:order-1" : ""}`}>
+              <div className={`relative flex items-center justify-center w-full min-h-[400px] ${i % 2 === 1 && !currentProduct ? "lg:order-1" : ""}`}>
                 {product.videoUrl ? (
-                  <>
+                  <div className="relative w-full flex items-center justify-center">
                     <video 
                       src={product.videoUrl} 
-                      poster={product.iconUrl}
-                      className="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-screen"
+                      className="w-full h-auto max-h-[80vh] object-contain mix-blend-screen opacity-90"
                       autoPlay
                       loop
                       muted
                       playsInline
                     />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-brand-secondary/40 via-transparent to-brand-primary/40 mix-blend-overlay pointer-events-none" />
-                  </>
+                    {/* Radial blend overlay to feather any sharp edges of the video source into black */}
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_black_90%)] pointer-events-none" />
+                  </div>
                 ) : product.isComingSoon ? (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 backdrop-blur-sm">
+                  <div className="relative w-full aspect-video flex flex-col items-center justify-center">
                     <img 
                       src="https://static.wixstatic.com/media/b20068_73160301523d4ab7a1a4b98949dd480e~mv2.jpeg" 
                       alt="ALRigs Logo" 
-                      className="w-24 h-24 object-contain mix-blend-screen mb-6 opacity-50"
+                      className="w-32 h-32 md:w-48 md:h-48 object-contain mix-blend-screen mb-8 opacity-40 animate-pulse"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="px-6 py-2 rounded-full border border-brand-primary/20 bg-brand-primary/10 text-brand-primary font-mono uppercase tracking-widest text-sm">
+                    <div className="px-8 py-3 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary font-mono uppercase tracking-[0.3em] text-sm backdrop-blur-sm shadow-[0_0_30px_rgba(59,130,246,0.1)]">
                       Coming Soon
                     </div>
                   </div>
-                ) : (
-                  <>
-                    <div className={`absolute inset-0 opacity-20 bg-gradient-to-br ${product.gradient}`} />
-                    <div className="relative z-10 scale-150 opacity-20">
-                      {product.icon}
-                    </div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                       <div className="w-32 h-32 bg-brand-primary/20 rounded-full blur-3xl animate-pulse" />
-                    </div>
-                  </>
-                )}
+                ) : null}
               </div>
             </motion.div>
           ))}

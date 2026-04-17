@@ -26,7 +26,7 @@ export default function Navbar({ onNavigate, currentPage }: { onNavigate: (page:
           
           <div className="relative group" onMouseEnter={() => setIsContinuumOpen(true)} onMouseLeave={() => setIsContinuumOpen(false)}>
             <button className={`hover:gradient-text transition-all flex items-center gap-1 ${currentPage.startsWith('product-') ? 'gradient-text' : 'gradient-text-muted'}`}>
-              The Continuum <ChevronDown className={`w-3 h-3 transition-transform ${isContinuumOpen ? 'rotate-180' : ''}`} />
+              Our Products <ChevronDown className={`w-3 h-3 transition-transform ${isContinuumOpen ? 'rotate-180' : ''}`} />
             </button>
             
             <AnimatePresence>
@@ -72,7 +72,7 @@ export default function Navbar({ onNavigate, currentPage }: { onNavigate: (page:
           >
             <button onClick={() => { onNavigate('home'); setIsOpen(false); }} className="text-brand-primary/60 font-bold uppercase tracking-widest text-sm text-left">Home</button>
             <div className="flex flex-col gap-2 pl-2 border-l border-brand-primary/10">
-              <span className="text-[10px] text-brand-primary/30 uppercase tracking-[0.2em] font-bold mb-1">The Continuum</span>
+              <span className="text-[10px] text-brand-primary/30 uppercase tracking-[0.2em] font-bold mb-1">Our Products</span>
               <button onClick={() => { onNavigate('product-pro'); setIsOpen(false); }} className="text-brand-primary/60 font-bold uppercase tracking-widest text-xs text-left py-1">Pro AI</button>
               <button onClick={() => { onNavigate('product-business'); setIsOpen(false); }} className="text-brand-primary/60 font-bold uppercase tracking-widest text-xs text-left py-1">Business AI</button>
               <button onClick={() => { onNavigate('product-transparency'); setIsOpen(false); }} className="text-brand-primary/60 font-bold uppercase tracking-widest text-xs text-left py-1">Transparency AI</button>

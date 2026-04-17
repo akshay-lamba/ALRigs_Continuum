@@ -23,7 +23,7 @@ export default function Footer() {
             </p>
             <div className="space-y-2">
                <p className="text-[10px] text-brand-primary/20 font-mono uppercase tracking-[0.2em]">Global Logistics: 5-Day Direct Delivery</p>
-               <p className="text-[10px] text-brand-primary/20 font-mono uppercase tracking-[0.2em]">Architecture: Proprietary .it Framework</p>
+               <p className="text-[10px] text-brand-primary/20 font-mono uppercase tracking-[0.2em]">Architecture: The .it Framework</p>
             </div>
           </div>
 

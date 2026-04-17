@@ -19,7 +19,6 @@ import ProductShowcase from "./components/ProductShowcase";
 import ProductsPage from "./components/ProductsPage";
 import ITFrameworkPage from "./components/ITFrameworkPage";
 import ARCTeamPage from "./components/ARCTeamPage";
-import TeamsSection from "./components/TeamsSection";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -29,18 +28,18 @@ export default function App() {
     
     // Dynamic Title for SEO
     const titles: Record<string, string> = {
-      home: "ALRigs Continuum | Sovereign AI",
-      products: "The Continuum | ALRigs Continuum",
-      "product-pro": "Pro AI | ALRigs Continuum",
-      "product-business": "Business AI | ALRigs Continuum",
-      "product-transparency": "Transparency AI | ALRigs Continuum",
-      about: "About Us | ALRigs Philosophy",
-      impact: "Impact | Real World Change",
-      "arc-engine": "ARC Engine | The Heart of the Continuum",
-      "it-framework": ".it Framework | Architecture of Sovereignty",
-      "arc-team": "ARC Teams | The Delivery Mission"
+      home: "ALRigs Continuum | Sovereign AI & Open Design",
+      products: "The Continuum | Products | ALRigs Continuum",
+      "product-pro": "Pro AI | Private Business AI | ALRigs Continuum",
+      "product-business": "Business AI | Sovereign Margin Expansion | ALRigs",
+      "product-transparency": "Transparency AI | Sovereign State Operations | ALRigs",
+      about: "The Philosophy | Open Design & Sovereignty | ALRigs",
+      impact: "Real World Impact | ALRigs Continuum",
+      "arc-engine": "ARC Engine | Sovereign Logic Architecture | ALRigs",
+      "it-framework": "The .it Framework | System Integration Architecture",
+      "arc-team": "ARC Teams | Sovereign Mission Operations"
     };
-    document.title = titles[currentPage] || "ALRigs Continuum";
+    document.title = titles[currentPage] || "ALRigs Continuum | Sovereign AI & Open Design Architecture";
   }, [currentPage]);
 
   return (
@@ -52,7 +51,6 @@ export default function App() {
           <>
             <Hero />
             <ProductShowcase onNavigate={setCurrentPage} />
-            <TeamsSection onNavigate={setCurrentPage} />
           </>
         )}
         

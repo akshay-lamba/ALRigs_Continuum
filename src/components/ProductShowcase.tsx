@@ -1,50 +1,65 @@
 import { motion } from "motion/react";
-import { Users, Building2, Landmark, Zap, ArrowRight } from "lucide-react";
+import { Landmark, ArrowRight, Activity, CheckCircle2 } from "lucide-react";
 
 export default function ProductShowcase({ onNavigate }: { onNavigate: (page: string) => void }) {
   const products = [
     {
       id: "pro",
       name: "Pro AI",
-      target: "Family-Owned Businesses",
-      tagline: "Private | Business AI | Humanely",
-      description: "Preserving legacy through digital sovereignty. We turn generational know-how into a permanent, automated asset.",
-      icon: <Users className="w-12 h-12" />,
-      gradient: "from-blue-600/20 to-cyan-400/20"
+      tagline: "Private | Pro AI | Humanely",
+      icon: <img src="https://static.wixstatic.com/media/b20068_a31ff2583fe843b39b8053f8ef067211~mv2.png" className="w-12 h-12 object-contain mix-blend-screen" referrerPolicy="no-referrer" alt="Pro AI" />,
+      features: [
+        "Professional-Grade AI Hardware",
+        "5-Day Global Logistics Delivery",
+        "Zero-Config Plug & Play Setup",
+        "Absolute Data Privacy",
+        "Dedicated Engineer Implementation"
+      ],
+      comingSoon: false
     },
     {
       id: "business",
       name: "Business AI",
-      target: "Large Multinational",
       tagline: "Sovereign | Business AI | Humanely",
-      description: "Achieving structural margin expansion through specialized SI teams and our proprietary .it framework.",
-      icon: <Building2 className="w-12 h-12" />,
-      gradient: "from-brand-secondary/20 to-brand-primary/20"
+      icon: <img src="https://static.wixstatic.com/media/b20068_34f70c080077492b9d251a04e3a6bc28~mv2.png" className="w-12 h-12 object-contain mix-blend-screen" referrerPolicy="no-referrer" alt="Business AI" />,
+      features: [
+        "The .it Framework",
+        "Total Sovereign Perimeter",
+        "Structural Margin Expansion",
+        "Global Operations Coordination",
+        "Full-Service Mission Teams"
+      ],
+      comingSoon: false
     },
     {
       id: "transparency",
       name: "Transparency AI",
-      target: "Public Sector",
-      tagline: "Sovereign | State | Humanely",
-      description: "Specialized Systems Integration for state and government bodies, enabling transparent and ethical governance.",
-      icon: <Landmark className="w-12 h-12" />,
-      gradient: "from-cyan-500/20 to-indigo-500/20"
+      tagline: "Sovereign | State AI | Humanely",
+      icon: <Landmark className="w-10 h-10 text-white" />,
+      features: [
+        "Sovereign Framework Design",
+        "Ethical Public Leadership AI",
+        "100% Auditable Intelligence",
+        "State-Level Security",
+        "Advanced Civic Coordination"
+      ],
+      comingSoon: true
     }
   ];
 
   return (
-    <section className="py-32 relative overflow-hidden bg-black">
+    <section className="py-24 md:py-32 bg-black border-t border-brand-primary/10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-24">
+        <div className="text-center mb-20 md:mb-24">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold mb-6 tracking-tighter"
+            className="text-4xl md:text-6xl font-black mb-6 tracking-tighter"
           >
             THE <span className="gradient-text uppercase">CONTINUUM</span>
           </motion.h2>
-          <p className="text-xl font-light tracking-widest uppercase gradient-text-muted">
+          <p className="text-sm md:text-xl font-light tracking-widest uppercase gradient-text-muted">
             Three Tiers of Private and Sovereign Intelligence
           </p>
         </div>
@@ -53,44 +68,48 @@ export default function ProductShowcase({ onNavigate }: { onNavigate: (page: str
           {products.map((product, i) => (
             <motion.div
               key={product.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.8 }}
-              whileHover={{ y: -10 }}
-              onClick={() => onNavigate(`product-${product.id}`)}
-              className={`relative p-8 rounded-[2.5rem] bg-gradient-to-br ${product.gradient} border border-white/5 group overflow-hidden flex flex-col cursor-pointer transition-all duration-300`}
+              transition={{ delay: i * 0.1 }}
+              onClick={() => !product.comingSoon && onNavigate(`product-${product.id}`)}
+              className={`flex flex-col p-10 rounded-[2.5rem] bg-brand-primary/5 border border-brand-primary/10 hover:bg-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 group ${product.comingSoon ? '' : 'cursor-pointer'}`}
             >
-              {/* Animated Background Glow */}
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-brand-primary/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
+              <div className="mb-8 flex justify-between items-start">
+                <div className="w-20 h-20 rounded-2xl bg-black/60 border border-brand-primary/10 flex items-center justify-center p-3 shadow-xl">
+                  {product.icon}
+                </div>
+                {product.comingSoon && (
+                  <div className="px-3 py-1.5 rounded-full bg-brand-primary/10 border border-brand-primary/20 flex items-center gap-2">
+                    <Activity className="w-3 h-3 text-brand-primary animate-pulse" />
+                    <span className="text-[9px] uppercase tracking-widest font-bold text-brand-primary">Coming Soon</span>
+                  </div>
+                )}
+              </div>
               
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="mb-6 p-4 rounded-2xl bg-black/40 inline-block gradient-border-muted group-hover:gradient-border transition-all self-start">
-                  <div className="gradient-text">{product.icon}</div>
-                </div>
-                
-                <h3 className="text-2xl font-black mb-1 tracking-tighter uppercase gradient-text">
-                  {product.name}
-                </h3>
-                <div className="text-[10px] font-mono mb-4 uppercase tracking-[0.2em] text-brand-primary/60">
-                  {product.target}
-                </div>
-                
-                <div className="text-xs font-bold mb-4 gradient-text uppercase tracking-tight">
-                  {product.tagline}
-                </div>
-
-                <p className="text-sm leading-relaxed gradient-text-muted font-light flex-grow">
-                  {product.description}
-                </p>
-                
-                <div className="mt-6 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-brand-primary/40 group-hover:text-brand-primary transition-colors">
-                  Learn More <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-                </div>
+              <h3 className="text-3xl font-black uppercase tracking-tighter gradient-text mb-2">
+                {product.name}
+              </h3>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/60 mb-10">
+                {product.tagline}
+              </p>
+              
+              <div className="space-y-5 mb-12 flex-grow">
+                {product.features.map((feature, idx) => (
+                  <div key={idx} className="flex items-start gap-4">
+                    <CheckCircle2 className="w-5 h-5 text-brand-primary/50 shrink-0" />
+                    <span className="text-sm gradient-text-muted font-light leading-snug">
+                      {feature}
+                    </span>
+                  </div>
+                ))}
               </div>
 
-              {/* Decorative Lines */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-primary/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+              {!product.comingSoon && (
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-primary/40 group-hover:text-brand-primary transition-colors mt-auto pt-6 border-t border-brand-primary/10">
+                  Explore Product <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

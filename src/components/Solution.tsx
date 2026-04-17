@@ -66,7 +66,7 @@ export default function Solution() {
             <div>
               <h3 className="text-3xl font-bold mb-6 gradient-text">Sovereign & Factorial</h3>
               <p className="text-lg mb-8 leading-relaxed gradient-text-muted">
-                Deploying on-prem ensures proprietary logic and "Secret Sauce" never leave control. 
+                Deploying on-prem ensures core business logic and "Secret Sauce" never leave control. 
                 The engine bridges coordination gap, instantly calculating factorial relationships between cross-departmental events.
               </p>
               <ul className="space-y-4">

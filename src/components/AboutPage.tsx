@@ -3,24 +3,22 @@ import { Download, Shield, Target, Cpu, Zap, ArrowRight, Linkedin, Mail } from "
 
 export default function AboutPage() {
   return (
-    <div className="pt-32 pb-24 bg-black min-h-screen">
+    <div className="pt-48 pb-32 bg-black min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         {/* Hero Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-24"
+          className="text-center mb-40 mt-16"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter uppercase">
-            THE ALRigs <span className="gradient-text uppercase">Philosophy</span>
-          </h1>
-          <p className="max-w-3xl mx-auto text-xl leading-relaxed gradient-text-muted font-light">
+          <p className="font-mono tracking-[0.3em] uppercase gradient-text-muted mb-12">The ALRigs Philosophy</p>
+          <p className="max-w-4xl mx-auto text-2xl md:text-3xl leading-relaxed gradient-text-muted font-light px-4">
             Who we are and why we believe AI should be private, sovereign, and—above all—humane.
           </p>
         </motion.div>
 
         {/* Core Beliefs */}
-        <div className="grid md:grid-cols-3 gap-8 mb-32">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-32">
           {[
             {
               icon: <Shield className="w-8 h-8 text-brand-primary" />,
@@ -36,6 +34,11 @@ export default function AboutPage() {
               icon: <Cpu className="w-8 h-8 text-brand-primary" />,
               title: "The Core Belief",
               desc: "The intelligence that runs a business belongs exclusively to the people who built that business."
+            },
+            {
+              icon: <Zap className="w-8 h-8 text-brand-primary" />,
+              title: "Open Design",
+              desc: "We are an open design company. Our architectures are transparent, ensuring absolute, verifiable trust across all integrations."
             }
           ].map((item, i) => (
             <motion.div
@@ -56,8 +59,7 @@ export default function AboutPage() {
         {/* Leadership Section */}
         <div className="mb-32">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 gradient-text">Leadership</h2>
-            <p className="font-mono tracking-widest uppercase gradient-text-muted">The Vision Behind ALRigs</p>
+            <p className="font-mono tracking-widest uppercase gradient-text-muted text-lg">The Vision Behind ALRigs</p>
           </div>
           
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12 justify-between">
@@ -99,8 +101,7 @@ export default function AboutPage() {
         {/* From Our Management */}
         <div className="mb-32">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 gradient-text">From Our Management</h2>
-            <p className="font-mono tracking-widest uppercase gradient-text-muted">Insights & Vision</p>
+            <p className="font-mono tracking-widest uppercase gradient-text-muted text-lg">Insights & Vision From Our Management</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[

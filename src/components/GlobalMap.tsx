@@ -19,7 +19,9 @@ export default function GlobalMap() {
           viewport={{ once: true }}
           className="relative"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-16 tracking-tighter uppercase">The ALRigs <span className="gradient-text">Continuum</span></h2>
+          <div className="text-center mb-16">
+            <p className="font-mono tracking-widest uppercase gradient-text-muted text-lg">Global Architecture Coverage</p>
+          </div>
           
           <div className="relative aspect-[2/1] w-full max-w-5xl mx-auto bg-brand-primary/[0.02] rounded-[3rem] gradient-border-muted overflow-hidden group">
             {/* Simple Dot Map Background */}

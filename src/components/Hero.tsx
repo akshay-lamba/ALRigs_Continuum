@@ -9,19 +9,18 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="relative w-full aspect-video rounded-[3rem] overflow-hidden border border-brand-primary/10 shadow-[0_0_50px_rgba(59,130,246,0.1)]"
+          className="relative w-full aspect-video flex items-center justify-center"
         >
           <video 
-            src="https://video.wixstatic.com/video/b20068_d4e8b3a8131b430585909fa012998467/1080p/mp4/file.mp4" 
-            className="w-full h-full object-cover"
+            src="https://video.wixstatic.com/video/b20068_fa128b75ad3a466e8b648cedc0cdaf32/1080p/mp4/file.mp4" 
+            className="w-full h-full object-cover mix-blend-screen"
             autoPlay
             loop
             muted
             playsInline
           />
-          {/* Subtle overlay to soften the video slightly and tie it to the aesthetic */}
-          <div className="absolute inset-0 bg-black/10 mix-blend-overlay pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black pointer-events-none opacity-40" />
+          {/* Radial fade to ensure video edges seamlessly blend into the black background */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_black_80%)] pointer-events-none" />
         </motion.div>
       </div>
       

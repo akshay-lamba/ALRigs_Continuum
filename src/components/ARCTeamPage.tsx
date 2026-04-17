@@ -27,17 +27,15 @@ export default function ARCTeamPage() {
   ];
 
   return (
-    <div className="pt-32 pb-24 bg-black min-h-screen">
+    <div className="pt-48 pb-32 bg-black min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-24"
+          className="text-center mb-40 mt-16"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter uppercase">
-            THREE TEAMS. <span className="gradient-text uppercase">ONE MISSION.</span>
-          </h1>
-          <p className="max-w-4xl mx-auto text-xl leading-relaxed gradient-text-muted font-light px-4">
+          <p className="font-mono tracking-[0.3em] uppercase gradient-text-muted mb-12">ARC Teams</p>
+          <p className="max-w-4xl mx-auto text-2xl md:text-3xl leading-relaxed gradient-text-muted font-light px-4">
             For our Business and Transparency tiers, we don't just provide software; we provide a mission-ready task force. We deploy three specialized teams to ensure the transition to AI is seamless, secure, and human-centered.
           </p>
         </motion.div>

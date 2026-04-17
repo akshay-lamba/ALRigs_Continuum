@@ -3,17 +3,15 @@ import { Download, TrendingUp, ShieldCheck, Zap, ArrowRight, CheckCircle } from 
 
 export default function ImpactPage() {
   return (
-    <div className="pt-32 pb-24 bg-black min-h-screen">
+    <div className="pt-48 pb-32 bg-black min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-24"
+          className="text-center mb-40 mt-16"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter uppercase">
-            REAL WORLD <span className="gradient-text uppercase">CHANGE</span>
-          </h1>
-          <p className="max-w-3xl mx-auto text-xl leading-relaxed gradient-text-muted font-light">
+          <p className="font-mono tracking-[0.3em] uppercase gradient-text-muted mb-12">Impact</p>
+          <p className="max-w-4xl mx-auto text-2xl md:text-3xl leading-relaxed gradient-text-muted font-light px-4">
             Stories and visions of how ALRigs is making business more private, corporations more sovereign, and states more transparent.
           </p>
         </motion.div>

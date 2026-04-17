@@ -11,12 +11,8 @@ export default function Problem() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight tracking-tighter uppercase">
-              Diagnosing the <br />
-              <span className="text-brand-primary/20">Enterprise Bottleneck</span>
-            </h2>
-            <p className="text-xl text-brand-primary/40 mb-12 leading-relaxed font-light">
-              The central barrier to peak performance is the manual retrieval and synchronization of context across disconnected departments.
+            <p className="text-2xl md:text-3xl text-brand-primary/40 mb-16 leading-relaxed font-light px-4">
+              The central barrier to enterprise peak performance is the manual retrieval and synchronization of context across disconnected departments.
             </p>
 
             <div className="space-y-6">
