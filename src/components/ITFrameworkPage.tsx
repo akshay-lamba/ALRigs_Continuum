@@ -27,13 +27,16 @@ export default function ITFrameworkPage() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-40 mt-16"
+          className="text-center mb-24 mt-16"
         >
-          <p className="font-mono tracking-[0.3em] uppercase gradient-text-muted mb-12">The .it Framework</p>
-          <p className="max-w-3xl mx-auto text-2xl md:text-3xl leading-relaxed gradient-text-muted font-light px-4">
+          <p className="font-mono tracking-[0.3em] uppercase gradient-text-muted">The .it Framework</p>
+        </motion.div>
+
+        <div className="mb-12 max-w-4xl">
+          <p className="text-xl md:text-2xl leading-relaxed gradient-text-muted font-light">
             This is our system integration framework. It is the foundation for Business and Transparency AI, designed to give large organizations and states absolute ownership over their data and AI logic.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-32">
           {principles.map((p, i) => (

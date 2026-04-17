@@ -8,17 +8,17 @@ export default function ArcEnginePage() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-40 mt-16"
+          className="text-center mb-24 mt-16"
         >
-          <p className="font-mono tracking-[0.3em] uppercase gradient-text-muted mb-12">ARC Engine</p>
-          <p className="max-w-4xl mx-auto text-2xl md:text-3xl leading-relaxed gradient-text-muted font-light px-4">
-            A simple explanation of the core intelligence technology that powers everything from the Pro AI box to state-level infrastructure. It is the common thread of intelligence that makes the Continuum possible.
-          </p>
+          <p className="font-mono tracking-[0.3em] uppercase gradient-text-muted">ARC Engine</p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center mb-32">
+        <div className="grid lg:grid-cols-2 gap-20 items-start mb-32">
           <div>
-            <h2 className="text-3xl font-black mb-8 uppercase tracking-tighter gradient-text">Exactly How It Works</h2>
+            <h2 className="text-3xl font-black mb-6 uppercase tracking-tighter gradient-text">Exactly How It Works</h2>
+            <p className="text-xl leading-relaxed gradient-text-muted font-light mb-12 pr-8">
+              A simple explanation of the core intelligence technology that powers everything from the Pro AI box to state-level infrastructure. It is the common thread of intelligence that makes the Continuum possible.
+            </p>
             <div className="space-y-10">
               <div className="relative pl-12">
                 <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary font-bold">1</div>

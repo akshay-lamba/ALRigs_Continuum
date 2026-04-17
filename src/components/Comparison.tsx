@@ -12,10 +12,6 @@ export default function Comparison() {
   return (
     <section className="py-24 relative space-bg border-y border-brand-primary/5">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tighter uppercase text-brand-primary/90">The Final <span className="gradient-text uppercase">Transition</span></h2>
-          <p className="text-xl font-light tracking-widest uppercase gradient-text-muted">Redefining the Corporate Balance Sheet</p>
-        </div>
 
         <div className="overflow-x-auto">
           <table className="w-full border-collapse">
