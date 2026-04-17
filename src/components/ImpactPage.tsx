@@ -5,19 +5,16 @@ export default function ImpactPage() {
   return (
     <div className="pt-32 pb-24 bg-black min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Hero Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-24"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">
-            DEFINING <br />
-            <span className="gradient-text uppercase">Business AI</span>
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter uppercase">
+            REAL WORLD <span className="gradient-text uppercase">CHANGE</span>
           </h1>
-          <p className="max-w-3xl mx-auto text-xl leading-relaxed gradient-text-muted">
-            The era of outsourced, public-server AI is a dead end. 
-            ALRigs engineers a bespoke AI ecosystem specifically for your enterprise perimeter.
+          <p className="max-w-3xl mx-auto text-xl leading-relaxed gradient-text-muted font-light">
+            Stories and visions of how ALRigs is making business more private, corporations more sovereign, and states more transparent.
           </p>
         </motion.div>
 
@@ -73,32 +70,44 @@ export default function ImpactPage() {
           </motion.div>
         </div>
 
-        {/* Commercial Terms */}
+        {/* The Human Upgrade */}
         <div className="mb-32">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 uppercase tracking-tighter gradient-text">Simple Commercial Terms</h2>
-            <p className="font-mono tracking-widest uppercase gradient-text-muted">Transparent, outcome-based pricing models.</p>
+            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter uppercase gradient-text">Humanely <br /><span className="text-3xl md:text-4xl gradient-text-muted">Designing the Transformation</span></h2>
+            <p className="max-w-3xl mx-auto text-xl leading-relaxed gradient-text-muted font-light">
+              We define "Humanely" as the intentional upgrade of human capability through sovereign automation.
+            </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Phase 1 (The Pilot)",
-                desc: "One flat fee. This covers our time fully setting up your private system and initially training the brain."
-              },
-              {
-                title: "Phase 2 (Rollout)",
-                desc: "Flexible structure. A shared-success model or a flat license fee, entirely dependent on what your Finance team prefers."
-              },
-              {
-                title: "Maintenance",
-                desc: "Optional annual support plan. Keeps your internal brain updated with the absolute latest technology every year."
-              }
-            ].map((item, i) => (
-              <div key={i} className="p-8 rounded-3xl bg-glass gradient-border">
-                <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight gradient-text">{item.title}</h3>
-                <p className="leading-relaxed gradient-text-muted">{item.desc}</p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="p-12 rounded-[4rem] bg-glass gradient-border"
+            >
+              <h3 className="text-3xl font-black mb-6 uppercase tracking-tight gradient-text">For the Global Leader</h3>
+              <p className="text-lg leading-relaxed gradient-text-muted font-light mb-8">
+                Owners and CEOs achieve unprecedented "Sovereign Coordination Velocity". The AI removes the anxiety of information silos, providing deterministic clarity so leadership can focus on high-level growth and legacy preservation.
+              </p>
+              <div className="flex items-center gap-4 text-brand-primary/40 font-mono text-xs uppercase tracking-widest">
+                <CheckCircle className="w-5 h-5" /> Deterministic Execution
               </div>
-            ))}
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="p-12 rounded-[4rem] bg-glass gradient-border"
+            >
+              <h3 className="text-3xl font-black mb-6 uppercase tracking-tight gradient-text">For the State & Public</h3>
+              <p className="text-lg leading-relaxed gradient-text-muted font-light mb-8">
+                Enabling public leaders with secure, ethical infrastructure. Large-scale utilities and state bodies gain back coordination velocity while ensuring full data ownership—the AI serves the people through transparent and audited systems.
+              </p>
+              <div className="flex items-center gap-4 text-brand-primary/40 font-mono text-xs uppercase tracking-widest">
+                <ShieldCheck className="w-5 h-5" /> Ethical Sovereign Logic
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>

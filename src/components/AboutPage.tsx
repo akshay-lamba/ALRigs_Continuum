@@ -11,13 +11,11 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-24"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">
-            THE EVENT HORIZON OF <br />
-            <span className="gradient-text uppercase">Corporate Intelligence</span>
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter uppercase">
+            THE ALRigs <span className="gradient-text uppercase">Philosophy</span>
           </h1>
-          <p className="max-w-3xl mx-auto text-xl leading-relaxed gradient-text-muted">
-            Building the infrastructure for corporate autonomy in the autonomous age. 
-            We are the bridge to a future where corporate intelligence is a private, protected, and permanent asset.
+          <p className="max-w-3xl mx-auto text-xl leading-relaxed gradient-text-muted font-light">
+            Who we are and why we believe AI should be private, sovereign, and—above all—humane.
           </p>
         </motion.div>
 

@@ -18,9 +18,13 @@ export default function Footer() {
                 ALRigs Continuum
               </span>
             </div>
-            <p className="text-brand-primary/30 max-w-sm leading-relaxed text-sm">
+            <p className="text-brand-primary/30 max-w-sm leading-relaxed text-sm mb-6">
               Building the permanent economic moat for the world's most ambitious enterprises through sovereign AI coordination.
             </p>
+            <div className="space-y-2">
+               <p className="text-[10px] text-brand-primary/20 font-mono uppercase tracking-[0.2em]">Global Logistics: 5-Day Direct Delivery</p>
+               <p className="text-[10px] text-brand-primary/20 font-mono uppercase tracking-[0.2em]">Architecture: Proprietary .it Framework</p>
+            </div>
           </div>
 
           <div>

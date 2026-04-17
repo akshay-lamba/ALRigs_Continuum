@@ -1,7 +1,5 @@
 import { motion } from "motion/react";
 import { Zap } from "lucide-react";
-import Solution from "./Solution";
-import ValueProp from "./ValueProp";
 
 export default function ArcEnginePage() {
   return (
@@ -12,46 +10,57 @@ export default function ArcEnginePage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-24"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">
-            THE <span className="gradient-text uppercase">ARC ENGINE</span> <br />
-            ARCHITECTURE
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter uppercase">
+            THE HEART OF THE <span className="gradient-text uppercase">CONTINUUM</span>
           </h1>
-          <p className="max-w-3xl mx-auto text-xl leading-relaxed gradient-text-muted">
-            The core infrastructure for corporate autonomy. 
-            A private, sovereign environment where your business logic lives and executes at machine speed.
+          <p className="max-w-3xl mx-auto text-xl leading-relaxed gradient-text-muted font-light px-4">
+            A simple explanation of the core intelligence technology that powers everything from the Pro AI box to state-level infrastructure. It is the common thread of intelligence that makes the Continuum possible.
           </p>
         </motion.div>
 
-        {/* The ARC Engine Details */}
-        <div className="mb-32">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 gradient-text">The ARC Engine Architecture</h2>
-            <p className="font-mono tracking-widest uppercase gradient-text-muted">Context • Depth • Velocity²</p>
+        <div className="grid lg:grid-cols-2 gap-20 items-center mb-32">
+          <div>
+            <h2 className="text-3xl font-black mb-8 uppercase tracking-tighter gradient-text">Exactly How It Works</h2>
+            <div className="space-y-10">
+              <div className="relative pl-12">
+                <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary font-bold">1</div>
+                <h4 className="text-xl font-bold mb-2 uppercase gradient-text">Capture</h4>
+                <p className="gradient-text-muted leading-relaxed">Most AI relies on the general internet. The ARC Engine relies only on <strong>your company's history</strong>. It captures the years of institutional know-how trapped in emails, documents, and the minds of your experts.</p>
+              </div>
+              <div className="relative pl-12">
+                <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary font-bold">2</div>
+                <h4 className="text-xl font-bold mb-2 uppercase gradient-text">Contain</h4>
+                <p className="gradient-text-muted leading-relaxed">Unlike public AI platforms, this intelligence never leaves your office. It lives in a private environment where <strong>only you hold the key</strong>. Your competitive advantage is never leaked to a public server.</p>
+              </div>
+              <div className="relative pl-12">
+                <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary font-bold">3</div>
+                <h4 className="text-xl font-bold mb-2 uppercase gradient-text">Coordinate</h4>
+                <p className="gradient-text-muted leading-relaxed">The Engine then acts as a high-speed conductor, helping every department talk to each other perfectly. It ensures that when sales moves, production is already prepared—automatically and securely.</p>
+              </div>
+            </div>
           </div>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="p-6 rounded-2xl bg-brand-primary/5 gradient-border-muted">
-                <h4 className="text-xl font-bold mb-2 uppercase tracking-tight gradient-text">Step 01: Private Environment</h4>
-                <p className="gradient-text-muted">Architecting a private operational environment where your business logic lives exclusively.</p>
-              </div>
-              <div className="p-6 rounded-2xl bg-brand-primary/5 gradient-border-muted">
-                <h4 className="text-xl font-bold mb-2 uppercase tracking-tight gradient-text">Step 02: Institutional Memory</h4>
-                <p className="gradient-text-muted">Capturing the specific know-how, effort, and years of experience of your best people.</p>
-              </div>
-              <div className="p-6 rounded-2xl bg-brand-primary/5 gradient-border-muted">
-                <h4 className="text-xl font-bold mb-2 uppercase tracking-tight gradient-text">Step 03: Verified Execution</h4>
-                <p className="gradient-text-muted">Delivering deterministic, safe, and verified autonomous execution through the Parallel Audit Layer.</p>
-              </div>
-            </div>
-            <div className="relative aspect-square rounded-[3rem] overflow-hidden border border-brand-primary/10 bg-black flex items-center justify-center">
-              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--color-brand-primary)_0%,_transparent_70%)]" />
-              <Zap className="w-32 h-32 text-brand-primary animate-pulse" />
-            </div>
+          
+          <div className="relative rounded-[4rem] aspect-square overflow-hidden gradient-border bg-glass flex items-center justify-center">
+             <div className="absolute inset-x-0 bottom-0 p-8 text-center bg-black/80 backdrop-blur-sm z-20">
+                <p className="font-mono text-xs uppercase tracking-[0.3em] text-brand-primary">The Heart of Corporate Autonomy</p>
+             </div>
+             <div className="relative z-10 p-12 text-center">
+                <Zap className="w-24 h-24 text-brand-primary mx-auto mb-8 animate-pulse" />
+                <h3 className="text-4xl font-black gradient-text uppercase mb-4">Sovereign Logic</h3>
+                <p className="gradient-text-muted text-lg font-light tracking-wide">Deterministic • Private • High Velocity</p>
+             </div>
+             <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--color-brand-primary)_0%,_transparent_70%)]" />
           </div>
         </div>
 
-        <Solution />
-        <ValueProp />
+        <section className="py-20 border-t border-brand-primary/10">
+           <div className="text-center">
+              <h2 className="text-4xl font-black mb-8 uppercase tracking-tighter gradient-text">Why It Matters</h2>
+              <p className="max-w-2xl mx-auto text-xl gradient-text-muted leading-relaxed font-light">
+                In the autonomous age, the company with the fastest, most private coordination velocity wins. The ARC Engine is the infrastructure that makes that velocity possible.
+              </p>
+           </div>
+        </section>
       </div>
     </div>
   );

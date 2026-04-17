@@ -1,17 +1,27 @@
 import { motion } from "motion/react";
-import { Users, Building2, Landmark, ArrowRight, Shield, Zap, Cpu } from "lucide-react";
+import { Users, Building2, Landmark, ArrowRight, Shield, Zap, Cpu, Package } from "lucide-react";
 
-export default function ProductsPage() {
+export default function ProductsPage({ productId }: { productId?: string }) {
   const products = [
     {
       id: "pro",
       name: "Pro AI",
+      tagline: "Private | Business AI | Humanely",
       target: "Family-Owned Businesses",
-      description: "Preserving legacy through digital sovereignty. We turn generational know-how into a permanent, automated asset.",
-      details: [
-        "Institutional Memory Capture: Digitizing years of unwritten expertise.",
-        "Private Knowledge Base: Your data never leaves your perimeter.",
-        "Legacy Automation: Ensuring the business runs with your specific logic, forever."
+      description: "Built for the heart of the economy—family-owned businesses. Preserving legacy through digital sovereignty.",
+      sections: [
+        {
+          title: "The Hardware",
+          content: "Order online. A high-spec professional AI box delivered to your door in 5 days through our efficient global logistics network."
+        },
+        {
+          title: "Setup",
+          content: "Ultimate ease of use. Simply plug the box in, navigate to Pro.local on your browser, and the setup is complete."
+        },
+        {
+          title: "The Human Touch",
+          content: "Every Pro AI purchase includes dedicated setup time with an ALRigs engineer who handles the implementation and integration for the business."
+        }
       ],
       iconUrl: "https://static.wixstatic.com/media/b20068_a31ff2583fe843b39b8053f8ef067211~mv2.png",
       gradient: "from-blue-600/20 to-cyan-400/20",
@@ -21,12 +31,22 @@ export default function ProductsPage() {
     {
       id: "business",
       name: "Business AI",
-      target: "Large Commercial Organizations",
-      description: "Achieving structural margin expansion. Factorial coordination velocity for complex, multi-national operations.",
-      details: [
-        "Cross-Departmental Synthesis: Breaking silos with unified intelligence.",
-        "Deterministic Execution: Safe, audited autonomous operations.",
-        "Margin Expansion: Reducing operational friction at scale."
+      tagline: "Sovereign | Business AI | Humanely",
+      target: "Large Multinationals",
+      description: "Designed for large multinational companies requiring total control and structural margin expansion.",
+      sections: [
+        {
+          title: "Total Sovereignty",
+          content: "Your data stays yours. Our .it framework ensures your AI is independent and secure, residing entirely within your sovereign perimeter."
+        },
+        {
+          title: "Full-Service Delivery",
+          content: "We provide high-level systems integration to weave intelligence into your global operations at machine speed."
+        },
+        {
+          title: "Mission Ready",
+          content: "Deployment and ongoing success managed by the ARC Consulting, Implementation, and Human Upgrade teams."
+        }
       ],
       iconUrl: "https://static.wixstatic.com/media/b20068_bf1e0b33f8fd4564be8918f7c5e7757a~mv2.jpeg",
       gradient: "from-brand-secondary/20 to-brand-primary/20",
@@ -36,12 +56,22 @@ export default function ProductsPage() {
     {
       id: "transparency",
       name: "Transparency AI",
-      target: "Public Sector & State Utilities",
-      description: "Deterministic, audited execution for public trust. Sovereign intelligence for critical national infrastructure.",
-      details: [
-        "Public Trust Architecture: Fully auditable AI decision-making.",
-        "Critical Infrastructure Security: Hardened against external influence.",
-        "Sovereign Intelligence: National data remains under national control."
+      tagline: "Sovereign | State | Humanely",
+      target: "Public Sector & Government Bodies",
+      description: "Empowering state leadership with secure, ethical infrastructure and transparent decision-making processes.",
+      sections: [
+        {
+          title: "Leadership Enabled",
+          content: "We don't just build tools; we enable public leaders to guide the state with clarity, ethics, and sovereign intelligence."
+        },
+        {
+          title: "Public Trust",
+          content: "Built on the .it framework to ensure every action is sovereign and every decision-making process is fully auditable and transparent."
+        },
+        {
+          title: "The ARC Approach",
+          content: "Dedicated mission teams ensuring state-level security and human-centered leadership across public service."
+        }
       ],
       icon: <Landmark className="w-12 h-12" />,
       gradient: "from-cyan-500/20 to-indigo-500/20",
@@ -49,6 +79,9 @@ export default function ProductsPage() {
       aspectRatio: "aspect-video"
     }
   ];
+
+  const currentProduct = productId ? products.find(p => p.id === productId) : null;
+  const displayProducts = currentProduct ? [currentProduct] : products;
 
   return (
     <div className="pt-32 pb-24 bg-black min-h-screen">
@@ -59,15 +92,15 @@ export default function ProductsPage() {
           className="text-center mb-24"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">
-            OUR <span className="gradient-text uppercase">PRODUCTS</span>
+            {currentProduct ? <span className="gradient-text uppercase">{currentProduct.name}</span> : <>THE <span className="gradient-text uppercase">CONTINUUM</span></>}
           </h1>
           <p className="max-w-3xl mx-auto text-xl leading-relaxed gradient-text-muted">
-            Sovereign intelligence solutions tailored for the specific needs of your organization.
+            {currentProduct ? currentProduct.tagline : "Three tiers of private and sovereign intelligence for family businesses, multinationals, and the public sector."}
           </p>
         </motion.div>
 
         <div className="space-y-32">
-          {products.map((product, i) => (
+          {displayProducts.map((product, i) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 40 }}
@@ -75,7 +108,7 @@ export default function ProductsPage() {
               viewport={{ once: true }}
               className="grid lg:grid-cols-2 gap-16 items-center"
             >
-              <div className={i % 2 === 1 ? "lg:order-2" : ""}>
+              <div className={i % 2 === 1 && !currentProduct ? "lg:order-2" : ""}>
                 <div className="mb-8 p-6 rounded-3xl bg-brand-primary/5 inline-block gradient-border">
                   {product.iconUrl ? (
                     <img src={product.iconUrl} alt={`${product.name} Icon`} className="w-12 h-12 object-cover rounded-lg mix-blend-screen" referrerPolicy="no-referrer" />
@@ -89,20 +122,28 @@ export default function ProductsPage() {
                 <div className="text-sm font-mono mb-8 uppercase tracking-[0.3em] text-brand-primary/60">
                   {product.target}
                 </div>
+                <div className="text-xl leading-relaxed mb-6 gradient-text font-bold tracking-tight uppercase">
+                  {product.tagline}
+                </div>
                 <p className="text-xl leading-relaxed mb-10 gradient-text-muted font-light">
                   {product.description}
                 </p>
                 <div className="space-y-4">
-                  {product.details.map((detail, idx) => (
-                    <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
-                      <Zap className="w-5 h-5 text-brand-primary mt-1 flex-shrink-0" />
-                      <span className="gradient-text-muted">{detail}</span>
+                  {product.sections.map((section, idx) => (
+                    <div key={idx} className="flex flex-col gap-2 p-6 rounded-2xl bg-white/5 border border-white/5 group hover:border-brand-primary/20 transition-colors">
+                      <h4 className="text-sm font-bold uppercase tracking-widest text-brand-primary flex items-center gap-2">
+                        <Zap className="w-4 h-4" />
+                        {section.title}
+                      </h4>
+                      <p className="gradient-text-muted leading-relaxed text-sm">
+                        {section.content}
+                      </p>
                     </div>
                   ))}
                 </div>
               </div>
               
-              <div className={`relative ${product.aspectRatio} rounded-[4rem] overflow-hidden gradient-border bg-glass flex items-center justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
+              <div className={`relative ${product.aspectRatio} rounded-[4rem] overflow-hidden gradient-border bg-glass flex items-center justify-center ${i % 2 === 1 && !currentProduct ? "lg:order-1" : ""}`}>
                 {product.videoUrl ? (
                   <>
                     <video 

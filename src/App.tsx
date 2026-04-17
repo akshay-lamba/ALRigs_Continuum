@@ -17,6 +17,9 @@ import ImpactPage from "./components/ImpactPage";
 import ArcEnginePage from "./components/ArcEnginePage";
 import ProductShowcase from "./components/ProductShowcase";
 import ProductsPage from "./components/ProductsPage";
+import ITFrameworkPage from "./components/ITFrameworkPage";
+import ARCTeamPage from "./components/ARCTeamPage";
+import TeamsSection from "./components/TeamsSection";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -26,11 +29,16 @@ export default function App() {
     
     // Dynamic Title for SEO
     const titles: Record<string, string> = {
-      home: "ALRigs Continuum | Sovereign AI ARC Engine",
-      products: "Our Products | ALRigs Continuum - Sovereign AI Solutions",
-      about: "About Us | ALRigs Continuum - Corporate Intelligence",
-      impact: "Impact & Outcomes | ALRigs Continuum - 90-Day Pilot",
-      "arc-engine": "ARC Engine Architecture | ALRigs Continuum"
+      home: "ALRigs Continuum | Sovereign AI",
+      products: "The Continuum | ALRigs Continuum",
+      "product-pro": "Pro AI | ALRigs Continuum",
+      "product-business": "Business AI | ALRigs Continuum",
+      "product-transparency": "Transparency AI | ALRigs Continuum",
+      about: "About Us | ALRigs Philosophy",
+      impact: "Impact | Real World Change",
+      "arc-engine": "ARC Engine | The Heart of the Continuum",
+      "it-framework": ".it Framework | Architecture of Sovereignty",
+      "arc-team": "ARC Teams | The Delivery Mission"
     };
     document.title = titles[currentPage] || "ALRigs Continuum";
   }, [currentPage]);
@@ -42,12 +50,16 @@ export default function App() {
       <main>
         {currentPage === 'home' && (
           <>
-            <Hero onNavigate={setCurrentPage} />
+            <Hero />
             <ProductShowcase onNavigate={setCurrentPage} />
+            <TeamsSection onNavigate={setCurrentPage} />
           </>
         )}
         
         {currentPage === 'products' && <ProductsPage />}
+        {currentPage === 'product-pro' && <ProductsPage productId="pro" />}
+        {currentPage === 'product-business' && <ProductsPage productId="business" />}
+        {currentPage === 'product-transparency' && <ProductsPage productId="transparency" />}
         
         {currentPage === 'about' && (
           <>
@@ -65,6 +77,10 @@ export default function App() {
         )}
 
         {currentPage === 'arc-engine' && <ArcEnginePage />}
+        
+        {currentPage === 'it-framework' && <ITFrameworkPage />}
+        
+        {currentPage === 'arc-team' && <ARCTeamPage />}
       </main>
       
       <Footer />
