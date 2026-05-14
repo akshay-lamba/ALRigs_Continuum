@@ -378,37 +378,42 @@ export default function TRUSTLayer() {
     <div className="bg-[#020617] text-slate-300 min-h-screen font-sans overflow-x-hidden pt-24 pb-20">
       
       {/* Dynamic Background */}
-      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.2, 0.1],
-            x: [0, 50, 0],
-            y: [0, 30, 0]
-          }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-900/30 blur-[120px] mix-blend-screen"
-        />
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-[#020617]">
+        {/* Ethereal Color Pools */}
         <motion.div 
           animate={{ 
             scale: [1, 1.3, 1],
-            opacity: [0.1, 0.15, 0.1],
-            x: [0, -40, 0],
-            y: [0, 60, 0]
+            x: ['-25%', '10%', '-25%'],
+            y: ['-20%', '15%', '-20%'],
           }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-slate-800/40 blur-[150px] mix-blend-screen"
+          transition={{ duration: 35, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-0 left-0 w-full h-full bg-blue-600/10 blur-[160px] rounded-full"
         />
         <motion.div 
           animate={{ 
-            scale: [1, 1.1, 1],
-            opacity: [0.05, 0.1, 0.05],
-            x: [0, 30, 0],
-            y: [0, -40, 0]
+            scale: [1.3, 1, 1.3],
+            x: ['20%', '-15%', '20%'],
+            y: ['10%', '-20%', '10%'],
           }}
-          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[30%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-indigo-900/20 blur-[100px] mix-blend-screen"
+          transition={{ duration: 40, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-0 right-0 w-full h-full bg-indigo-600/5 blur-[200px] rounded-full"
         />
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.05, 0.1, 0.05]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-slate-400/5 blur-[180px] rounded-full"
+        />
+
+        {/* Artistic Texture Overlay */}
+        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none" 
+             style={{ 
+               backgroundImage: `url('https://static.wixstatic.com/media/b20068_9fa90575e66a4e579bca39912badb4fc~mv2.jpeg')`,
+               backgroundSize: 'cover',
+               backgroundPosition: 'center',
+             }} />
       </div>
 
       {/* Header */}

@@ -85,8 +85,8 @@ export default function App() {
       {/* Navigation */}
       <Navbar />
       
-      {/* Main Content Area: Offset by navbar height and footer height */}
-      <main className="pt-28 pb-32 w-full min-h-screen flex flex-col">
+      {/* Main Content Area: Offset by navbar height */}
+      <main className="pt-28 w-full min-h-screen flex flex-col">
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />

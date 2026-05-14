@@ -22,14 +22,14 @@ export default function PEOPLEOwnerPage() {
         </button>
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto flex flex-col gap-12 px-6">
+      <div className="relative z-10 max-w-[1400px] mx-auto flex flex-col px-6">
         
         {/* Section 1 */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-full relative rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_30px_80px_-20px_rgba(16,185,129,0.15)] group"
+          className="w-full relative rounded-t-[2rem] overflow-hidden border-x border-t border-white/10 shadow-2xl group"
         >
           <img 
             src="https://static.wixstatic.com/media/b20068_f8c91e499bb140048216a0947ec4d4d7~mv2.jpeg" 
@@ -38,34 +38,32 @@ export default function PEOPLEOwnerPage() {
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-tr from-[#020617]/20 to-transparent pointer-events-none opacity-80" />
-          <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[2rem] pointer-events-none" />
         </motion.div>
 
         {/* Section 2 */}
         <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="w-full relative rounded-[2rem] overflow-hidden border border-white/5 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.5)] group hover:bg-[#0a0a0a] transition-all duration-500 hover:border-white/10"
+          className="w-full relative overflow-hidden border-x border-white/10 group hover:bg-[#0a0a0a] transition-all duration-500"
         >
           <img 
-            src="https://static.wixstatic.com/media/b20068_9fa90575e66a4e579bca39912badb4fc~mv2.jpeg" 
+            src="https://static.wixstatic.com/media/b20068_0e16ebc9b03a4cbe81bc8d518b8a56e9~mv2.jpeg" 
             alt="Section 2" 
             className="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-1000"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/30 to-transparent pointer-events-none" />
-          <div className="absolute inset-0 ring-1 ring-inset ring-white/5 rounded-[2rem] pointer-events-none" />
         </motion.div>
 
         {/* Section 3 */}
         <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="w-full relative rounded-[2rem] overflow-hidden border border-emerald-500/10 shadow-2xl group transition-all duration-500 hover:border-emerald-500/20"
+          className="w-full relative rounded-b-[2rem] overflow-hidden border-x border-b border-white/10 shadow-2xl group transition-all duration-500"
         >
           <img 
             src="https://static.wixstatic.com/media/b20068_014d67e950934bb0930e21cd87a227e5~mv2.jpeg" 
@@ -75,7 +73,6 @@ export default function PEOPLEOwnerPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/40 to-transparent pointer-events-none" />
           <div className="absolute inset-0 bg-emerald-500/5 mix-blend-overlay pointer-events-none" />
-          <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[2rem] pointer-events-none" />
         </motion.div>
         
       </div>
