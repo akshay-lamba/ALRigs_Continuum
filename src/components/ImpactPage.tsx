@@ -3,14 +3,14 @@ import { Download, TrendingUp, ShieldCheck, Zap, ArrowRight, CheckCircle } from 
 
 export default function ImpactPage() {
   return (
-    <div className="pt-48 pb-32 bg-black min-h-screen">
+    <div className="pt-48 pb-32 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-40 mt-16"
         >
-          <p className="font-mono tracking-[0.3em] uppercase gradient-text-muted mb-12">Impact</p>
+          <p className="font-mono tracking-[0.3em]  gradient-text-muted mb-12">Impact</p>
           <p className="max-w-4xl mx-auto text-2xl md:text-3xl leading-relaxed gradient-text-muted font-light px-4">
             Stories and visions of how ALRigs is making business more private, corporations more sovereign, and states more transparent.
           </p>
@@ -23,10 +23,10 @@ export default function ImpactPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 gradient-border-muted text-xs font-bold tracking-widest uppercase mb-6">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 gradient-border-muted text-xs font-bold tracking-widest  mb-6">
               <span className="gradient-text">Zero Risk • High Impact</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight tracking-tighter uppercase">
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight tracking-tighter ">
               The 90-Day <br />
               <span className="gradient-text-muted">Proof of Value Pilot</span>
             </h2>
@@ -42,7 +42,7 @@ export default function ImpactPage() {
                 "Visibility: Deliver clean, daily reports detailing exact actions taken"
               ].map((text, i) => (
                 <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-brand-primary/5 gradient-border-muted">
-                  <CheckCircle className="w-6 h-6 text-brand-primary flex-shrink-0" />
+                  <CheckCircle className="w-6 h-6 gradient-text flex-shrink-0" />
                   <span className="font-medium gradient-text-muted">{text}</span>
                 </div>
               ))}
@@ -57,9 +57,9 @@ export default function ImpactPage() {
           >
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--color-brand-primary)_0%,_transparent_70%)]" />
             <div className="text-9xl font-black mb-4 animate-pulse gradient-text">90</div>
-            <div className="text-2xl font-bold tracking-widest uppercase mb-8 gradient-text-muted">DAYS</div>
+            <div className="text-2xl font-bold tracking-widest  mb-8 gradient-text-muted">DAYS</div>
             <div className="p-6 rounded-2xl bg-brand-primary/10 gradient-border-muted">
-              <h4 className="text-xl font-bold mb-2 uppercase tracking-tight gradient-text">The 10x Guarantee</h4>
+              <h4 className="text-xl font-bold mb-2  tracking-tight gradient-text">The 10x Guarantee</h4>
               <p className="text-sm gradient-text-muted">
                 If the system cannot clearly show it will pay for itself ten times over by the end of 90 days, 
                 we help you delete the engine. You keep the insights; we take the risk.

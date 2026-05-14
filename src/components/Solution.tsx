@@ -16,9 +16,9 @@ export default function Solution() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-bold mb-6 tracking-tighter"
           >
-            The <span className="gradient-text uppercase">ARC Engine</span> Architecture
+            The <span className="gradient-text ">ARC Engine</span> Architecture
           </motion.h2>
-          <p className="text-xl font-mono tracking-[0.3em] uppercase gradient-text-muted">
+          <p className="text-xl font-mono tracking-[0.3em]  gradient-text-muted">
             Context • Depth • Velocity²
           </p>
         </div>
@@ -29,7 +29,7 @@ export default function Solution() {
               icon: <Zap className="w-8 h-8" />,
               title: "Instant Synthesis",
               desc: "Moving from 'knowing' to 'doing' with zero friction. Factorial synthesis at machine speed.",
-              color: "text-brand-primary"
+              color: "gradient-text"
             },
             {
               icon: <ShieldCheck className="w-8 h-8" />,
@@ -41,7 +41,7 @@ export default function Solution() {
               icon: <Database className="w-8 h-8" />,
               title: "Unified Intelligence",
               desc: "Pulling ERP, CRM, and Communications into a single, sovereign on-prem/private cloud boundary.",
-              color: "text-brand-primary"
+              color: "gradient-text"
             }
           ].map((item, i) => (
             <motion.div
@@ -55,7 +55,7 @@ export default function Solution() {
               <div className={`mb-6 p-4 rounded-2xl bg-brand-primary/5 inline-block group-hover:scale-110 transition-transform`}>
                 <div className="gradient-text">{item.icon}</div>
               </div>
-              <h3 className="text-2xl font-bold mb-4 tracking-tight uppercase gradient-text">{item.title}</h3>
+              <h3 className="text-2xl font-bold mb-4 tracking-tight  gradient-text">{item.title}</h3>
               <p className="leading-relaxed text-sm font-light gradient-text-muted">{item.desc}</p>
             </motion.div>
           ))}
@@ -66,7 +66,7 @@ export default function Solution() {
             <div>
               <h3 className="text-3xl font-bold mb-6 gradient-text">Sovereign & Factorial</h3>
               <p className="text-lg mb-8 leading-relaxed gradient-text-muted">
-                Deploying on-prem ensures core business logic and "Secret Sauce" never leave control. 
+                Deploying on-prem ensures core business logic and "Secret Sauce" remain entirely under your control. 
                 The engine bridges coordination gap, instantly calculating factorial relationships between cross-departmental events.
               </p>
               <ul className="space-y-4">
@@ -79,9 +79,9 @@ export default function Solution() {
               </ul>
             </div>
             <div className="relative aspect-video rounded-2xl bg-black border border-brand-primary/10 flex items-center justify-center overflow-hidden">
-               <Cpu className="w-32 h-32 text-brand-primary opacity-20 animate-pulse" />
+               <Cpu className="w-32 h-32 gradient-text opacity-20 animate-pulse" />
                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
-               <div className="absolute bottom-6 left-6 right-6 p-4 bg-glass rounded-xl text-xs font-mono text-brand-primary">
+               <div className="absolute bottom-6 left-6 right-6 p-4 bg-glass rounded-xl text-xs font-mono gradient-text">
                  $ ARC_ENGINE_STATUS: OPTIMIZED_COORDINATION_VELOCITY
                </div>
             </div>

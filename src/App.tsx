@@ -3,79 +3,132 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Solution from "./components/Solution";
-import ValueProp from "./components/ValueProp";
+import Home from "./components/Home";
 import Footer from "./components/Footer";
-import AboutPage from "./components/AboutPage";
-import ImpactPage from "./components/ImpactPage";
-import ArcEnginePage from "./components/ArcEnginePage";
-import ProductShowcase from "./components/ProductShowcase";
-import ProductsPage from "./components/ProductsPage";
-import ITFrameworkPage from "./components/ITFrameworkPage";
-import ARCTeamPage from "./components/ARCTeamPage";
 
-export default function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+// Imports to copy to App.tsx:
+import VISIONLayer from './components/layers/vision/VISIONLayer';
+import VISIONTheBelief from './components/layers/vision/VISIONTheBelief';
+import VISIONTheProblemWeSaw from './components/layers/vision/VISIONTheProblemWeSaw';
+import VISIONTheWorldWeBuild from './components/layers/vision/VISIONTheWorldWeBuild';
+import VISIONIntelligenceHumanely from './components/layers/vision/VISIONIntelligenceHumanely';
+import VISIONTheTimeline from './components/layers/vision/VISIONTheTimeline';
+import PEOPLELayer from './components/layers/people/PEOPLELayer';
+import PEOPLERunningaBusiness from './components/layers/people/PEOPLERunningaBusiness';
+import PEOPLERunningaDivision from './components/layers/people/PEOPLERunningaDivision';
+import PEOPLERunningaCompany from './components/layers/people/PEOPLERunningaCompany';
+import PEOPLERunningaCountry from './components/layers/people/PEOPLERunningaCountry';
+import PEOPLEBuildingWithUs from './components/layers/people/PEOPLEBuildingWithUs';
+import SOLUTIONSLayer from './components/layers/solutions/SOLUTIONSLayer';
+import SOLUTIONSProAI from './components/layers/solutions/SOLUTIONSProAI';
+import SOLUTIONSBusinessAI from './components/layers/solutions/SOLUTIONSBusinessAI';
+import SOLUTIONSTransparencyAI from './components/layers/solutions/SOLUTIONSTransparencyAI';
+import SOLUTIONSHelpMeChoose from './components/layers/solutions/SOLUTIONSHelpMeChoose';
+import SOLUTIONSHowTheyConnect from './components/layers/solutions/SOLUTIONSHowTheyConnect';
+import INTELLIGENCELayer from './components/layers/intelligence/INTELLIGENCELayer';
+import INTELLIGENCETheZeroStack from './components/layers/intelligence/INTELLIGENCETheZeroStack';
+import INTELLIGENCETheARCEngine from './components/layers/intelligence/INTELLIGENCETheARCEngine';
+import INTELLIGENCETheitFramework from './components/layers/intelligence/INTELLIGENCETheitFramework';
+import INTELLIGENCETheScience from './components/layers/intelligence/INTELLIGENCETheScience';
+import INTELLIGENCEPerformanceData from './components/layers/intelligence/INTELLIGENCEPerformanceData';
+import MARKETLayer from './components/layers/market/MARKETLayer';
+import MARKETSovereigntyShift from './components/layers/market/MARKETSovereigntyShift';
+import MARKETIndustriesWeAreIn from './components/layers/market/MARKETIndustriesWeAreIn';
+import MARKETStrategicPartners from './components/layers/market/MARKETStrategicPartners';
+import MARKETIntegrationGallery from './components/layers/market/MARKETIntegrationGallery';
+import MARKETMarketPapers from './components/layers/market/MARKETMarketPapers';
+import TRUSTLayer from './components/layers/trust/TRUSTLayer';
+import TRUSTInThePress from './components/layers/trust/TRUSTInThePress';
+import ProductsPage from './components/ProductsPage';
+import ProductsHubPage from './components/ProductsHubPage';
+import { useParams } from "react-router-dom";
+
+function ProductRouteWrapper() {
+  const { id } = useParams();
+  return <ProductsPage productId={id} />;
+}
+
+
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    
-    // Dynamic Title for SEO
-    const titles: Record<string, string> = {
-      home: "ALRigs Continuum | Sovereign AI & Open Design",
-      products: "The Continuum | Products | ALRigs Continuum",
-      "product-pro": "Pro AI | Private Business AI | ALRigs Continuum",
-      "product-business": "Business AI | Sovereign Margin Expansion | ALRigs",
-      "product-transparency": "Transparency AI | Sovereign State Operations | ALRigs",
-      about: "The Philosophy | Open Design & Sovereignty | ALRigs",
-      impact: "Real World Impact | ALRigs Continuum",
-      "arc-engine": "ARC Engine | Sovereign Logic Architecture | ALRigs",
-      "it-framework": "The .it Framework | System Integration Architecture",
-      "arc-team": "ARC Teams | Sovereign Mission Operations"
-    };
-    document.title = titles[currentPage] || "ALRigs Continuum | Sovereign AI & Open Design Architecture";
-  }, [currentPage]);
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 0);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
+
+export default function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    document.title = "ALRigs Continuum | Intelligence Exclusively Owned By You";
+  }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-[#000000] selection:bg-brand-primary/30">
-      <Navbar onNavigate={setCurrentPage} currentPage={currentPage} />
+    <div className="min-h-screen bg-[#020617] selection:bg-blue-500/30 font-sans text-slate-400">
+      <ScrollToTop />
       
-      <main>
-        {currentPage === 'home' && (
-          <>
-            <Hero />
-            <ProductShowcase onNavigate={setCurrentPage} />
-          </>
-        )}
-        
-        {currentPage === 'products' && <ProductsPage />}
-        {currentPage === 'product-pro' && <ProductsPage productId="pro" />}
-        {currentPage === 'product-business' && <ProductsPage productId="business" />}
-        {currentPage === 'product-transparency' && <ProductsPage productId="transparency" />}
-        
-        {currentPage === 'about' && (
-          <>
-            <AboutPage />
-          </>
-        )}
-        
-        {currentPage === 'impact' && (
-          <>
-            <ImpactPage />
-          </>
-        )}
-
-        {currentPage === 'arc-engine' && <ArcEnginePage />}
-        
-        {currentPage === 'it-framework' && <ITFrameworkPage />}
-        
-        {currentPage === 'arc-team' && <ARCTeamPage />}
+      {/* Navigation */}
+      <Navbar />
+      
+      {/* Main Content Area: Offset by navbar height and footer height */}
+      <main className="pt-28 pb-32 w-full min-h-screen flex flex-col">
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            
+            <Route path="/vision" element={<VISIONLayer />} />
+            <Route path="/vision/belief" element={<VISIONTheBelief />} />
+            <Route path="/vision/problem" element={<VISIONTheProblemWeSaw />} />
+            <Route path="/vision/world" element={<VISIONTheWorldWeBuild />} />
+            <Route path="/vision/intelligence-humanely" element={<VISIONIntelligenceHumanely />} />
+            <Route path="/vision/timeline" element={<VISIONTheTimeline />} />
+            <Route path="/people" element={<PEOPLELayer />} />
+            <Route path="/people/business" element={<PEOPLERunningaBusiness />} />
+            <Route path="/people/division" element={<PEOPLERunningaDivision />} />
+            <Route path="/people/company" element={<PEOPLERunningaCompany />} />
+            <Route path="/people/country" element={<PEOPLERunningaCountry />} />
+            <Route path="/people/building" element={<PEOPLEBuildingWithUs />} />
+            <Route path="/solutions" element={<SOLUTIONSLayer />} />
+            <Route path="/solutions/proai" element={<SOLUTIONSProAI />} />
+            <Route path="/solutions/businessai" element={<SOLUTIONSBusinessAI />} />
+            <Route path="/solutions/transparencyai" element={<SOLUTIONSTransparencyAI />} />
+            <Route path="/solutions/help" element={<SOLUTIONSHelpMeChoose />} />
+            <Route path="/solutions/connect" element={<SOLUTIONSHowTheyConnect />} />
+            <Route path="/products" element={<ProductsHubPage />} />
+            <Route path="/products/:id" element={<ProductRouteWrapper />} />
+            <Route path="/intelligence" element={<INTELLIGENCELayer />} />
+            <Route path="/intelligence/zero-stack" element={<INTELLIGENCETheZeroStack />} />
+            <Route path="/intelligence/arc-engine" element={<INTELLIGENCETheARCEngine />} />
+            <Route path="/intelligence/it-framework" element={<INTELLIGENCETheitFramework />} />
+            <Route path="/intelligence/science" element={<INTELLIGENCETheScience />} />
+            <Route path="/intelligence/performance" element={<INTELLIGENCEPerformanceData />} />
+            <Route path="/market" element={<MARKETLayer />} />
+            <Route path="/market/sovereignty" element={<MARKETSovereigntyShift />} />
+            <Route path="/market/industries" element={<MARKETIndustriesWeAreIn />} />
+            <Route path="/market/partners" element={<MARKETStrategicPartners />} />
+            <Route path="/market/integration" element={<MARKETIntegrationGallery />} />
+            <Route path="/market/papers" element={<MARKETMarketPapers />} />
+            <Route path="/trust" element={<TRUSTLayer />} />
+            <Route path="/trust/press" element={<TRUSTInThePress />} />
+          </Routes>
+        </div>
+        <Footer />
       </main>
-      
-      <Footer />
     </div>
   );
 }

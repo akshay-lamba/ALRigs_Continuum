@@ -20,23 +20,23 @@ export default function ARCTeamPage() {
     {
       title: "ARC Human Upgrade Team",
       tagline: "(The Enablers)",
-      desc: "People and Culture. We believe AI should empower people, not replace them. This team focuses on the 'Humanely' aspect of our promise. They provide high-level training and cultural coaching to ensure that staff and leaders feel confident, capable, and upgraded by the new technology.",
+      desc: "People and Culture. We believe AI should empower people, elevate them. This team focuses on the 'Humanely' aspect of our promise. They provide high-level training and cultural coaching to ensure that staff and leaders feel confident, capable, and upgraded by the new technology.",
       focus: ["Cultural Coaching", "High-Level Training", "Human-AI Synergy", "Capability Upgrading"],
       icon: <ShieldCheck className="w-10 h-10" />
     }
   ];
 
   return (
-    <div className="pt-48 pb-32 bg-black min-h-screen">
+    <div className="pt-48 pb-32 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-40 mt-16"
         >
-          <p className="font-mono tracking-[0.3em] uppercase gradient-text-muted mb-12">ARC Teams</p>
+          <p className="font-mono tracking-[0.3em]  gradient-text-muted mb-12">ARC Teams</p>
           <p className="max-w-4xl mx-auto text-2xl md:text-3xl leading-relaxed gradient-text-muted font-light px-4">
-            For our Business and Transparency tiers, we don't just provide software; we provide a mission-ready task force. We deploy three specialized teams to ensure the transition to AI is seamless, secure, and human-centered.
+            For our Business and Transparency tiers, beyond providing software, we deliver a mission-ready task force. We deploy three specialized teams to ensure the transition to AI is seamless, secure, and human-centered.
           </p>
         </motion.div>
 
@@ -54,14 +54,14 @@ export default function ARCTeamPage() {
                 <div className="gradient-text">{team.icon}</div>
               </div>
               
-              <h3 className="text-3xl font-black mb-1 uppercase tracking-tighter gradient-text">{team.title}</h3>
-              <div className="text-xs font-mono mb-6 uppercase tracking-widest text-brand-primary/60">{team.tagline}</div>
+              <h3 className="text-3xl font-black mb-1  tracking-tighter gradient-text">{team.title}</h3>
+              <div className="text-xs font-mono mb-6  tracking-widest gradient-text/60">{team.tagline}</div>
               
               <p className="text-lg leading-relaxed gradient-text-muted font-light mb-8 flex-grow">{team.desc}</p>
               
               <div className="space-y-3 pb-4">
                 {team.focus.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-brand-primary/40">
+                  <div key={idx} className="flex items-center gap-3 text-xs font-bold  tracking-widest gradient-text/40">
                     <div className="w-1 h-1 bg-brand-primary rounded-full" />
                     {item}
                   </div>

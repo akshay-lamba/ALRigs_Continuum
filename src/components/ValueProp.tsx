@@ -6,22 +6,22 @@ export default function ValueProp() {
     {
       title: "Sovereign Ownership",
       desc: "Shift from OpEx liability to a permanent CapEx digital asset.",
-      icon: <Shield className="text-brand-primary" />
+      icon: <Shield className="gradient-text" />
     },
     {
       title: "Instant Coordination",
       desc: "Eliminate the 'Delay Tax' with real-time factorial logic.",
-      icon: <Zap className="text-brand-primary" />
+      icon: <Zap className="gradient-text" />
     },
     {
       title: "Human Upgrade",
       desc: "Transition your staff from tactical doers to strategic auditors.",
-      icon: <Target className="text-brand-primary" />
+      icon: <Target className="gradient-text" />
     },
     {
       title: "Permanent Profit",
       desc: "Achieve mathematically impossible leads over linear competitors.",
-      icon: <TrendingUp className="text-brand-primary" />
+      icon: <TrendingUp className="gradient-text" />
     }
   ];
 
@@ -36,7 +36,7 @@ export default function ValueProp() {
           >
             <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight tracking-tighter">
               The Strategic Path to <br />
-              <span className="gradient-text uppercase">Sovereign AI Value</span>
+              <span className="gradient-text ">Sovereign AI Value</span>
             </h2>
             <p className="text-xl mb-12 leading-relaxed font-light gradient-text-muted">
               Our framework redefines how enterprises interact with intelligence, moving from rented utilities to owned, high-velocity assets.
@@ -46,7 +46,7 @@ export default function ValueProp() {
               {points.map((point, i) => (
                 <div key={i} className="p-6 rounded-2xl bg-brand-primary/5 gradient-border-muted hover:gradient-border transition-all">
                   <div className="mb-4 gradient-text">{point.icon}</div>
-                  <h4 className="font-bold mb-2 text-sm uppercase tracking-widest gradient-text">{point.title}</h4>
+                  <h4 className="font-bold mb-2 text-sm  tracking-widest gradient-text">{point.title}</h4>
                   <p className="text-[11px] leading-relaxed font-medium gradient-text-muted">{point.desc}</p>
                 </div>
               ))}

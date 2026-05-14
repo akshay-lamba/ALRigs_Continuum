@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import { motion } from "motion/react";
 import { Users, Cpu, ShieldCheck, ArrowRight } from "lucide-react";
 
-export default function TeamsSection({ onNavigate }: { onNavigate: (page: string) => void }) {
+export default function TeamsSection() {
+  const navigate = useNavigate();
   const teams = [
     {
       title: "ARC Consulting Team",
@@ -31,8 +33,8 @@ export default function TeamsSection({ onNavigate }: { onNavigate: (page: string
            viewport={{ once: true }}
            className="mb-20"
         >
-          <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter uppercase gradient-text">Our Delivery Teams</h2>
-          <p className="text-xl font-light tracking-widest uppercase gradient-text-muted">The Experts Behind the Transformation</p>
+          <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter  gradient-text">Our Delivery Teams</h2>
+          <p className="text-xl font-light tracking-widest  gradient-text-muted">The Experts Behind the Transformation</p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -48,12 +50,12 @@ export default function TeamsSection({ onNavigate }: { onNavigate: (page: string
               <div className="mb-8 p-6 rounded-2xl bg-black/40 gradient-border-muted group-hover:gradient-border transition-all">
                 <div className="gradient-text">{team.icon}</div>
               </div>
-              <h3 className="text-2xl font-black mb-4 uppercase tracking-tight gradient-text">{team.title}</h3>
+              <h3 className="text-2xl font-black mb-4  tracking-tight gradient-text">{team.title}</h3>
               <p className="text-lg leading-relaxed gradient-text-muted font-light mb-8">{team.desc}</p>
               
               <button 
-                onClick={() => onNavigate('arc-team')}
-                className="mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-primary/40 group-hover:text-brand-primary transition-colors"
+                onClick={() => navigate('/about/team')}
+                className="mt-auto flex items-center gap-2 text-xs font-bold  tracking-widest gradient-text/40 group-hover:gradient-text transition-colors"
               >
                 Meet the Team <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>

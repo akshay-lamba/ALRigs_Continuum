@@ -1,143 +1,87 @@
+import { useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
-import { Landmark, ArrowRight, Activity, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-export default function ProductShowcase({ onNavigate }: { onNavigate: (page: string) => void }) {
+export default function ProductShowcase() {
+  const navigate = useNavigate();
   const products = [
     {
       id: "pro",
-      name: "Pro AI",
-      tagline: "Private | Pro AI | Humanely",
-      icon: <img src="https://static.wixstatic.com/media/b20068_a31ff2583fe843b39b8053f8ef067211~mv2.png" className="w-12 h-12 object-contain mix-blend-screen" referrerPolicy="no-referrer" alt="Pro AI" />,
-      features: [
-        "Professional-Grade AI Hardware",
-        "5-Day Global Logistics Delivery",
-        "Zero-Config Plug & Play Setup",
-        "Absolute Data Privacy",
-        "Dedicated Engineer Implementation"
-      ],
-      comingSoon: false
+      badge: "Private",
+      name: "ALRigs Pro AI",
+      positioning: "Private | Pro AI | Humanely",
+      audience: "For regional and family businesses",
+      image: "https://static.wixstatic.com/media/b20068_e10e35105f184034a2ed7dddb7b9a16a~mv2.jpeg"
     },
     {
       id: "business",
-      name: "Business AI",
-      tagline: "Sovereign | Business AI | Humanely",
-      icon: <img src="https://static.wixstatic.com/media/b20068_34f70c080077492b9d251a04e3a6bc28~mv2.png" className="w-12 h-12 object-contain mix-blend-screen" referrerPolicy="no-referrer" alt="Business AI" />,
-      features: [
-        "The .it Framework",
-        "Total Sovereign Perimeter",
-        "Structural Margin Expansion",
-        "Global Operations Coordination",
-        "Full-Service Mission Teams"
-      ],
-      comingSoon: false
+      badge: "Sovereign",
+      name: "ALRigs Business AI",
+      positioning: "Sovereign | Business AI | Humanely",
+      audience: "For global corporations",
+      image: "https://static.wixstatic.com/media/b20068_cfdfa9463b1042b281a440b5da9c2746~mv2.jpeg"
     },
     {
       id: "transparency",
-      name: "Transparency AI",
-      tagline: "Sovereign | State AI | Humanely",
-      icon: <Landmark className="w-10 h-10 text-white" />,
-      features: [
-        "Sovereign Framework Design",
-        "Ethical Public Leadership AI",
-        "100% Auditable Intelligence",
-        "State-Level Security",
-        "Advanced Civic Coordination"
-      ],
-      comingSoon: true
+      badge: "Sovereign",
+      name: "ALRigs State AI",
+      positioning: "Sovereign | State AI | Humanely",
+      audience: "For state and public sector",
+      image: "https://static.wixstatic.com/media/b20068_a25acc7d35e347f6a6220895956d3fd5~mv2.jpeg"
     }
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-black border-t border-brand-primary/10">
+    <section className="py-16 md:py-24 bg-transparent border-t border-blue-900/30">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20 md:mb-24">
+        <div className="text-center mb-12 md:mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black mb-6 tracking-tighter"
+            className="text-3xl md:text-5xl font-black mb-4 tracking-tighter"
           >
-            THE <span className="gradient-text uppercase">CONTINUUM</span>
+            THE <span className="gradient-text ">CONTINUUM</span>
           </motion.h2>
-          <p className="text-sm md:text-xl font-light tracking-widest uppercase gradient-text-muted">
+          <p className="text-sm md:text-lg font-light tracking-widest  text-slate-400">
             Three Tiers of Private and Sovereign Intelligence
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {products.map((product, i) => (
-            <motion.div
-              key={product.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              onClick={() => !product.comingSoon && onNavigate(`product-${product.id}`)}
-              className={`flex flex-col p-10 rounded-[2.5rem] bg-brand-primary/5 border border-brand-primary/10 hover:bg-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 group ${product.comingSoon ? '' : 'cursor-pointer'}`}
-            >
-              <div className="mb-8 flex justify-between items-start">
-                <div className="w-20 h-20 rounded-2xl bg-black/60 border border-brand-primary/10 flex items-center justify-center p-3 shadow-xl">
-                  {product.icon}
+            <div key={product.id} className="flex flex-col gap-4">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                onClick={() => navigate(product.id === 'pro' ? '/products/proai' : `/products/${product.id}`)}
+                className="rounded-3xl bg-[#050505] flex flex-col overflow-hidden relative group cursor-pointer aspect-[3/4] transition-all duration-500 border border-[#1a1a1a] hover:border-slate-500/50"
+              >
+                <div className="absolute inset-0 z-0 flex items-center justify-center p-8">
+                  <img 
+                    src={product.image} 
+                    alt={product.name} 
+                    className="w-full h-full object-contain opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
-                {product.comingSoon && (
-                  <div className="px-3 py-1.5 rounded-full bg-brand-primary/10 border border-brand-primary/20 flex items-center gap-2">
-                    <Activity className="w-3 h-3 text-brand-primary animate-pulse" />
-                    <span className="text-[9px] uppercase tracking-widest font-bold text-brand-primary">Coming Soon</span>
-                  </div>
-                )}
-              </div>
-              
-              <h3 className="text-3xl font-black uppercase tracking-tighter gradient-text mb-2">
-                {product.name}
-              </h3>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/60 mb-10">
-                {product.tagline}
-              </p>
-              
-              <div className="space-y-5 mb-12 flex-grow">
-                {product.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-start gap-4">
-                    <CheckCircle2 className="w-5 h-5 text-brand-primary/50 shrink-0" />
-                    <span className="text-sm gradient-text-muted font-light leading-snug">
-                      {feature}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {!product.comingSoon && (
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-primary/40 group-hover:text-brand-primary transition-colors mt-auto pt-6 border-t border-brand-primary/10">
-                  Explore Product <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </div>
-              )}
-            </motion.div>
+                
+                <div className="flex-grow relative z-10" />
+              </motion.div>
+              <motion.p 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 + (i * 0.1) }}
+                className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-slate-500 uppercase text-center px-4 whitespace-nowrap"
+              >
+                {product.positioning}
+              </motion.p>
+            </div>
           ))}
         </div>
-
-        {/* Blended Video Overview */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-20 relative w-full rounded-[3rem] overflow-hidden border border-brand-primary/10 lg:aspect-[21/9] aspect-video flex content-center bg-black"
-        >
-          {/* Blend overlays */}
-          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-0 bg-brand-primary/5 mix-blend-overlay pointer-events-none z-10" />
-          
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            className="w-full h-full object-cover opacity-80 mix-blend-screen scale-105"
-          >
-            <source src="https://video.wixstatic.com/video/b20068_645cf86a41c342a391b430ea79438259/720p/mp4/file.mp4" type="video/mp4" />
-          </video>
-        </motion.div>
       </div>
     </section>
   );

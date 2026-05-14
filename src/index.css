@@ -6,31 +6,27 @@
   --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  /* Cold Space Blue Palette (Brighter for readability) */
-  --color-brand-primary: #EFF6FF; /* Very Light Blue */
-  --color-brand-accent: #93C5FD; /* Light Blue */
-  --color-brand-secondary: #3B82F6; /* Mid Blue */
-  --color-brand-dark: #000000; /* Matte Black */
+  --color-brand-primary: #1e3a8a;
+  --color-brand-secondary: #0f172a;
+  --color-brand-accent: #94a3b8;
+  --color-brand-dark: #020617;
+  --color-surface: #0f172a;
+  --color-text-main: #cbd5e1;
   
-  --gradient-brand: linear-gradient(to right, #EFF6FF, #93C5FD, #3B82F6);
-  --gradient-brand-muted: linear-gradient(to right, rgba(239, 246, 255, 0.9), rgba(147, 197, 253, 0.9), rgba(59, 130, 246, 0.9));
+  --gradient-brand: linear-gradient(135deg, #0f172a, #94a3b8);
+  --gradient-brand-muted: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(148, 163, 184, 0.3));
 }
 
 @layer base {
   body {
-    @apply bg-[#000000] font-sans antialiased selection:bg-brand-primary/30;
-    color: transparent;
-    background-image: var(--gradient-brand-muted);
-    -webkit-background-clip: text;
-    background-clip: text;
+    @apply font-sans antialiased text-slate-400;
+    background: #020617;
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight uppercase;
-    color: transparent;
-    background-image: var(--gradient-brand);
-    -webkit-background-clip: text;
-    background-clip: text;
+    @apply font-display tracking-tight text-slate-400;
   }
 }
 
@@ -38,38 +34,38 @@
   .gradient-border {
     position: relative;
     border: 1px solid transparent;
-    background: linear-gradient(#000000, #000000) padding-box,
+    background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
                 var(--gradient-brand) border-box;
   }
 
   .gradient-border-muted {
     position: relative;
     border: 1px solid transparent;
-    background: linear-gradient(#000000, #000000) padding-box,
+    background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
                 var(--gradient-brand-muted) border-box;
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-50 via-blue-300 to-blue-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-blue-400 via-slate-300 to-slate-400;
   }
 
   .gradient-text-muted {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-100/90 via-blue-300/90 to-blue-500/90;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-slate-500 to-slate-600;
   }
 
   .bg-glass {
-    @apply bg-[#020617] border border-blue-900/30; /* Very dark matte blue-black */
+    @apply bg-gradient-to-br from-blue-900/40 to-slate-400/10 backdrop-blur-xl border border-blue-900/50 shadow-[0_4px_30px_rgba(0,0,0,0.5)];
   }
 
   .space-bg {
-    background: #000000; /* Matte black only, no radial gradients */
+    background: #0a0a0a;
   }
 
   .text-brand-muted {
-    @apply text-brand-primary/40;
+    @apply text-slate-500;
   }
 
   .border-brand-soft {
-    @apply border-brand-primary/10;
+    @apply border-[#1e293b];
   }
 }

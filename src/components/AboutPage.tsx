@@ -3,7 +3,7 @@ import { Download, Shield, Target, Cpu, Zap, ArrowRight, Linkedin, Mail } from "
 
 export default function AboutPage() {
   return (
-    <div className="pt-48 pb-32 bg-black min-h-screen">
+    <div className="pt-48 pb-32 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         {/* Hero Section */}
         <motion.div 
@@ -11,7 +11,7 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-40 mt-16"
         >
-          <p className="font-mono tracking-[0.3em] uppercase gradient-text-muted mb-12">The ALRigs Philosophy</p>
+          <p className="font-mono tracking-[0.3em]  gradient-text-muted mb-12">The ALRigs Philosophy</p>
           <p className="max-w-4xl mx-auto text-2xl md:text-3xl leading-relaxed gradient-text-muted font-light px-4">
             Who we are and why we believe AI should be private, sovereign, and—above all—humane.
           </p>
@@ -21,22 +21,22 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-32">
           {[
             {
-              icon: <Shield className="w-8 h-8 text-brand-primary" />,
+              icon: <Shield className="w-8 h-8 gradient-text" />,
               title: "Sovereign by Design",
               desc: "We build the infrastructure for corporate autonomy, ensuring your intelligence stays within your perimeter."
             },
             {
-              icon: <Target className="w-8 h-8 text-brand-primary" />,
+              icon: <Target className="w-8 h-8 gradient-text" />,
               title: "The Mission",
               desc: "To transform corporate intelligence into a private, protected, and permanent balance-sheet asset."
             },
             {
-              icon: <Cpu className="w-8 h-8 text-brand-primary" />,
+              icon: <Cpu className="w-8 h-8 gradient-text" />,
               title: "The Core Belief",
               desc: "The intelligence that runs a business belongs exclusively to the people who built that business."
             },
             {
-              icon: <Zap className="w-8 h-8 text-brand-primary" />,
+              icon: <Zap className="w-8 h-8 gradient-text" />,
               title: "Open Design",
               desc: "We are an open design company. Our architectures are transparent, ensuring absolute, verifiable trust across all integrations."
             }
@@ -50,7 +50,7 @@ export default function AboutPage() {
               className="p-8 rounded-3xl bg-glass gradient-border"
             >
               <div className="mb-6 gradient-text">{item.icon}</div>
-              <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight gradient-text">{item.title}</h3>
+              <h3 className="text-2xl font-bold mb-4  tracking-tight gradient-text">{item.title}</h3>
               <p className="leading-relaxed gradient-text-muted">{item.desc}</p>
             </motion.div>
           ))}
@@ -59,27 +59,27 @@ export default function AboutPage() {
         {/* Leadership Section */}
         <div className="mb-32">
           <div className="text-center mb-16">
-            <p className="font-mono tracking-widest uppercase gradient-text-muted text-lg">The Vision Behind ALRigs</p>
+            <p className="font-mono tracking-widest  gradient-text-muted text-lg">The Vision Behind ALRigs</p>
           </div>
           
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12 justify-between">
             <div className="text-center md:text-left order-2 md:order-1">
-              <h3 className="text-3xl font-bold mb-2 gradient-text uppercase tracking-tight">Geetika Chawla Lamba</h3>
-              <p className="text-xl font-mono tracking-widest uppercase gradient-text-muted mb-6">CEO, ALRigs Continuum</p>
+              <h3 className="text-3xl font-bold mb-2 gradient-text  tracking-tight">Geetika Chawla Lamba</h3>
+              <p className="text-xl font-mono tracking-widest  gradient-text-muted mb-6">CEO, ALRigs Continuum</p>
               
               <div className="flex items-center justify-center md:justify-start gap-6">
                 <a 
                   href="https://www.linkedin.com/in/geetika-chawla/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-primary/60 hover:text-brand-primary transition-colors"
+                  className="flex items-center gap-2 text-sm font-bold  tracking-widest gradient-text/60 hover:gradient-text transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
                   <span>LinkedIn</span>
                 </a>
                 <a 
                   href="mailto:g@alrigs.com" 
-                  className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-primary/60 hover:text-brand-primary transition-colors"
+                  className="flex items-center gap-2 text-sm font-bold  tracking-widest gradient-text/60 hover:gradient-text transition-colors"
                 >
                   <Mail className="w-5 h-5" />
                   <span>Email</span>
@@ -101,7 +101,7 @@ export default function AboutPage() {
         {/* From Our Management */}
         <div className="mb-32">
           <div className="text-center mb-16">
-            <p className="font-mono tracking-widest uppercase gradient-text-muted text-lg">Insights & Vision From Our Management</p>
+            <p className="font-mono tracking-widest  gradient-text-muted text-lg">Insights & Vision From Our Management</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -125,8 +125,8 @@ export default function AboutPage() {
                 rel="noopener noreferrer"
                 className="p-8 rounded-3xl bg-glass gradient-border hover:border-brand-primary/40 transition-all duration-300 group flex flex-col justify-between h-full"
               >
-                <h3 className="text-xl font-bold mb-6 leading-relaxed gradient-text group-hover:text-white transition-colors">{article.title}</h3>
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-primary/60 group-hover:text-brand-primary transition-colors">
+                <h3 className="text-xl font-bold mb-6 leading-relaxed gradient-text group-hover:text-slate-400 transition-colors">{article.title}</h3>
+                <div className="flex items-center gap-2 text-xs font-bold  tracking-widest gradient-text/60 group-hover:gradient-text transition-colors">
                   Read Article <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </a>
