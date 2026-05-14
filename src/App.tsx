@@ -17,7 +17,7 @@ import VISIONTheWorldWeBuild from './components/layers/vision/VISIONTheWorldWeBu
 import VISIONIntelligenceHumanely from './components/layers/vision/VISIONIntelligenceHumanely';
 import VISIONTheTimeline from './components/layers/vision/VISIONTheTimeline';
 import PEOPLELayer from './components/layers/people/PEOPLELayer';
-import PEOPLERunningaBusiness from './components/layers/people/PEOPLERunningaBusiness';
+import PEOPLEOwnerPage from './components/layers/people/PEOPLEOwnerPage';
 import PEOPLERunningaDivision from './components/layers/people/PEOPLERunningaDivision';
 import PEOPLERunningaCompany from './components/layers/people/PEOPLERunningaCompany';
 import PEOPLERunningaCountry from './components/layers/people/PEOPLERunningaCountry';
@@ -98,7 +98,7 @@ export default function App() {
             <Route path="/vision/intelligence-humanely" element={<VISIONIntelligenceHumanely />} />
             <Route path="/vision/timeline" element={<VISIONTheTimeline />} />
             <Route path="/people" element={<PEOPLELayer />} />
-            <Route path="/people/business" element={<PEOPLERunningaBusiness />} />
+            <Route path="/owner" element={<PEOPLEOwnerPage />} />
             <Route path="/people/division" element={<PEOPLERunningaDivision />} />
             <Route path="/people/company" element={<PEOPLERunningaCompany />} />
             <Route path="/people/country" element={<PEOPLERunningaCountry />} />

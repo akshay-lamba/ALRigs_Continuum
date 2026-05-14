@@ -9,7 +9,7 @@ export default function PEOPLELayer() {
   const peopleRoles = [
     {
       id: "business",
-      path: "/people/business",
+      path: "/owner",
       seat: "SEAT ONE",
       name: "The Owner",
       subtitle: "You built the business. You still don't know if it made money this week.",

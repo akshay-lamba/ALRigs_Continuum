@@ -6,18 +6,10 @@ export default function Footer() {
     <footer className="fixed bottom-0 left-0 right-0 z-40 py-4 bg-[#020617]/90 backdrop-blur-md border-t border-blue-900/30 flex flex-col items-center">
       <div className="w-full max-w-7xl mx-auto px-6 flex flex-col gap-4">
         
-        <div className="flex flex-row justify-center items-center gap-6 text-xs font-medium tracking-widest lowercase text-slate-500 overflow-x-auto whitespace-nowrap hide-scrollbar">
-          <button onClick={() => navigate('/trust#zone-2')} className="hover:text-blue-500 transition-colors">legal and privacy</button>
-          <span className="text-blue-900/50 hidden md:inline">&mdash;</span>
-          <button onClick={() => navigate('/trust#zone-1')} className="hover:text-blue-500 transition-colors">regulatory and compliance</button>
-          <span className="text-blue-900/50 hidden md:inline">&mdash;</span>
+        <div className="flex flex-row justify-center items-center gap-6 md:gap-8 xl:gap-10 text-xs font-bold tracking-widest lowercase text-slate-400 overflow-x-auto whitespace-nowrap hide-scrollbar">
           <button onClick={() => navigate('/trust/press')} className="hover:text-blue-500 transition-colors">media kit</button>
-          <span className="text-blue-900/50 hidden md:inline">&mdash;</span>
-          <button onClick={() => navigate('/people')} className="hover:text-blue-500 transition-colors">executive profiles</button>
-          <span className="text-blue-900/50 hidden md:inline">&mdash;</span>
-          <button onClick={() => navigate('/trust/contact')} className="hover:text-blue-500 transition-colors">contact global</button>
-          <span className="text-blue-900/50 hidden md:inline">&mdash;</span>
-          <button className="hover:text-blue-500 transition-colors">event calendar</button>
+          <button onClick={() => navigate('/people')} className="hover:text-blue-500 transition-colors">our team</button>
+          <button onClick={() => navigate('/trust/contact')} className="hover:text-blue-500 transition-colors">reach us</button>
         </div>
 
         <div className="w-full border-t border-blue-900/30"></div>
