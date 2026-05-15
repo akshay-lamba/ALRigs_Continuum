@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 export default function Footer() {
   const navigate = useNavigate();
   return (
-    <footer className="w-full bg-[#020617] border-t border-blue-900/30 py-12 mt-auto">
+    <footer className="w-full bg-black border-t border-white/5 py-12 mt-auto">
       <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-8">
         
         <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-slate-400">

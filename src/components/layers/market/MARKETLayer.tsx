@@ -56,7 +56,7 @@ export default function MARKETLayer() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] flex flex-col items-center pt-32 pb-20 px-4 md:px-8 overflow-hidden relative">
+    <div className="min-h-screen bg-transparent flex flex-col items-center pt-32 pb-20 px-4 md:px-8 overflow-hidden relative">
       <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_100%)] pointer-events-none" />
       
       <div className="flex flex-col items-center mb-16 text-center z-10 relative">

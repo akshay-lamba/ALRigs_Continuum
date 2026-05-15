@@ -7,7 +7,7 @@ export default function PEOPLEOwnerPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-[#020617] min-h-screen font-sans overflow-x-hidden pt-24 pb-20">
+    <div className="bg-transparent min-h-screen font-sans overflow-x-hidden pt-24 pb-20">
       
       {/* Background glow */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[40vh] bg-emerald-900/10 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />

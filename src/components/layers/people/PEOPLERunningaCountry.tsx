@@ -8,7 +8,7 @@ export default function PEOPLERunningaCountry() {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-[#020617] text-slate-300 min-h-screen font-sans overflow-x-hidden pt-24 pb-20">
+    <div className="bg-transparent text-slate-300 min-h-screen font-sans overflow-x-hidden pt-24 pb-20">
       
       {/* Background glow */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[40vh] bg-orange-900/10 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />

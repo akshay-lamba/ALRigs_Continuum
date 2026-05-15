@@ -50,7 +50,7 @@ export default function ProductsPage({ productId }: { productId?: string }) {
   };
 
   return (
-    <div className="pt-32 pb-20 bg-[#020617] min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
+    <div className="pt-32 pb-20 bg-transparent min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
       {/* Product Specific Background Image */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <img 

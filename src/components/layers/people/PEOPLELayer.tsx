@@ -1,7 +1,63 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
+import { Download } from "lucide-react";
+
+function OwnerSlideshow({ images, title }: { images: string[], title: string }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  return (
+    <div className="mb-12 rounded-2xl overflow-hidden border border-white/5 shadow-[0_0_100px_rgba(0,0,0,0.5)] group/slideshow relative aspect-video">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={currentIndex}
+          src={images[currentIndex]}
+          alt={`${title} Slide ${currentIndex + 1}`}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="absolute inset-0 w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </AnimatePresence>
+      
+      {/* Overlay controls */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrentIndex(i);
+            }}
+            className={`w-12 h-1 rounded-full transition-all duration-500 ${
+              i === currentIndex ? "bg-blue-500 w-20" : "bg-white/20 hover:bg-white/40"
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+      
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+      
+      {/* Indicator Text */}
+      <div className="absolute top-6 right-6 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+        <span className="text-[10px] font-black text-white/60 tracking-widest uppercase">
+          0{currentIndex + 1} <span className="mx-1 text-blue-500">/</span> 0{images.length}
+        </span>
+      </div>
+    </div>
+  );
+}
 
 export default function PEOPLELayer() {
   const navigate = useNavigate();
@@ -16,7 +72,12 @@ export default function PEOPLELayer() {
       focus: "Data sovereignty and proprietary intelligence.",
       success: "Does this AI make the company more valuable to sell or pass on?",
       path: "/owner",
-      color: "from-emerald-500/20"
+      color: "from-emerald-500/20",
+      images: [
+        "https://static.wixstatic.com/media/b20068_7db440d7d54346bab18199f0ef18c9d9~mv2.jpeg",
+        "https://static.wixstatic.com/media/b20068_d317516f22bd45408f6dc8ad399f8a73~mv2.jpeg",
+        "https://static.wixstatic.com/media/b20068_0e16ebc9b03a4cbe81bc8d518b8a56e9~mv2.jpeg"
+      ]
     },
     {
       id: "ceo",
@@ -65,16 +126,16 @@ export default function PEOPLELayer() {
   ];
 
   return (
-    <div className="bg-[#020617] text-slate-300 min-h-screen font-sans overflow-x-hidden">
+    <div className="bg-transparent text-slate-300 min-h-screen font-sans overflow-x-hidden">
       {/* Hero: Pure Visual Entry */}
       <div className="relative w-full h-[60vh] md:h-[85vh] overflow-hidden">
         <img 
-          src="https://static.wixstatic.com/media/b20068_546d26f6ffbe4326a5df8b186607eb5b~mv2.jpeg" 
+          src="https://static.wixstatic.com/media/b20068_7db440d7d54346bab18199f0ef18c9d9~mv2.jpeg" 
           alt="The Collection" 
           className="absolute inset-0 w-full h-full object-cover object-top filter brightness-90"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
         
         {/* Invisible Clickable Zones for Desktop Navigation */}
         <div className="absolute inset-0 hidden md:flex z-10 w-full">
@@ -103,7 +164,6 @@ export default function PEOPLELayer() {
             transition={{ duration: 1 }}
           >
             <h2 className="text-5xl md:text-9xl font-black text-white tracking-tighter mb-8 uppercase leading-[0.85]">
-              The Persona<br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500">Collection.</span>
             </h2>
             <p className="text-xl md:text-3xl text-slate-400 font-medium leading-relaxed max-w-2xl">
@@ -144,6 +204,37 @@ export default function PEOPLELayer() {
 
                 {/* Right: Persona Deep-Dive */}
                 <div className="lg:w-3/5 relative z-10">
+                  {p.images ? (
+                    <OwnerSlideshow images={p.images} title={p.title} />
+                  ) : p.image ? (
+                    <motion.div 
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      className="mb-12 rounded-2xl overflow-hidden border border-white/5 shadow-[0_0_100px_rgba(0,0,0,0.5)] group/img relative"
+                    >
+                      <img 
+                        src={p.image} 
+                        alt={p.title} 
+                        className="w-full h-auto object-cover max-h-[600px] transition-transform duration-1000 group-hover/img:scale-[1.02]"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+                    </motion.div>
+                  ) : null}
+                  
+                  {p.id === 'owner' && (
+                    <div className="mb-12">
+                      <a 
+                        href="#" 
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-blue-900/20 border border-blue-500/30 text-blue-400 text-[10px] font-black uppercase tracking-[0.3em] hover:bg-blue-500 hover:text-white transition-all group"
+                      >
+                        <Download className="w-4 h-4 group-hover:animate-bounce" />
+                        Download Portfolio Strategy PDF
+                      </a>
+                    </div>
+                  )}
+
                   <p className="text-xl md:text-3xl text-slate-300 font-medium leading-relaxed mb-12">
                     {p.desc}
                   </p>

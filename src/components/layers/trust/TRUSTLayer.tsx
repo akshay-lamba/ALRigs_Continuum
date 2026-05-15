@@ -375,10 +375,10 @@ export default function TRUSTLayer() {
   const lastUpdated = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
   return (
-    <div className="bg-[#020617] text-slate-300 min-h-screen font-sans overflow-x-hidden pt-24 pb-20">
+    <div className="bg-transparent text-slate-300 min-h-screen font-sans overflow-x-hidden pt-24 pb-20">
       
       {/* Dynamic Background */}
-      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-[#020617]">
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-transparent">
         {/* Ethereal Color Pools */}
         <motion.div 
           animate={{ 
@@ -407,13 +407,7 @@ export default function TRUSTLayer() {
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-slate-400/5 blur-[180px] rounded-full"
         />
 
-        {/* Artistic Texture Overlay */}
-        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none" 
-             style={{ 
-               backgroundImage: `url('https://static.wixstatic.com/media/b20068_9fa90575e66a4e579bca39912badb4fc~mv2.jpeg')`,
-               backgroundSize: 'cover',
-               backgroundPosition: 'center',
-             }} />
+        {/* Artistic Texture Overlay is now global in App.tsx */}
       </div>
 
       {/* Header */}

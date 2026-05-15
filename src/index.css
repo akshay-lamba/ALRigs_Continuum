@@ -20,7 +20,7 @@
 @layer base {
   body {
     @apply font-sans antialiased text-slate-400;
-    background: #020617;
+    background: #000000;
     background-attachment: fixed;
     min-height: 100vh;
   }

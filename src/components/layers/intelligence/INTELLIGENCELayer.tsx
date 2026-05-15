@@ -105,7 +105,7 @@ export default function INTELLIGENCELayer() {
   const navigate = useNavigate();
   
   return (
-    <div className="min-h-screen bg-[#020617] flex flex-col items-center relative overflow-hidden font-sans pt-32 pb-24">
+    <div className="min-h-screen bg-transparent flex flex-col items-center relative overflow-hidden font-sans pt-32 pb-24">
       
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -129,8 +129,8 @@ export default function INTELLIGENCELayer() {
             />
 
             {/* Overlays for depth and atmosphere */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/20 to-transparent opacity-90" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/50 via-transparent to-[#020617]/50 opacity-60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50 opacity-60" />
             
             {/* Scanline effect */}
             <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(transparent_50%,rgba(0,0,0,1)_50%)] bg-[length:100%_4px] mix-blend-overlay" />
@@ -197,7 +197,7 @@ export default function INTELLIGENCELayer() {
                       className="w-full h-full object-contain transform group-hover:scale-[1.02] transition-transform duration-700 opacity-95"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
                   </div>
                 )}
 

@@ -73,7 +73,7 @@ export default function SOLUTIONSLayer() {
                 />
               </div>
               
-              <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                 <span className="text-[10px] font-black text-blue-500 uppercase tracking-widest">Learn more</span>
               </div>
             </div>

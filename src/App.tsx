@@ -79,9 +79,24 @@ export default function App() {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-[#020617] selection:bg-blue-500/30 font-sans text-slate-400">
+    <div className="min-h-screen bg-black selection:bg-blue-500/30 font-sans text-slate-400 relative overflow-x-hidden">
       <ScrollToTop />
       
+      {/* Seamless Global Background Texture */}
+      <div className="fixed inset-0 z-[-1] pointer-events-none opacity-[0.06] mix-blend-screen" 
+           style={{ 
+             backgroundImage: `url('https://static.wixstatic.com/media/b20068_9fa90575e66a4e579bca39912badb4fc~mv2.jpeg')`,
+             backgroundSize: 'cover',
+             backgroundPosition: 'center',
+             backgroundAttachment: 'fixed'
+           }} />
+      
+      {/* Background Glows for Depth */}
+      <div className="fixed inset-0 z-[-2] pointer-events-none overflow-hidden">
+        <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-900/10 blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-indigo-900/5 blur-[150px]" />
+      </div>
+
       {/* Navigation */}
       <Navbar />
       
