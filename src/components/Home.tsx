@@ -11,9 +11,21 @@ export default function Home() {
         <div className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-12 text-center py-10">
             
           <div className="flex flex-col items-center max-w-4xl">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-sans text-slate-400 tracking-tight leading-snug mb-8 font-semibold">
-              Intelligence dedicated to your business.<br />
-              Exclusively owned by you.
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-sans tracking-tight leading-snug mb-8 font-semibold flex flex-col gap-2">
+              <div>
+                {["Intelligence", "dedicated", "to", "your", "business."].map((word, i) => {
+                  const colors = ['text-blue-500', 'text-slate-300', 'text-white', 'text-blue-400', 'text-slate-400', 'text-blue-300', 'text-indigo-400'];
+                  const color = colors[i % colors.length];
+                  return <span key={i} className={`${color} mr-2`}>{word}</span>
+                })}
+              </div>
+              <div>
+                {["Exclusively", "owned", "by", "you."].map((word, i) => {
+                  const colors = ['text-white', 'text-blue-400', 'text-slate-400', 'text-blue-500', 'text-slate-300', 'text-blue-300', 'text-indigo-400'];
+                  const color = colors[i % colors.length];
+                  return <span key={i} className={`${color} mr-2`}>{word}</span>
+                })}
+              </div>
             </h1>
             <p className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-slate-500 uppercase mb-8">
               ALRigs | Intelligence | Humanely
