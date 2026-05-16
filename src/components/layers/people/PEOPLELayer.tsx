@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { Download } from "lucide-react";
 
-function OwnerSlideshow({ images, title }: { images: string[], title: string }) {
+function PersonaSlideshow({ images, title }: { images: string[], title: string }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -15,23 +15,23 @@ function OwnerSlideshow({ images, title }: { images: string[], title: string }) 
   }, [images.length]);
 
   return (
-    <div className="mb-12 rounded-2xl overflow-hidden border border-white/5 shadow-[0_0_100px_rgba(0,0,0,0.5)] group/slideshow relative aspect-video">
+    <div className="absolute inset-0 w-full h-full">
       <AnimatePresence mode="wait">
         <motion.img
           key={currentIndex}
           src={images[currentIndex]}
           alt={`${title} Slide ${currentIndex + 1}`}
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-          className="absolute inset-0 w-full h-full object-cover"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="absolute inset-0 w-full h-full object-cover grayscale opacity-50 contrast-125 transition-all duration-1000 group-hover:grayscale-0 group-hover:opacity-100 scale-105"
           referrerPolicy="no-referrer"
         />
       </AnimatePresence>
       
       {/* Overlay controls */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         {images.map((_, i) => (
           <button
             key={i}
@@ -39,18 +39,16 @@ function OwnerSlideshow({ images, title }: { images: string[], title: string }) 
               e.stopPropagation();
               setCurrentIndex(i);
             }}
-            className={`w-12 h-1 rounded-full transition-all duration-500 ${
-              i === currentIndex ? "bg-blue-500 w-20" : "bg-white/20 hover:bg-white/40"
+            className={`w-8 h-1 rounded-full transition-all duration-500 ${
+              i === currentIndex ? "bg-blue-500 w-12" : "bg-white/20 hover:bg-white/40"
             }`}
             aria-label={`Go to slide ${i + 1}`}
           />
         ))}
       </div>
       
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-      
       {/* Indicator Text */}
-      <div className="absolute top-6 right-6 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+      <div className="absolute top-10 right-10 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         <span className="text-[10px] font-black text-white/60 tracking-widest uppercase">
           0{currentIndex + 1} <span className="mx-1 text-blue-500">/</span> 0{images.length}
         </span>
@@ -87,7 +85,11 @@ export default function PEOPLELayer() {
       focus: "Predictive insights and high-level decision support.",
       success: "Does this AI improve our margins and speed to market?",
       path: "/people/company",
-      image: "https://static.wixstatic.com/media/b20068_f2f81156fe934989b526d701e67e3760~mv2.jpeg"
+      images: [
+        "https://static.wixstatic.com/media/b20068_a3cd1b6959f3463e8ce2cd9df30311b9~mv2.jpeg",
+        "https://static.wixstatic.com/media/b20068_d397ed88447947c08edd4f7c77ba528d~mv2.jpeg",
+        "https://static.wixstatic.com/media/b20068_e5e9d7d998e74fa09e7d4260ee1897ea~mv2.jpeg"
+      ]
     },
     {
       id: "functional",
@@ -240,7 +242,7 @@ export default function PEOPLELayer() {
 
                 <div className="absolute inset-0 z-0">
                   {p.images ? (
-                    <OwnerSlideshow images={p.images} title={p.title} />
+                    <PersonaSlideshow images={p.images} title={p.title} />
                   ) : (
                     <img 
                       src={p.image} 

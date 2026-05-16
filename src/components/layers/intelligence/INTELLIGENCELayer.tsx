@@ -176,98 +176,84 @@ export default function INTELLIGENCELayer() {
         </div>
 
         {/* 10 Stack Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-[90rem] pb-24 px-4 md:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-full max-w-[100rem] pb-24">
           {stackLayers.map((layer, index) => {
             const Icon = layer.icon;
             return (
               <motion.div 
                 key={layer.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.7, delay: index * 0.1, ease: [0.23, 1, 0.32, 1] }}
-                className="relative group bg-[#050505]/60 hover:bg-[#0a0a0a] border border-white/5 hover:border-white/10 rounded-2xl overflow-hidden transition-all duration-500 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] flex flex-col h-full"
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative flex flex-col bg-[#050505] border border-white/5 hover:border-blue-500/30 rounded-[2.5rem] overflow-hidden transition-all duration-700 shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:shadow-blue-500/5 h-full"
               >
-                {/* Image Section (if configured) */}
-                {layer.bgImage && (
-                  <div className="w-full relative flex-grow min-h-[280px] overflow-hidden bg-black border-b border-white/10 flex items-center justify-center p-1">
+                {/* Visual Section: Consistent Aspect Ratio */}
+                <div className="relative aspect-[4/5] overflow-hidden bg-neutral-900/50 border-b border-white/5">
+                  {layer.bgImage ? (
                     <img 
                       src={layer.bgImage}
                       alt={layer.title}
-                      className="w-full h-full object-contain transform group-hover:scale-[1.02] transition-transform duration-700 opacity-95"
+                      className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
-                  </div>
-                )}
-
-                {/* Card Gradient Glow */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${layer.color} opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none blur-3xl`} />
-                
-                <div className={`relative z-10 flex flex-col gap-1.5 ${layer.bgImage ? 'p-3 md:p-4 bg-[#050505] shrink-0' : 'p-6 md:p-8 flex-grow justify-end'}`}>
-                  {!layer.bgImage && (
-                    <div className="flex justify-between items-start mb-1">
-                      <motion.div
-                        animate={{
-                          rotateY: [0, -15, 15, 0],
-                          rotateX: [0, 10, -10, 0],
-                          y: [0, -4, 4, 0]
-                        }}
-                        transition={{
-                          duration: 6 + Math.random() * 2,
-                          repeat: Infinity,
-                          ease: "linear"
-                        }}
-                        className={`p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl ${layer.iconColor} shadow-xl shadow-black/50`}
-                        style={{ transformStyle: 'preserve-3d' }}
-                      >
-                        <Icon className="w-8 h-8" />
-                      </motion.div>
-                      
-                      <div className="text-[90px] font-black leading-none opacity-5 text-white mix-blend-overlay tracking-tighter absolute -top-4 -right-2 pointer-events-none scale-150 transform origin-top-right">
-                        {layer.id}
+                  ) : (
+                    <div className={`absolute inset-0 bg-gradient-to-br ${layer.color} opacity-20`}>
+                      <div className="absolute inset-0 flex items-center justify-center opacity-20">
+                        <Icon className="w-32 h-32 text-white" />
                       </div>
                     </div>
                   )}
                   
-                  <div className="flex-grow flex flex-col justify-end">
-                    {layer.bgImage && (
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <motion.div
-                          animate={{
-                            rotateY: [0, -15, 15, 0],
-                            rotateX: [0, 10, -10, 0],
-                            y: [0, -4, 4, 0]
-                          }}
-                          transition={{
-                            duration: 6 + Math.random() * 2,
-                            repeat: Infinity,
-                            ease: "linear"
-                          }}
-                          className={`p-1.5 rounded bg-white/5 border border-white/10 backdrop-blur-xl ${layer.iconColor} shadow-xl shadow-black/50`}
-                          style={{ transformStyle: 'preserve-3d' }}
-                        >
-                          <Icon className="w-3.5 h-3.5" />
-                        </motion.div>
-                        <div className="text-xl font-black leading-none opacity-10 text-white mix-blend-overlay tracking-tighter pointer-events-none ml-auto">
-                          {layer.id}
-                        </div>
-                      </div>
-                    )}
+                  {/* Glass Reflection Overlays */}
+                  <div className="absolute inset-0 z-10 pointer-events-none">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  </div>
 
-                    <h3 className="text-sm md:text-base font-bold text-slate-200 mb-0.5 tracking-tight leading-snug">
-                      {layer.title}
-                    </h3>
-                    
-                    <p className={`font-bold mb-1.5 ${layer.iconColor} tracking-widest text-[9px] uppercase`}>
+                  {/* Icon Badge */}
+                  <div className="absolute top-8 left-8 z-20">
+                    <div className={`p-4 rounded-2xl bg-black/40 backdrop-blur-xl border border-white/10 ${layer.iconColor} shadow-2xl`}>
+                      <Icon className="w-6 h-6" />
+                    </div>
+                  </div>
+
+                  {/* ID Tag */}
+                  <div className="absolute top-8 right-8 z-20">
+                    <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.4em] group-hover:text-blue-500 transition-colors">
+                      Stack {layer.id}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content Section: Unified Footer */}
+                <div className="flex flex-col p-8 md:p-10 flex-grow">
+                  <h3 className="text-xl md:text-2xl font-black text-white tracking-tight leading-[1.1] mb-4 uppercase group-hover:text-blue-500 transition-colors duration-500">
+                    {layer.title}
+                  </h3>
+                  
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="h-px w-8 bg-blue-500/50" />
+                    <p className={`font-black ${layer.iconColor} tracking-[0.25em] text-[10px] uppercase`}>
                       {layer.subtitle}
                     </p>
-                    
-                    <div className="text-slate-400 text-[11px] leading-tight flex flex-col gap-1">
-                      {layer.desc.split('.').filter(s => s.trim().length > 0).map((sentence, i) => (
-                        <span key={i} className="block">{sentence.trim()}</span>
-                      ))}
-                    </div>
+                  </div>
+                  
+                  <div className="flex flex-col gap-2.5">
+                    {layer.desc.split('.').filter(s => s.trim().length > 0).map((sentence, i) => (
+                      <div key={i} className="flex gap-3">
+                        <div className="w-1 h-1 rounded-full bg-blue-500/40 mt-2 shrink-0" />
+                        <p className="text-slate-400 text-xs md:text-sm font-medium leading-relaxed tracking-wide">
+                          {sentence.trim()}.
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Bottom Action Hint */}
+                  <div className="mt-auto pt-10 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                    <span className="text-[9px] font-black text-blue-500 tracking-[0.4em] uppercase">Intelligence Node</span>
+                    <ArrowRight className="w-4 h-4 text-blue-500" />
                   </div>
                 </div>
               </motion.div>
