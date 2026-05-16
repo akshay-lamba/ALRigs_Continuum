@@ -31,28 +31,32 @@ function PersonaSlideshow({ images, title }: { images: string[], title: string }
       </AnimatePresence>
       
       {/* Overlay controls */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        {images.map((_, i) => (
-          <button
-            key={i}
-            onClick={(e) => {
-              e.stopPropagation();
-              setCurrentIndex(i);
-            }}
-            className={`w-8 h-1 rounded-full transition-all duration-500 ${
-              i === currentIndex ? "bg-blue-500 w-12" : "bg-white/20 hover:bg-white/40"
-            }`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
+      {images.length > 1 && (
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              onClick={(e) => {
+                e.stopPropagation();
+                setCurrentIndex(i);
+              }}
+              className={`w-8 h-1 rounded-full transition-all duration-500 ${
+                i === currentIndex ? "bg-blue-500 w-12" : "bg-white/20 hover:bg-white/40"
+              }`}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
+      )}
       
       {/* Indicator Text */}
-      <div className="absolute top-10 right-10 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <span className="text-[10px] font-black text-white/60 tracking-widest uppercase">
-          0{currentIndex + 1} <span className="mx-1 text-blue-500">/</span> 0{images.length}
-        </span>
-      </div>
+      {images.length > 1 && (
+        <div className="absolute top-10 right-10 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <span className="text-[10px] font-black text-white/60 tracking-widest uppercase">
+            0{currentIndex + 1} <span className="mx-1 text-blue-500">/</span> 0{images.length}
+          </span>
+        </div>
+      )}
     </div>
   );
 }
@@ -100,7 +104,11 @@ export default function PEOPLELayer() {
       focus: "Task automation and departmental optimization.",
       success: "Does this AI remove bottlenecks and stop team burnout?",
       path: "/people/division",
-      image: "https://static.wixstatic.com/media/b20068_546d26f6ffbe4326a5df8b186607eb5b~mv2.jpeg"
+      images: [
+        "https://static.wixstatic.com/media/b20068_5135e878c75b4af396c37198e7078f67~mv2.jpeg",
+        "https://static.wixstatic.com/media/b20068_01b4e4157a3f438c96dfc8916359d70a~mv2.jpeg",
+        "https://static.wixstatic.com/media/b20068_8ea95d95cfaf43d5871475c643a452fa~mv2.jpeg"
+      ]
     },
     {
       id: "state",
@@ -111,7 +119,7 @@ export default function PEOPLELayer() {
       focus: "Bias prevention, security, and universal access.",
       success: "Does this AI make life safer and fairer for every citizen?",
       path: "/people/country",
-      image: "https://static.wixstatic.com/media/b20068_a4da7cb2042845618cdb397441584282~mv2.jpeg"
+      images: ["https://static.wixstatic.com/media/b20068_a4da7cb2042845618cdb397441584282~mv2.jpeg"]
     },
     {
       id: "tech",
@@ -122,7 +130,7 @@ export default function PEOPLELayer() {
       focus: "Integration, model reliability, and data privacy.",
       success: "Is the system secure, fast, and built to scale?",
       path: "/people/building",
-      image: "https://static.wixstatic.com/media/b20068_36d6a54f8f4a47a1957297e6878b37f4~mv2.jpeg"
+      images: ["https://static.wixstatic.com/media/b20068_36d6a54f8f4a47a1957297e6878b37f4~mv2.jpeg"]
     }
   ];
 
@@ -241,16 +249,7 @@ export default function PEOPLELayer() {
                 </div>
 
                 <div className="absolute inset-0 z-0">
-                  {p.images ? (
-                    <PersonaSlideshow images={p.images} title={p.title} />
-                  ) : (
-                    <img 
-                      src={p.image} 
-                      alt={p.title}
-                      className="w-full h-full object-cover grayscale opacity-50 contrast-125 transition-all duration-1000 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
-                      referrerPolicy="no-referrer"
-                    />
-                  )}
+                  <PersonaSlideshow images={p.images} title={p.title} />
                 </div>
                 
                 {/* Vignette & Gradient */}
@@ -267,29 +266,29 @@ export default function PEOPLELayer() {
 
               {/* Minimalist Content Block */}
               <div className="flex flex-col px-4 flex-grow">
-                <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-6 leading-[0.9] transition-colors duration-500 group-hover:text-blue-500">
+                <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-6 leading-[0.9] transition-colors duration-500 group-hover:text-blue-500 min-h-[4rem] md:min-h-[6rem]">
                   {p.title}
                 </h3>
                 
-                <p className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed mb-12 line-clamp-3 min-h-[5.5rem]">
+                <p className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed mb-12 line-clamp-3 min-h-[5.5rem] md:min-h-[6rem]">
                   {p.desc}
                 </p>
 
                 {/* Sub-details: High-end Minimalist List */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 py-10 border-y border-white/5 mb-12 relative overflow-hidden">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 py-10 border-y border-white/5 mb-12 relative overflow-hidden min-h-[14rem] sm:min-h-[8rem]">
                   <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none" />
                   
-                  <div>
+                  <div className="flex flex-col">
                     <h4 className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-4">Identity</h4>
-                    <p className="text-xs md:text-sm text-slate-300 font-semibold leading-tight">{p.perspective}</p>
+                    <p className="text-xs md:text-sm text-slate-300 font-semibold leading-tight mt-auto">{p.perspective}</p>
                   </div>
-                  <div>
+                  <div className="flex flex-col">
                     <h4 className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-4">Mechanism</h4>
-                    <p className="text-xs md:text-sm text-slate-300 font-semibold leading-tight">{p.focus}</p>
+                    <p className="text-xs md:text-sm text-slate-300 font-semibold leading-tight mt-auto">{p.focus}</p>
                   </div>
-                  <div>
+                  <div className="flex flex-col">
                     <h4 className="text-[9px] font-black text-blue-500/60 uppercase tracking-widest mb-4">Metric</h4>
-                    <p className="text-xs md:text-[11px] text-blue-400 font-black leading-tight italic">"{p.success}"</p>
+                    <p className="text-xs md:text-[11px] text-blue-400 font-black leading-tight italic mt-auto">"{p.success}"</p>
                   </div>
                 </div>
 
