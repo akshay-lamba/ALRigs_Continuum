@@ -119,7 +119,11 @@ export default function PEOPLELayer() {
       focus: "Bias prevention, security, and universal access.",
       success: "Does this AI make life safer and fairer for every citizen?",
       path: "/people/country",
-      images: ["https://static.wixstatic.com/media/b20068_a4da7cb2042845618cdb397441584282~mv2.jpeg"]
+      images: [
+        "https://static.wixstatic.com/media/b20068_5b93919fb379407b9c6f271e0c55442b~mv2.jpeg",
+        "https://static.wixstatic.com/media/b20068_48a99022b8fa4681b136623d47e1d9fc~mv2.jpeg",
+        "https://static.wixstatic.com/media/b20068_14d45ddc24bd4dd68a31f3a7f9f7ac5d~mv2.jpeg"
+      ]
     },
     {
       id: "tech",
