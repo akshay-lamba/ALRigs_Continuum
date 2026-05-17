@@ -52,6 +52,39 @@ export default function SOLUTIONSProAI() {
           />
         </div>
 
+        {/* Video Embedding Section */}
+        <div className="w-full relative bg-neutral-950 py-12 md:py-24 px-6 flex flex-col items-center justify-center border-y border-white/5 overflow-hidden">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-5xl relative z-10"
+          >
+            <div className="relative aspect-video rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 bg-black shadow-[0_0_100px_-20px_rgba(59,130,246,0.2)]">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/videoseries?list=PL4_49j8YRffwdE0V0iu4IGkC7ic2XOKGK" 
+                title="ALRigs Pro AI Showcase" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+            </div>
+            
+            {/* Subtle Label */}
+            <div className="mt-8 flex items-center justify-center gap-3">
+              <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+              <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em]">Integrated Intelligence View</span>
+            </div>
+          </motion.div>
+          
+          {/* Background Ambient Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05)_0%,transparent_70%)] pointer-events-none" />
+        </div>
+
         {/* Section 2 */}
         <div className="w-full relative">
           <img 

@@ -21,10 +21,10 @@ export default function Hero({}: { }) {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-6xl font-black mb-4 tracking-tighter  text-slate-400 leading-tight"
+          className="text-2xl md:text-4xl font-black mb-4 tracking-tighter text-slate-400 leading-tight flex flex-wrap items-center justify-center gap-x-3 uppercase"
         >
-          Your competitors are renting intelligence. <br className="hidden md:block" />
-          <span className="gradient-text">You can own it.</span>
+          <span>Your competitors are renting intelligence</span>
+          <span className="gradient-text">You can own it</span>
         </motion.h1>
         
         <motion.p
@@ -33,7 +33,7 @@ export default function Hero({}: { }) {
           transition={{ delay: 0.1 }}
           className="text-base md:text-lg font-light text-slate-400 max-w-2xl mx-auto mb-8"
         >
-          Transform variable operating expenses into permanent structural margin advantages.
+          Transform variable operating expenses into permanent structural margin advantages
         </motion.p>
         
         <motion.button

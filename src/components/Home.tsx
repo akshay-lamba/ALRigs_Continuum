@@ -7,23 +7,20 @@ export default function Home() {
     <div className="w-full flex flex-col font-sans">
       
       {/* block 1 — above the fold */}
-      <div className="min-h-[calc(100vh-112px)] bg-transparent flex flex-col items-center justify-center relative px-6 py-16 md:py-24">
+      <div className="min-h-[80vh] md:min-h-[calc(100vh-112px)] bg-transparent flex flex-col items-center justify-center relative px-6 py-20 md:py-24 leading-none">
         <div className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-12 text-center">
             
-          <div className="flex flex-col items-center max-w-5xl">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-sans tracking-tighter leading-[0.95] mb-10 font-black flex flex-col gap-2 uppercase">
-              <div className="gradient-text-blue">
-                Intelligence dedicated to your business.
-              </div>
-              <div className="gradient-text">
-                Exclusively owned by you.
-              </div>
+          <div className="flex flex-col items-center max-w-6xl">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-sans tracking-tighter leading-[1.1] mb-8 font-black flex flex-wrap items-center justify-center gap-x-3 gap-y-2 uppercase">
+              <span className="gradient-text-blue">
+                Intelligence dedicated to your business
+              </span>
+              <span className="gradient-text">
+                Exclusively owned by you
+              </span>
             </h1>
-            <p className="text-xs md:text-sm font-black tracking-[0.4em] text-blue-500 uppercase mb-10">
+            <p className="text-[10px] md:text-sm font-black tracking-[0.3em] md:tracking-[0.4em] text-blue-500 uppercase mb-6">
               ALRigs | Intelligence | Humanely
-            </p>
-            <p className="text-base md:text-lg text-slate-400 mb-12 font-medium tracking-wide max-w-3xl leading-relaxed">
-              Owned entirely. Running exclusively on your infrastructure. Permanently.
             </p>
           </div>
         </div>

@@ -7,8 +7,8 @@ const stackLayers = [
   {
     id: "01",
     title: "L01 — C: Context — The Ground Truth Layer",
-    subtitle: "Ground truth. Your data. Your soul.",
-    desc: "MD files injected. Your proprietary data becomes the intelligence foundation.",
+    subtitle: "Ground truth Your data Your soul",
+    desc: "MD files injected Your proprietary data becomes the intelligence foundation",
     icon: Fingerprint,
     color: "from-teal-500/30",
     iconColor: "text-teal-400",
@@ -17,8 +17,8 @@ const stackLayers = [
   {
     id: "02",
     title: "L02 — Zero Stack — The Sovereign Compute Layer",
-    subtitle: "Private sovereign compute.",
-    desc: "7-layer stack. Your hardware. Your key. Zero cloud dependency.",
+    subtitle: "Private sovereign compute",
+    desc: "7-layer stack Your hardware Your key Zero cloud dependency",
     icon: Server,
     color: "from-slate-500/30",
     iconColor: "text-slate-400",
@@ -27,8 +27,8 @@ const stackLayers = [
   {
     id: "03",
     title: "L03 — The .it Framework — The Action Language Layer",
-    subtitle: "The action language.",
-    desc: "English in. Code out. The bridge between human intent and machine execution.",
+    subtitle: "The action language",
+    desc: "English in Code out The bridge between human intent and machine execution",
     icon: Code2,
     color: "from-orange-500/30",
     iconColor: "text-orange-400",
@@ -37,8 +37,8 @@ const stackLayers = [
   {
     id: "04",
     title: "L04 — D: Depth — The Precision Reasoning Layer",
-    subtitle: "Precision reasoning.",
-    desc: "AI capabilities tuned to your industry, geography, and business context.",
+    subtitle: "Precision reasoning",
+    desc: "AI capabilities tuned to your industry geography and business context",
     icon: Target,
     color: "from-rose-500/30",
     iconColor: "text-rose-400",
@@ -47,8 +47,8 @@ const stackLayers = [
   {
     id: "05",
     title: "L05 — The ARC Engine — The Sovereign Intelligence Layer",
-    subtitle: "The thinking core.",
-    desc: "C + D + V² = ARC. Velocity of action multiplied by velocity of audit. Simultaneously.",
+    subtitle: "The thinking core",
+    desc: "C + D + V² = ARC Velocity of action multiplied by velocity of audit Simultaneously",
     icon: Cpu,
     color: "from-cyan-500/30",
     iconColor: "text-cyan-400",
@@ -57,8 +57,8 @@ const stackLayers = [
   {
     id: "06",
     title: "L06 — The ARC Insight Stack — The Clarity Layer",
-    subtitle: "See everything clearly.",
-    desc: "Finance. Human. Analytics. Assets. Process. Five views. One brain.",
+    subtitle: "See everything clearly",
+    desc: "Finance Human Analytics Assets Process Five views One brain",
     icon: Layers,
     color: "from-indigo-500/30",
     iconColor: "text-indigo-400",
@@ -66,8 +66,8 @@ const stackLayers = [
   {
     id: "07",
     title: "L07 — Human Upgrade — The Owner Transformation Layer",
-    subtitle: "Become a better version.",
-    desc: "Owner grows alongside the system. Better questions. Sharper decisions.",
+    subtitle: "Become a better version",
+    desc: "Owner grows alongside the system Better questions Sharper decisions",
     icon: User,
     color: "from-amber-500/30",
     iconColor: "text-amber-400",
@@ -75,8 +75,8 @@ const stackLayers = [
   {
     id: "08",
     title: "L08 — V²: Velocity Squared — The Execution Layer",
-    subtitle: "Instant action and audit.",
-    desc: "Execution and proof happen simultaneously. Speed without blind spots.",
+    subtitle: "Instant action and audit",
+    desc: "Execution and proof happen simultaneously Speed without blind spots",
     icon: Zap,
     color: "from-emerald-500/30",
     iconColor: "text-emerald-400",
@@ -84,8 +84,8 @@ const stackLayers = [
   {
     id: "09",
     title: "L09 — The Zero Promise — The Trust Contract Layer",
-    subtitle: "We own the outcome.",
-    desc: "Zero latency for your business. Privacy by design. No vendor lock-in.",
+    subtitle: "We own the outcome",
+    desc: "Zero latency for your business Privacy by design No vendor lock-in",
     icon: ShieldCheck,
     color: "from-purple-500/30",
     iconColor: "text-purple-400",
@@ -93,8 +93,8 @@ const stackLayers = [
   {
     id: "10",
     title: "L10 — Sovereignty — The Worldview Layer",
-    subtitle: "Intelligence. Humanely.",
-    desc: "Your data, model, hardware. Nothing rented. Nothing exposed.",
+    subtitle: "Intelligence Humanely",
+    desc: "Your data model hardware Nothing rented Nothing exposed",
     icon: Globe,
     color: "from-blue-500/30",
     iconColor: "text-blue-400",
@@ -174,6 +174,39 @@ export default function INTELLIGENCELayer() {
             </div>
           </a>
         </div>
+        
+        {/* Video Embedding Section */}
+        <div className="w-full relative mb-24 flex flex-col items-center justify-center">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-6xl relative z-10"
+          >
+            <div className="relative aspect-video rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 bg-black shadow-[0_0_80px_rgba(0,0,0,0.5)]">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/videoseries?list=PL4_49j8YRffyEAkLDaHJJxTah8QnKU3vs" 
+                title="ALRigs Intelligence Showcase" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+            </div>
+            
+            {/* Subtle Label */}
+            <div className="mt-8 flex items-center justify-center gap-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+              <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em]">Proprietary Intelligence Architecture</span>
+            </div>
+          </motion.div>
+          
+          {/* Background Ambient Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0%,transparent_70%)] pointer-events-none" />
+        </div>
 
         {/* 10 Stack Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-full max-w-[100rem] pb-24">
@@ -244,7 +277,7 @@ export default function INTELLIGENCELayer() {
                       <div key={i} className="flex gap-3">
                         <div className="w-1 h-1 rounded-full bg-blue-500/40 mt-2 shrink-0" />
                         <p className="text-slate-400 text-xs md:text-sm font-medium leading-relaxed tracking-wide">
-                          {sentence.trim()}.
+                          {sentence.trim()}
                         </p>
                       </div>
                     ))}
