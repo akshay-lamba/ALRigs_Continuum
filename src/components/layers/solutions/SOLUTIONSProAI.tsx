@@ -110,26 +110,51 @@ export default function SOLUTIONSProAI() {
             className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent"
           />
 
-          <div className="relative z-10 flex flex-col items-center">
+          <div className="relative z-10 flex flex-col items-center w-full max-w-4xl mx-auto">
             <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase mb-2 group-hover/download:text-blue-500 transition-colors duration-700">
-              Download brochure here.
+              Access intelligence.
             </h3>
             <p className="text-[10px] font-black text-blue-500/60 uppercase tracking-[0.5em] mb-12">
-              Pro AI Technical Specification
+              Pro AI Technical Specifications & Insights
             </p>
             
-            <a 
-              href="https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_a2476c1ee7e54b939da6d181780c27d7.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/btn relative px-12 py-5 bg-white font-black text-[10px] text-black uppercase tracking-[0.6em] rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl"
-            >
-              <span className="relative z-10">Access Document</span>
-              <div className="absolute inset-0 bg-blue-500 -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500" />
-              <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500 z-20">
-                Access Document
-              </span>
-            </a>
+            <div className="flex flex-wrap items-center justify-center gap-6 w-full">
+              {/* ARC Engine Card */}
+              <a 
+                href="https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_a2476c1ee7e54b939da6d181780c27d7.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/card relative w-48 h-48 md:w-56 md:h-56 bg-white/[0.02] border border-white/5 rounded-3xl md:rounded-[2.5rem] flex flex-col items-center justify-center p-8 transition-all duration-500 hover:bg-white/[0.05] hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(59,130,246,0.3)]"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 border border-blue-500/20 group-hover/card:scale-110 transition-transform duration-500">
+                   <Download className="w-6 h-6 text-blue-400" />
+                </div>
+                <span className="text-sm md:text-base text-white text-center leading-tight">
+                  The ARC Engine
+                </span>
+                
+                {/* Decorative corner */}
+                <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-blue-500/20 group-hover/card:bg-blue-500 transition-colors" />
+              </a>
+
+              {/* Insights Layer Card */}
+              <a 
+                href="https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_08b3abfeb9a84a018ed00777ca7e1495.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/card relative w-48 h-48 md:w-56 md:h-56 bg-white/[0.02] border border-white/5 rounded-3xl md:rounded-[2.5rem] flex flex-col items-center justify-center p-8 transition-all duration-500 hover:bg-white/[0.05] hover:border-indigo-500/50 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(99,102,241,0.3)]"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 flex items-center justify-center mb-6 border border-indigo-500/20 group-hover/card:scale-110 transition-transform duration-500">
+                   <Download className="w-6 h-6 text-indigo-400" />
+                </div>
+                <span className="text-sm md:text-base text-white text-center leading-tight">
+                  The Insights Layer
+                </span>
+
+                {/* Decorative corner */}
+                <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-indigo-500/20 group-hover/card:bg-indigo-500 transition-colors" />
+              </a>
+            </div>
           </div>
 
           {/* Background Decorative Element */}
