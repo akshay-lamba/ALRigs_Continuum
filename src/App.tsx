@@ -21,7 +21,7 @@ import PEOPLEOwnerPage from './components/layers/people/PEOPLEOwnerPage';
 import PEOPLERunningaDivision from './components/layers/people/PEOPLERunningaDivision';
 import PEOPLERunningaCompany from './components/layers/people/PEOPLERunningaCompany';
 import PEOPLERunningaCountry from './components/layers/people/PEOPLERunningaCountry';
-import PEOPLEBuildingWithUs from './components/layers/people/PEOPLEBuildingWithUs';
+import PEOPLETechLeader from './components/layers/people/PEOPLETechLeader';
 import SOLUTIONSLayer from './components/layers/solutions/SOLUTIONSLayer';
 import SOLUTIONSProAI from './components/layers/solutions/SOLUTIONSProAI';
 import SOLUTIONSBusinessAI from './components/layers/solutions/SOLUTIONSBusinessAI';
@@ -117,7 +117,7 @@ export default function App() {
             <Route path="/people/division" element={<PEOPLERunningaDivision />} />
             <Route path="/people/company" element={<PEOPLERunningaCompany />} />
             <Route path="/people/country" element={<PEOPLERunningaCountry />} />
-            <Route path="/people/building" element={<PEOPLEBuildingWithUs />} />
+            <Route path="/people/tech" element={<PEOPLETechLeader />} />
             <Route path="/solutions" element={<SOLUTIONSLayer />} />
             <Route path="/solutions/proai" element={<SOLUTIONSProAI />} />
             <Route path="/solutions/businessai" element={<SOLUTIONSBusinessAI />} />

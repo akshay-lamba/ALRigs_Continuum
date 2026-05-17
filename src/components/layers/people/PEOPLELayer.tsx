@@ -127,17 +127,17 @@ export default function PEOPLELayer() {
     },
     {
       id: "tech",
-      title: "Technology Leader",
+      title: "The Tech Leader",
       world: "Systems & Infrastructure",
       desc: "Views AI as a technical architecture. The \"magic\" is stripped away to reveal the pipes. Focus is on how the models are built, where the data sits, and how to keep systems running smoothly.",
       perspective: "Stability, security, and scalability.",
       focus: "Integration, model reliability, and data privacy.",
       success: "Is the system secure, fast, and built to scale?",
-      path: "/people/building",
+      path: "/people/tech",
       images: [
-        "https://static.wixstatic.com/media/b20068_1659f94dd5994d7c9fec5ae2459b78fc~mv2.jpeg",
-        "https://static.wixstatic.com/media/b20068_d386b872f37b4e94ac4fd9cdd12b9496~mv2.jpeg",
-        "https://static.wixstatic.com/media/b20068_415fb72e204941b0bf65102e0abd3682~mv2.jpeg"
+        "https://static.wixstatic.com/media/b20068_b64347f2e3f24d0b9ed87da2436f6af6~mv2.jpeg",
+        "https://static.wixstatic.com/media/b20068_fa7bfad1ece6444c85cd1d2a2ba93877~mv2.jpeg",
+        "https://static.wixstatic.com/media/b20068_36051c87c78e4c138047793eb171a77c~mv2.jpeg"
       ]
     }
   ];
