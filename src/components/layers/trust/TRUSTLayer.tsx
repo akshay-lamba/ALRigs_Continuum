@@ -28,12 +28,12 @@ export default function TRUSTLayer() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h1 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase mb-6 leading-none">
-            Trust & Legal.
-          </h1>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-[10px] font-black uppercase tracking-[0.4em] mb-8">
             <ShieldCheck className="w-4 h-4" /> Compliance by Transparency
           </div>
+          <h1 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase mb-6 leading-none">
+            Trust & Legal
+          </h1>
           <p className="text-xs md:text-sm font-black text-blue-500 uppercase tracking-[0.4em] max-w-2xl mx-auto">
             ALRigs | Intelligence | Humanely
           </p>
