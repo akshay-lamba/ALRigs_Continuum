@@ -35,13 +35,15 @@ import INTELLIGENCETheitFramework from './components/layers/intelligence/INTELLI
 import INTELLIGENCETheScience from './components/layers/intelligence/INTELLIGENCETheScience';
 import INTELLIGENCEPerformanceData from './components/layers/intelligence/INTELLIGENCEPerformanceData';
 import MARKETLayer from './components/layers/market/MARKETLayer';
+import MarketCountryPage from './components/layers/market/MarketCountryPage';
 import MARKETSovereigntyShift from './components/layers/market/MARKETSovereigntyShift';
 import MARKETIndustriesWeAreIn from './components/layers/market/MARKETIndustriesWeAreIn';
 import MARKETStrategicPartners from './components/layers/market/MARKETStrategicPartners';
 import MARKETIntegrationGallery from './components/layers/market/MARKETIntegrationGallery';
 import MARKETMarketPapers from './components/layers/market/MARKETMarketPapers';
 import TRUSTLayer from './components/layers/trust/TRUSTLayer';
-import TRUSTInThePress from './components/layers/trust/TRUSTInThePress';
+import TeamPage from './components/TeamPage';
+import ContactPage from './components/ContactPage';
 import ProductsPage from './components/ProductsPage';
 import ProductsHubPage from './components/ProductsHubPage';
 import { useParams } from "react-router-dom";
@@ -50,6 +52,42 @@ function ProductRouteWrapper() {
   const { id } = useParams();
   return <ProductsPage productId={id} />;
 }
+
+// Wrapper components for country pages
+const USAMarket = () => (
+  <MarketCountryPage 
+    countryName="United States" 
+    flag="🇺🇸" 
+  />
+);
+
+const IndiaMarket = () => (
+  <MarketCountryPage 
+    countryName="India" 
+    flag="🇮🇳" 
+  />
+);
+
+const MEMarket = () => (
+  <MarketCountryPage 
+    countryName="Middle East" 
+    flag="🇦🇪" 
+  />
+);
+
+const AfricaMarket = () => (
+  <MarketCountryPage 
+    countryName="Africa" 
+    flag="🇿🇦" 
+  />
+);
+
+const UKMarket = () => (
+  <MarketCountryPage 
+    countryName="United Kingdom" 
+    flag="🇬🇧" 
+  />
+);
 
 
 function ScrollToTop() {
@@ -133,13 +171,19 @@ export default function App() {
             <Route path="/intelligence/science" element={<INTELLIGENCETheScience />} />
             <Route path="/intelligence/performance" element={<INTELLIGENCEPerformanceData />} />
             <Route path="/market" element={<MARKETLayer />} />
+            <Route path="/market/usa" element={<USAMarket />} />
+            <Route path="/market/india" element={<IndiaMarket />} />
+            <Route path="/market/middle-east" element={<MEMarket />} />
+            <Route path="/market/africa" element={<AfricaMarket />} />
+            <Route path="/market/uk" element={<UKMarket />} />
             <Route path="/market/sovereignty" element={<MARKETSovereigntyShift />} />
             <Route path="/market/industries" element={<MARKETIndustriesWeAreIn />} />
             <Route path="/market/partners" element={<MARKETStrategicPartners />} />
             <Route path="/market/integration" element={<MARKETIntegrationGallery />} />
             <Route path="/market/papers" element={<MARKETMarketPapers />} />
             <Route path="/trust" element={<TRUSTLayer />} />
-            <Route path="/trust/press" element={<TRUSTInThePress />} />
+            <Route path="/team" element={<TeamPage />} />
+            <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </div>
         <Footer />
