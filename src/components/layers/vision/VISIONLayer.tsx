@@ -6,12 +6,12 @@ export default function VISIONLayer() {
   const rooms = [{"name":"The Belief","path":"/vision/belief"},{"name":"The Problem We Saw","path":"/vision/problem"},{"name":"The World We Build","path":"/vision/world"},{"name":"Intelligence Humanely","path":"/vision/intelligence-humanely"},{"name":"The Timeline","path":"/vision/timeline"}];
 
     return (
-    <div className="pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-screen">
+    <div className="pt-24 pb-20 px-6 max-w-7xl mx-auto min-h-screen">
       <div className="flex flex-col items-center mb-16">
-        <p className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-slate-500 uppercase mb-4">
+        <p className="text-[10px] md:text-xs font-black tracking-[0.3em] text-blue-500 uppercase mb-3">
           ALRigs | Intelligence | Humanely
         </p>
-        <h1 className="text-5xl md:text-7xl font-black text-slate-400 tracking-tighter text-center uppercase">
+        <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-center uppercase gradient-text-blue">
           VISION
         </h1>
       </div>

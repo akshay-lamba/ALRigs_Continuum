@@ -105,19 +105,19 @@ export default function INTELLIGENCELayer() {
   const navigate = useNavigate();
   
   return (
-    <div className="min-h-screen bg-transparent flex flex-col items-center relative overflow-hidden font-sans pt-32 pb-24">
+    <div className="min-h-screen bg-transparent flex flex-col items-center relative overflow-hidden font-sans pt-24 pb-20">
       
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       
       {/* Glow Effects */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[50vh] bg-blue-900/10 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
-      <div className="fixed bottom-0 left-1/4 w-[40vw] h-[40vh] bg-emerald-900/10 blur-[100px] rounded-full mix-blend-screen pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[5vh] bg-blue-900/10 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
+      <div className="fixed bottom-0 left-1/4 w-[20vw] h-[20vh] bg-emerald-900/10 blur-[100px] rounded-full mix-blend-screen pointer-events-none" />
 
       <div className="px-6 w-full max-w-[1600px] mx-auto relative z-10 flex flex-col items-center">
         
         {/* Main Image and Download Section */}
-        <div className="flex flex-col items-end gap-4 w-full max-w-6xl mb-32">
+        <div className="flex flex-col items-end gap-4 w-full max-w-6xl mb-24">
           {/* Main Image Container with cutting-edge effects */}
           <div className="relative w-full aspect-video max-h-[85vh] rounded-[2rem] overflow-hidden group border border-white/5 shadow-[0_0_80px_rgba(0,0,0,0.8)] backdrop-blur-3xl">
             

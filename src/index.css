@@ -13,6 +13,35 @@
   --color-surface: #0f172a;
   --color-text-main: #cbd5e1;
   
+  /* Matte silver - neutral mid-gray */
+  --color-white: #b1b3b8;
+  
+  /* Restoring comfortable font sizes for human reading */
+  --font-size-9xl: 5rem;
+  --font-size-8xl: 4rem;
+  --font-size-7xl: 3.5rem;
+  --font-size-6xl: 3rem;
+  --font-size-5xl: 2.25rem;
+  --font-size-4xl: 1.875rem;
+  --font-size-3xl: 1.5rem;
+  --font-size-2xl: 1.25rem;
+  --font-size-xl: 1.125rem;
+  --font-size-lg: 1.05rem;
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-xs: 0.75rem;
+
+  /* Restore spacing factors to provide breathing room and intentional flow */
+  --spacing-48: 12rem;
+  --spacing-40: 10rem;
+  --spacing-32: 8rem;
+  --spacing-28: 7rem;
+  --spacing-24: 6rem;
+  --spacing-20: 5rem;
+  --spacing-16: 4rem;
+  --spacing-12: 3rem;
+  --spacing-8: 2rem;
+
   --gradient-brand: linear-gradient(135deg, #0f172a, #94a3b8);
   --gradient-brand-muted: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(148, 163, 184, 0.3));
 }
@@ -26,33 +55,49 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight text-slate-400;
+    @apply tracking-tighter text-slate-400 font-black uppercase;
+    font-family: inherit;
+  }
+
+  h1 {
+    display: inline-block;
+    line-height: 0.9;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #e2e8f0, #94a3b8, #64748b);
   }
 }
 
+@utility gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #e2e8f0, #94a3b8, #64748b);
+}
+
+@utility gradient-text-blue {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #93c5fd, #3b82f6, #4f46e5);
+}
+
+@utility gradient-text-emerald {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #6ee7b7, #10b981, #0d9488);
+}
+
+@utility gradient-text-indigo {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #a5b4fc, #6366f1, #9333ea);
+}
+
 @layer utilities {
-  .gradient-border {
-    position: relative;
-    border: 1px solid transparent;
-    background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
-                var(--gradient-brand) border-box;
-  }
-
-  .gradient-border-muted {
-    position: relative;
-    border: 1px solid transparent;
-    background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
-                var(--gradient-brand-muted) border-box;
-  }
-
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-blue-400 via-slate-300 to-slate-400;
-  }
-
-  .gradient-text-muted {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-slate-500 to-slate-600;
-  }
-
   .bg-glass {
     @apply bg-gradient-to-br from-blue-900/40 to-slate-400/10 backdrop-blur-xl border border-blue-900/50 shadow-[0_4px_30px_rgba(0,0,0,0.5)];
   }

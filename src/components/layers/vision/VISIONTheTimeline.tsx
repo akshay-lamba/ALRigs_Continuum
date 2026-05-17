@@ -6,7 +6,7 @@ export default function VISIONTheTimeline() {
   const navigate = useNavigate();
 
   return (
-    <div className="pt-32 pb-20 px-6 max-w-5xl mx-auto min-h-screen space-y-16">
+    <div className="pt-32 pb-24 px-6 max-w-5xl mx-auto min-h-screen space-y-24">
       <button 
         onClick={() => navigate('/vision')}
         className="flex items-center text-slate-500 hover:text-blue-500 font-semibold tracking-widest text-xs uppercase transition-colors"
@@ -15,7 +15,7 @@ export default function VISIONTheTimeline() {
       </button>
 
       <div>
-        <h1 className="text-4xl md:text-5xl font-black text-slate-400 mb-6 tracking-tighter">The Timeline</h1>
+        <h1 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter gradient-text-blue leading-none">The Timeline</h1>
         <p className="text-xl font-medium text-slate-400 leading-relaxed mb-12">
           Headline content for The Timeline. Sublines and specific paragraphs will go here to explain the core concept concisely without fluff.
         </p>

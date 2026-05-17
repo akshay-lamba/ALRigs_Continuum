@@ -6,7 +6,7 @@ export default function MARKETMarketPapers() {
   const navigate = useNavigate();
 
   return (
-    <div className="pt-32 pb-20 px-6 max-w-5xl mx-auto min-h-screen space-y-16">
+    <div className="pt-16 pb-12 px-6 max-w-5xl mx-auto min-h-screen space-y-10">
       <button 
         onClick={() => navigate('/market')}
         className="flex items-center text-slate-500 hover:text-blue-500 font-semibold tracking-widest text-xs uppercase transition-colors"
@@ -15,7 +15,7 @@ export default function MARKETMarketPapers() {
       </button>
 
       <div>
-        <h1 className="text-4xl md:text-5xl font-black text-slate-400 mb-6 tracking-tighter">Market Papers</h1>
+        <h1 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter gradient-text-blue leading-none">Market Papers</h1>
         <p className="text-xl font-medium text-slate-400 leading-relaxed mb-12">
           Headline content for Market Papers. Sublines and specific paragraphs will go here to explain the core concept concisely without fluff.
         </p>

@@ -8,7 +8,7 @@ export default function PEOPLERunningaCountry() {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-transparent text-slate-300 min-h-screen font-sans overflow-x-hidden pt-24 pb-20">
+    <div className="bg-transparent text-slate-300 min-h-screen font-sans overflow-x-hidden pt-12 pb-10">
       
       {/* Background glow */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[40vh] bg-orange-900/10 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
@@ -30,10 +30,10 @@ export default function PEOPLERunningaCountry() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl"
         >
-          <h1 className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter uppercase leading-none text-balance">
-            The<br/><span className="text-orange-500">State Leader.</span>
+          <h1 className="text-3xl md:text-6xl font-black mb-8 tracking-tighter uppercase leading-none text-balance gradient-text">
+            The<br/><span className="gradient-text-blue">State Leader.</span>
           </h1>
-          <p className="text-xl md:text-3xl text-slate-400 font-medium leading-relaxed mb-16">
+          <p className="text-base md:text-xl text-slate-400 font-medium leading-relaxed mb-12">
             Ethics & Public Utility. Safety, equity, and civic stability. Built for public institutions.
           </p>
         </motion.div>

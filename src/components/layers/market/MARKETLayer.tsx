@@ -56,17 +56,17 @@ export default function MARKETLayer() {
   ];
 
   return (
-    <div className="min-h-screen bg-transparent flex flex-col items-center pt-32 pb-20 px-4 md:px-8 overflow-hidden relative">
+    <div className="min-h-screen bg-transparent flex flex-col items-center pt-24 pb-20 px-4 md:px-8 overflow-hidden relative">
       <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_100%)] pointer-events-none" />
       
       <div className="flex flex-col items-center mb-16 text-center z-10 relative">
-        <p className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-blue-500 uppercase mb-4 flex items-center gap-2">
+        <p className="text-[10px] md:text-xs font-black tracking-[0.3em] text-blue-500 uppercase mb-3 flex items-center gap-2">
           <Globe className="w-4 h-4" /> Global Sovereignty
         </p>
-        <h1 className="text-5xl md:text-7xl font-black text-slate-100 tracking-tighter uppercase drop-shadow-2xl">
+        <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase drop-shadow-2xl gradient-text-blue">
           Markets
         </h1>
-        <p className="text-slate-400 mt-6 max-w-2xl text-lg font-medium">
+        <p className="text-slate-500 mt-4 max-w-2xl text-base font-medium leading-relaxed">
           ALRigs models are deployed globally, tailored to the unique regulatory, cultural, and operational sovereignty needs of each region.
         </p>
       </div>

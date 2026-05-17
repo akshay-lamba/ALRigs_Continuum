@@ -1,5 +1,6 @@
 {
-  "name": "The Collection",
+  "name": "ALRigs",
   "description": "Exploration of strategic AI personas and proprietary intelligence frameworks for sovereign value creation.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

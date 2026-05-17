@@ -375,7 +375,7 @@ export default function TRUSTLayer() {
   const lastUpdated = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
   return (
-    <div className="bg-transparent text-slate-300 min-h-screen font-sans overflow-x-hidden pt-24 pb-20">
+    <div className="bg-transparent text-slate-300 min-h-screen font-sans overflow-x-hidden pt-12 pb-10">
       
       {/* Dynamic Background */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-transparent">
@@ -411,17 +411,17 @@ export default function TRUSTLayer() {
       </div>
 
       {/* Header */}
-      <div className="relative z-10 max-w-[1400px] w-full mx-auto px-6 mb-16 pt-16">
+      <div className="relative z-10 max-w-[1400px] w-full mx-auto px-6 mb-12 pt-12">
         <div className="flex flex-col md:flex-row items-end justify-between gap-8 border-b border-white/10 pb-8">
           <div>
-            <p className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-blue-500 uppercase mb-4 flex items-center gap-2">
+            <p className="text-[10px] md:text-xs font-black tracking-[0.3em] text-blue-500 uppercase mb-3 flex items-center gap-2">
               <ShieldCheck className="w-4 h-4" />
               Living Hub
             </p>
-            <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-4">
+            <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-4 gradient-text">
               Compliance Hub
             </h1>
-            <p className="text-slate-400 text-lg md:text-xl font-medium max-w-2xl leading-relaxed">
+            <p className="text-slate-500 text-base md:text-lg font-medium max-w-2xl leading-relaxed">
               Every document is real, published, dated, and version-numbered. Visitors — clients, regulators, auditors, investors — can see everything. Nothing hidden, nothing "available on request."
             </p>
           </div>

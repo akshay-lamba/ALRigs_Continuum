@@ -22,11 +22,11 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-white/5 z-50 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 h-20 md:h-28 flex items-center justify-between">
           
           {/* Logo */}
           <button onClick={() => navigate('/')} className="hover:opacity-80 transition-opacity">
-            <img src="https://static.wixstatic.com/media/b20068_2c836ed25c204a9284ce8a4a72b85375~mv2.jpeg" alt="ALRigs" className="h-8 md:h-10 object-contain mix-blend-screen" referrerPolicy="no-referrer" />
+            <img src="https://static.wixstatic.com/media/b20068_2c836ed25c204a9284ce8a4a72b85375~mv2.jpeg" alt="ALRigs" className="h-10 md:h-12 object-contain mix-blend-screen" referrerPolicy="no-referrer" />
           </button>
 
           {/* Desktop Nav Links */}
@@ -75,7 +75,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ type: 'tween', duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-black pt-28 px-6 pb-8 flex flex-col lg:hidden overflow-y-auto"
+            className="fixed inset-0 z-40 bg-black pt-36 px-6 pb-8 flex flex-col lg:hidden overflow-y-auto"
           >
             <div className="flex flex-col gap-6 font-bold text-2xl tracking-tighter lowercase items-start">
               {LAYERS.map(layer => (

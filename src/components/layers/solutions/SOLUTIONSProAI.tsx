@@ -29,7 +29,7 @@ export default function SOLUTIONSProAI() {
   ];
 
   return (
-    <div className="pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-screen">
+    <div className="pt-16 pb-12 px-6 max-w-7xl mx-auto min-h-screen">
       {/* Navigation */}
       <div className="mb-12">
         <button 
@@ -83,7 +83,7 @@ export default function SOLUTIONSProAI() {
         </div>
 
         {/* Section 5: Resource Download - Minimalist */}
-        <div className="w-full relative bg-neutral-900 py-32 px-8 flex flex-col items-center justify-center text-center border-t border-white/5 overflow-hidden group/download">
+        <div className="w-full relative bg-neutral-900 py-20 px-8 flex flex-col items-center justify-center text-center border-t border-white/5 overflow-hidden group/download">
           {/* Amazing Sliding Graphic */}
           <motion.div 
             animate={{ 

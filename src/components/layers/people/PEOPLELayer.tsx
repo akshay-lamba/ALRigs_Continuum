@@ -123,14 +123,18 @@ export default function PEOPLELayer() {
     },
     {
       id: "tech",
-      title: "The Tech Leader",
+      title: "Technology Leader",
       world: "Systems & Infrastructure",
       desc: "Views AI as a technical architecture. The \"magic\" is stripped away to reveal the pipes. Focus is on how the models are built, where the data sits, and how to keep systems running smoothly.",
       perspective: "Stability, security, and scalability.",
       focus: "Integration, model reliability, and data privacy.",
       success: "Is the system secure, fast, and built to scale?",
       path: "/people/building",
-      images: ["https://static.wixstatic.com/media/b20068_36d6a54f8f4a47a1957297e6878b37f4~mv2.jpeg"]
+      images: [
+        "https://static.wixstatic.com/media/b20068_1659f94dd5994d7c9fec5ae2459b78fc~mv2.jpeg",
+        "https://static.wixstatic.com/media/b20068_d386b872f37b4e94ac4fd9cdd12b9496~mv2.jpeg",
+        "https://static.wixstatic.com/media/b20068_415fb72e204941b0bf65102e0abd3682~mv2.jpeg"
+      ]
     }
   ];
 
@@ -186,9 +190,9 @@ export default function PEOPLELayer() {
       </div>
 
       {/* Section 02: Immersive Video (Seamless Transition) */}
-      <div className="relative w-full py-24 md:py-40 bg-black">
+      <div className="relative w-full py-12 md:py-20 bg-black">
         {/* Seamless Blend Layer */}
-        <div className="absolute -top-40 left-0 w-full h-40 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
+        <div className="absolute -top-20 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
         
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
@@ -196,7 +200,7 @@ export default function PEOPLELayer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="relative aspect-video rounded-[3rem] overflow-hidden border border-white/10 bg-neutral-900 group shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)]"
+            className="relative aspect-video rounded-[2.5rem] overflow-hidden border border-white/5 bg-neutral-900 group shadow-2xl"
           >
             {/* Glass frame effect */}
             <div className="absolute inset-0 z-20 pointer-events-none ring-1 ring-inset ring-white/10 rounded-[3rem]" />
@@ -227,8 +231,8 @@ export default function PEOPLELayer() {
       </div>
 
       {/* Section 03: Central Persona Gallery (2 per line, uniform design) */}
-      <div className="max-w-7xl mx-auto px-6 py-32 md:py-48">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32">
+      <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
           {personas.map((p, idx) => (
             <motion.div
               key={p.id}
@@ -241,7 +245,7 @@ export default function PEOPLELayer() {
               {/* Image / Slideshow Container: Identical Aspect Ratio */}
               <div 
                 onClick={() => navigate(p.path)}
-                className="relative aspect-[16/11] rounded-[2.5rem] overflow-hidden mb-12 cursor-pointer bg-neutral-900 border border-white/5 transition-all duration-1000 group-hover:border-blue-500/40 group-hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)]"
+                className="relative aspect-[16/11] rounded-[2rem] overflow-hidden mb-6 cursor-pointer bg-neutral-900 border border-white/5 transition-all duration-1000 group-hover:border-blue-500/40 group-hover:shadow-2xl"
               >
                 {/* 3D Glass reflection overlay */}
                 <div className="absolute inset-0 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
@@ -266,16 +270,16 @@ export default function PEOPLELayer() {
 
               {/* Minimalist Content Block */}
               <div className="flex flex-col px-4 flex-grow">
-                <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-6 leading-[0.9] transition-colors duration-500 group-hover:text-blue-500 min-h-[4rem] md:min-h-[6rem]">
+                <h3 className="text-3xl md:text-5xl font-black tracking-tighter uppercase mb-4 leading-[0.9] transition-colors duration-500 group-hover:gradient-text-blue gradient-text min-h-[3rem] md:min-h-[4.5rem]">
                   {p.title}
                 </h3>
                 
-                <p className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed mb-12 line-clamp-3 min-h-[5.5rem] md:min-h-[6rem]">
+                <p className="text-base md:text-lg text-slate-400 font-medium leading-relaxed mb-6 line-clamp-3 min-h-[4rem] md:min-h-[4.5rem]">
                   {p.desc}
                 </p>
 
                 {/* Sub-details: High-end Minimalist List */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 py-10 border-y border-white/5 mb-12 relative overflow-hidden min-h-[14rem] sm:min-h-[8rem]">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-6 border-y border-white/5 mb-8 relative overflow-hidden min-h-[12rem] sm:min-h-[6rem]">
                   <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none" />
                   
                   <div className="flex flex-col">

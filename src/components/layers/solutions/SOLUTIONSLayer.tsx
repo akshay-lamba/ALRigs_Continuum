@@ -1,6 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function SOLUTIONSLayer() {
@@ -29,13 +29,13 @@ export default function SOLUTIONSLayer() {
   ];
 
   return (
-    <div className="pt-32 pb-20 px-6 max-w-[1400px] w-full mx-auto min-h-screen">
+    <div className="pt-24 pb-20 px-6 max-w-[1400px] w-full mx-auto min-h-screen">
       <div className="flex flex-col items-center mb-16 md:mb-24">
         <motion.p 
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-blue-500 uppercase mb-4"
+          className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-blue-500 uppercase mb-3"
         >
           Intelligence Dedicated | Humanely
         </motion.p>
@@ -44,13 +44,13 @@ export default function SOLUTIONSLayer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-9xl font-black text-white tracking-tighter text-center uppercase leading-none"
+          className="text-4xl md:text-7xl font-black tracking-tighter text-center uppercase leading-none gradient-text-blue"
         >
           Solutions.
         </motion.h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-16">
         {solutions.map((sol, idx) => (
           <motion.div 
             key={sol.id} 
@@ -83,6 +83,78 @@ export default function SOLUTIONSLayer() {
           </motion.div>
         ))}
       </div>
+
+      {/* Global Resource Download Section */}
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="w-full relative bg-[#050505] rounded-[3rem] py-32 px-8 flex flex-col items-center justify-center text-center border border-white/5 overflow-hidden group/download shadow-[0_0_100px_rgba(0,0,0,1)]"
+      >
+        {/* Animated Scanning Lines */}
+        <motion.div 
+          animate={{ 
+            x: ['-100%', '100%'],
+            opacity: [0, 0.4, 0]
+          }}
+          transition={{ 
+            duration: 10, 
+            repeat: Infinity, 
+            ease: "linear" 
+          }}
+          className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"
+        />
+        <motion.div 
+          animate={{ 
+            x: ['100%', '-100%'],
+            opacity: [0, 0.2, 0]
+          }}
+          transition={{ 
+            duration: 15, 
+            repeat: Infinity, 
+            ease: "linear" 
+          }}
+          className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent"
+        />
+
+        <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto">
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="mb-10 p-6 rounded-full bg-blue-500/10 border border-blue-500/20"
+          >
+            <Download className="w-8 h-8 text-blue-500" />
+          </motion.div>
+
+          <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase mb-2 group-hover/download:text-blue-500 transition-colors duration-700 leading-[0.9]">
+            Full Portfolio <br/> Download here.
+          </h3>
+          <p className="text-[10px] md:text-xs font-black text-blue-500/60 uppercase tracking-[0.5em] mb-12">
+            Complete ALRigs Systems & Intelligence Framework
+          </p>
+          
+          <a 
+            href="https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_df8b0eefb0b44ff397a0e79abb30ef7d.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/btn relative px-16 py-6 bg-white font-black text-xs text-black uppercase tracking-[0.5em] rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl"
+          >
+            <span className="relative z-10">Access Portfolio</span>
+            <div className="absolute inset-0 bg-blue-600 -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500" />
+            <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500 z-20">
+              Access Portfolio
+            </span>
+          </a>
+        </div>
+
+        {/* Ambient Pulsing Background */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05)_0%,transparent_60%)] pointer-events-none" />
+        
+        {/* Dynamic Edge Glow */}
+        <div className="absolute inset-0 border border-white/0 group-hover:border-blue-500/20 transition-all duration-1000 pointer-events-none rounded-[3rem]" />
+      </motion.div>
     </div>
   );
 }

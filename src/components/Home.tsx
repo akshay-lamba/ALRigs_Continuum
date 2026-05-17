@@ -7,42 +7,33 @@ export default function Home() {
     <div className="w-full flex flex-col font-sans">
       
       {/* block 1 — above the fold */}
-      <div className="min-h-[calc(100vh-112px)] bg-transparent flex flex-col items-center justify-center relative px-6 py-10 md:px-12 lg:px-24">
-        <div className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-12 text-center py-10">
+      <div className="min-h-[calc(100vh-112px)] bg-transparent flex flex-col items-center justify-center relative px-6 py-16 md:py-24">
+        <div className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-12 text-center">
             
-          <div className="flex flex-col items-center max-w-4xl">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-sans tracking-tight leading-snug mb-8 font-semibold flex flex-col gap-2">
-              <div>
-                {["Intelligence", "dedicated", "to", "your", "business."].map((word, i) => {
-                  const colors = ['text-blue-500', 'text-slate-300', 'text-white', 'text-blue-400', 'text-slate-400', 'text-blue-300', 'text-indigo-400'];
-                  const color = colors[i % colors.length];
-                  return <span key={i} className={`${color} mr-2`}>{word}</span>
-                })}
+          <div className="flex flex-col items-center max-w-5xl">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-sans tracking-tighter leading-[0.95] mb-10 font-black flex flex-col gap-2 uppercase">
+              <div className="gradient-text-blue">
+                Intelligence dedicated to your business.
               </div>
-              <div>
-                {["Exclusively", "owned", "by", "you."].map((word, i) => {
-                  const colors = ['text-white', 'text-blue-400', 'text-slate-400', 'text-blue-500', 'text-slate-300', 'text-blue-300', 'text-indigo-400'];
-                  const color = colors[i % colors.length];
-                  return <span key={i} className={`${color} mr-2`}>{word}</span>
-                })}
+              <div className="gradient-text">
+                Exclusively owned by you.
               </div>
             </h1>
-            <p className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-slate-500 uppercase mb-8">
+            <p className="text-xs md:text-sm font-black tracking-[0.4em] text-blue-500 uppercase mb-10">
               ALRigs | Intelligence | Humanely
             </p>
-            <p className="text-sm md:text-base text-slate-400 mb-10 font-medium tracking-wide max-w-2xl">
+            <p className="text-base md:text-lg text-slate-400 mb-12 font-medium tracking-wide max-w-3xl leading-relaxed">
               Owned entirely. Running exclusively on your infrastructure. Permanently.
             </p>
           </div>
-
         </div>
       </div>
 
       {/* block 3 — products image section */}
-      <div className="w-full bg-transparent py-12 px-6 md:px-12 flex justify-center pb-24 text-slate-400 border-none mt-[-2rem]">
+      <div className="w-full bg-transparent py-16 px-6 md:px-12 flex justify-center pb-32 text-slate-400 border-none">
         <div 
           onClick={() => navigate('/solutions')}
-          className="w-full max-w-5xl rounded-[1.5rem] p-3 md:p-4 bg-gradient-to-b from-[#121212]/80 to-[#0a0a0a]/90 backdrop-blur-xl border border-slate-700/50 shadow-[0_8px_30px_rgb(0,0,0,0.8)] relative group cursor-pointer transition-all duration-500 hover:border-slate-500/50"
+          className="w-full max-w-6xl rounded-[2.5rem] p-4 md:p-6 bg-gradient-to-b from-[#121212]/80 to-[#0a0a0a]/90 backdrop-blur-xl border border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group cursor-pointer transition-all duration-700 hover:border-blue-500/30"
         >
           <div className="w-full rounded-[1rem] overflow-hidden bg-[#050505] flex items-center justify-center relative">
             <img 

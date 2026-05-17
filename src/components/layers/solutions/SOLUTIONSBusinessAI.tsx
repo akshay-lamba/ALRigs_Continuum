@@ -7,7 +7,7 @@ export default function SOLUTIONSBusinessAI() {
   const navigate = useNavigate();
 
   return (
-    <div className="pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-screen">
+    <div className="pt-16 pb-12 px-6 max-w-7xl mx-auto min-h-screen">
       {/* Navigation */}
       <div className="mb-12">
         <button 
