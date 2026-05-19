@@ -119,55 +119,44 @@ export default function SOLUTIONSProAI() {
         <div className="w-full relative bg-neutral-950 border-t border-white/5 py-24 px-6 md:px-12 flex flex-col items-center overflow-hidden">
           <div className="w-full max-w-6xl relative z-10 flex flex-col items-center">
             
-            <div className="grid grid-cols-1 gap-20 w-full">
+            <div className="grid grid-cols-1 gap-16 w-full">
               
               {/* Section 1: The big idea */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="max-w-4xl mx-auto w-full">
                 <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                 >
-                  <h3 className="text-2xl md:text-3xl font-medium text-white tracking-tight mb-8">
+                  <h3 className="text-xl md:text-2xl font-medium text-white tracking-tight mb-8">
                     The big idea: stop renting, start owning
                   </h3>
                   <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
                     <p>
-                      Most business software forces you into an endless loop of monthly subscriptions. You pay per employee, every single month, forever.
+                      <strong className="text-white">Most business software never stops charging you.</strong>
+                    </p>
+                    <p>
+                      Every month, another bill lands. Then another. It adds up fast, and you never actually own anything.
                     </p>
                     <p className="text-white font-medium">
-                      Pro AI is different. It is a one-time purchase.
+                      Pro AI is different. You buy it once, and it is yours forever.
                     </p>
-                    <ul className="space-y-4 pt-4">
+                    <ul className="space-y-6 pt-4">
                       <li className="flex gap-4">
                         <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-3 shrink-0" />
-                        <span><strong className="text-white font-semibold">You own it:</strong> You buy the system once, and it belongs to your business forever. There are AED 0 in recurring monthly software fees.</span>
+                        <span><strong className="text-white font-semibold">You own it.</strong> One payment and the system belongs to your business permanently. No monthly fees, no per-employee charges, no contracts to renegotiate.</span>
                       </li>
                       <li className="flex gap-4">
                         <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-3 shrink-0" />
-                        <span><strong className="text-white font-semibold">Total privacy:</strong> All of your business files, customer data, and company knowledge stay safe inside your own office.</span>
+                        <span><strong className="text-white font-semibold">Your whole team moves faster.</strong> Tasks that used to take hours get done in minutes. Your people stop wasting time on repetitive work and start focusing on things that actually grow your business.</span>
                       </li>
                       <li className="flex gap-4">
                         <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-3 shrink-0" />
-                        <span><strong className="text-white font-semibold">No subscription fatigue:</strong> You get all the power of modern AI without another monthly bill eating into your cash flow.</span>
+                        <span><strong className="text-white font-semibold">No bill surprises, ever.</strong> One predictable cost covers everything — updates, new tools, fixes, and improvements. No shock when you hire someone new, and no price hikes when the vendor feels like it.</span>
                       </li>
                     </ul>
                   </div>
                 </motion.div>
-                <div className="perspective-1000 flex justify-center w-full">
-                  <motion.div 
-                    whileHover={{ scale: 1.01 }}
-                    className="relative w-full aspect-[16/10] rounded-[3rem] overflow-hidden group shadow-2xl transition-all duration-700 bg-neutral-900/50 border border-white/5"
-                  >
-                    <img 
-                      src="https://static.wixstatic.com/media/b20068_e10e35105f184034a2ed7dddb7b9a16a~mv2.jpeg"
-                      alt="Sovereign AI Hardware"
-                      className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-1000"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-                    <div className="absolute inset-0 border border-white/10 rounded-[3rem] pointer-events-none" />
-                  </motion.div>
-                </div>
               </div>
 
               {/* Section 2: System size */}
@@ -208,18 +197,18 @@ export default function SOLUTIONSProAI() {
 
               <div className="w-full p-16 md:p-24 rounded-[4rem] bg-gradient-to-b from-white/5 to-transparent border border-white/5 mt-0 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
-                <h4 className="text-2xl md:text-3xl font-medium text-slate-300 tracking-tighter mb-16 text-center">Implementation & support</h4>
+                <h4 className="text-2xl md:text-3xl font-medium text-slate-300 tracking-tighter mb-16 text-center">Implementation and support</h4>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24">
                   <div className="text-center md:text-left flex flex-col items-center md:items-start group">
-                    <h5 className="text-white font-medium text-lg mb-4 tracking-tight group-hover:text-blue-400 transition-colors">delivery to your door step</h5>
+                    <h5 className="text-white font-medium text-lg mb-4 tracking-tight group-hover:text-blue-400 transition-colors">Delivery to your doorstep</h5>
                     <p className="text-slate-500 text-sm leading-relaxed font-light">Safe, secure, and prompt physical logistics to your business location.</p>
                   </div>
                   <div className="text-center md:text-left flex flex-col items-center md:items-start group">
-                    <h5 className="text-white font-medium text-lg mb-4 tracking-tight group-hover:text-blue-400 transition-colors">white glove setup and technology support experience</h5>
+                    <h5 className="text-white font-medium text-lg mb-4 tracking-tight group-hover:text-blue-400 transition-colors">White glove setup and technology support</h5>
                     <p className="text-slate-500 text-sm leading-relaxed font-light">End-to-engineering deployment and strategic onboarding tailored to your workflow.</p>
                   </div>
                   <div className="text-center md:text-left flex flex-col items-center md:items-start group">
-                    <h5 className="text-white font-medium text-lg mb-4 tracking-tight group-hover:text-blue-400 transition-colors">transparent ongoing support costs</h5>
+                    <h5 className="text-white font-medium text-lg mb-4 tracking-tight group-hover:text-blue-400 transition-colors">Transparent ongoing support costs</h5>
                     <p className="text-slate-500 text-sm leading-relaxed font-light">No hidden fees. Absolute clarity on every future engagement with our technical team.</p>
                   </div>
                 </div>

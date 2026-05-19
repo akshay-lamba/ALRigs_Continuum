@@ -12,9 +12,9 @@ export default function SOLUTIONSTransparencyAI() {
       <div className="mb-12">
         <button 
           onClick={() => navigate('/solutions')}
-          className="flex items-center text-slate-500 hover:text-blue-500 font-semibold tracking-widest text-xs uppercase transition-colors relative z-10"
+          className="flex items-center text-slate-500 hover:text-blue-500 font-semibold tracking-widest text-xs transition-colors relative z-10"
         >
-          <ArrowLeft className="w-4 h-4 mr-2" /> Back to SOLUTIONS
+          <ArrowLeft className="w-4 h-4 mr-2" /> back to solutions
         </button>
       </div>
 
@@ -57,7 +57,7 @@ export default function SOLUTIONSTransparencyAI() {
             {/* Subtle Label */}
             <div className="mt-8 flex items-center justify-center gap-3">
               <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-              <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em]">Integrated Intelligence View</span>
+              <span className="text-[10px] font-black text-slate-500 tracking-[0.4em]">integrated intelligence view</span>
             </div>
           </motion.div>
           
@@ -124,10 +124,10 @@ export default function SOLUTIONSTransparencyAI() {
           />
 
           <div className="relative z-10 flex flex-col items-center">
-            <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase mb-2 group-hover/download:text-blue-500 transition-colors duration-700">
+            <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-2 group-hover/download:text-blue-500 transition-colors duration-700">
               Download brochure here.
             </h3>
-            <p className="text-[10px] font-black text-blue-500/60 uppercase tracking-[0.5em] mb-12">
+            <p className="text-[10px] font-black text-blue-500/60 tracking-[0.5em] mb-12">
               State AI Deployment Framework
             </p>
             
@@ -135,7 +135,7 @@ export default function SOLUTIONSTransparencyAI() {
               href="https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_39242c6d9c5544a4940b06effb1a865f.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group/btn relative px-12 py-5 bg-white font-black text-[10px] text-black uppercase tracking-[0.6em] rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl"
+              className="group/btn relative px-12 py-5 bg-white font-black text-[10px] text-black tracking-[0.6em] rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl"
             >
               <span className="relative z-10">Access Document</span>
               <div className="absolute inset-0 bg-blue-500 -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500" />
