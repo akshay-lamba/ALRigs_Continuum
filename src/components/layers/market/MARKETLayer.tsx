@@ -16,7 +16,8 @@ export default function MARKETLayer() {
       image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=2800&q=80",
       desc: "Sovereign intelligence empowering the leading economy.",
       flag: "🇺🇸",
-      color: "from-blue-600/20"
+      color: "from-blue-600/20",
+      isIncoming: true
     },
     {
       name: "United Kingdom",
@@ -25,7 +26,8 @@ export default function MARKETLayer() {
       image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2800&q=80",
       desc: "Governance, compliance and tradition meeting future tech.",
       flag: "🇬🇧",
-      color: "from-red-600/20"
+      color: "from-red-600/20",
+      isIncoming: true
     },
     {
       name: "Middle East",
@@ -34,7 +36,8 @@ export default function MARKETLayer() {
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=2800&q=80",
       desc: "Rapid modernization fueled by secure AI capabilities.",
       flag: "🇦🇪",
-      color: "from-emerald-600/20"
+      color: "from-emerald-600/20",
+      isIncoming: false
     },
     {
       name: "India",
@@ -43,7 +46,8 @@ export default function MARKETLayer() {
       image: "https://images.unsplash.com/photo-1524230659092-07f99a75c013?auto=format&fit=crop&w=2800&q=80",
       desc: "Digital acceleration at population scale.",
       flag: "🇮🇳",
-      color: "from-orange-500/20"
+      color: "from-orange-500/20",
+      isIncoming: false
     },
     {
       name: "Africa",
@@ -52,7 +56,8 @@ export default function MARKETLayer() {
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=2800&q=80",
       desc: "The next frontier of human-centric technological growth.",
       flag: "🇿🇦",
-      color: "from-amber-600/20"
+      color: "from-amber-600/20",
+      isIncoming: true
     }
   ];
 
@@ -122,9 +127,11 @@ export default function MARKETLayer() {
                     </p>
                     
                     <div className="flex flex-col gap-4">
-                      <div className="flex items-center text-[10px] font-black text-blue-400 uppercase tracking-[0.3em] bg-blue-900/40 w-max px-3 py-1 rounded-full border border-blue-400/20 backdrop-blur-sm">
-                        Incoming 2026
-                      </div>
+                      {region.isIncoming && (
+                        <div className="flex items-center text-[10px] font-black text-blue-400 uppercase tracking-[0.3em] bg-blue-900/40 w-max px-3 py-1 rounded-full border border-blue-400/20 backdrop-blur-sm">
+                          Incoming 2026
+                        </div>
+                      )}
                       <div className="flex items-center text-xs font-bold text-blue-400 uppercase tracking-widest bg-blue-900/50 w-max px-4 py-2 hover:bg-blue-800/80 rounded-full border border-blue-400/30 backdrop-blur-md transition-all group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]">
                         View Market <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </div>
