@@ -34,9 +34,9 @@ export default function SOLUTIONSProAI() {
       <div className="mb-12">
         <button 
           onClick={() => navigate('/solutions')}
-          className="flex items-center text-slate-500 hover:text-blue-500 font-semibold tracking-widest text-xs uppercase transition-colors relative z-10"
+          className="flex items-center text-slate-500 hover:text-blue-500 font-semibold tracking-widest text-xs transition-colors relative z-10"
         >
-          <ArrowLeft className="w-4 h-4 mr-2" /> Back to SOLUTIONS
+          <ArrowLeft className="w-4 h-4 mr-2" /> back to solutions
         </button>
       </div>
 
@@ -77,7 +77,7 @@ export default function SOLUTIONSProAI() {
             {/* Subtle Label */}
             <div className="mt-8 flex items-center justify-center gap-3">
               <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-              <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em]">Integrated Intelligence View</span>
+              <span className="text-[10px] font-black text-slate-500 tracking-[0.4em]">integrated intelligence view</span>
             </div>
           </motion.div>
           
@@ -115,6 +115,126 @@ export default function SOLUTIONSProAI() {
           />
         </div>
 
+        {/* Pricing Section */}
+        <div className="w-full relative bg-neutral-950 border-t border-white/5 py-24 px-6 md:px-12 flex flex-col items-center overflow-hidden">
+          <div className="w-full max-w-6xl relative z-10 flex flex-col items-center">
+            
+            <div className="grid grid-cols-1 gap-20 w-full">
+              
+              {/* Section 1: The big idea */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-2xl md:text-3xl font-medium text-white tracking-tight mb-8">
+                    The big idea: stop renting, start owning
+                  </h3>
+                  <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
+                    <p>
+                      Most business software forces you into an endless loop of monthly subscriptions. You pay per employee, every single month, forever.
+                    </p>
+                    <p className="text-white font-medium">
+                      Pro AI is different. It is a one-time purchase.
+                    </p>
+                    <ul className="space-y-4 pt-4">
+                      <li className="flex gap-4">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-3 shrink-0" />
+                        <span><strong className="text-white font-semibold">You own it:</strong> You buy the system once, and it belongs to your business forever. There are AED 0 in recurring monthly software fees.</span>
+                      </li>
+                      <li className="flex gap-4">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-3 shrink-0" />
+                        <span><strong className="text-white font-semibold">Total privacy:</strong> All of your business files, customer data, and company knowledge stay safe inside your own office.</span>
+                      </li>
+                      <li className="flex gap-4">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-3 shrink-0" />
+                        <span><strong className="text-white font-semibold">No subscription fatigue:</strong> You get all the power of modern AI without another monthly bill eating into your cash flow.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </motion.div>
+                <div className="perspective-1000 flex justify-center w-full">
+                  <motion.div 
+                    whileHover={{ scale: 1.01 }}
+                    className="relative w-full aspect-[16/10] rounded-[3rem] overflow-hidden group shadow-2xl transition-all duration-700 bg-neutral-900/50 border border-white/5"
+                  >
+                    <img 
+                      src="https://static.wixstatic.com/media/b20068_e10e35105f184034a2ed7dddb7b9a16a~mv2.jpeg"
+                      alt="Sovereign AI Hardware"
+                      className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-1000"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+                    <div className="absolute inset-0 border border-white/10 rounded-[3rem] pointer-events-none" />
+                  </motion.div>
+                </div>
+              </div>
+
+              {/* Section 2: System size */}
+              <div className="w-full">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {[
+                    { line1: "Pro AI", line2: "Nano", staff: "up to 100 employees", price: "AED 49,999", best: "Small offices and local retail businesses" },
+                    { line1: "Pro AI", line2: "Standard", staff: "up to 300 employees", price: "AED 99,999", best: "Growing businesses automating daily tasks", glow: true },
+                    { line1: "Pro AI", line2: "Platinum", staff: "up to 500 employees", price: "AED 199,999", best: "Larger companies handling heavy workloads" }
+                  ].map((pkg, i) => (
+                    <motion.div 
+                      key={i}
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      className={`relative p-10 rounded-[2.5rem] border flex flex-col justify-between h-[500px] transition-all duration-700 ${pkg.glow ? 'bg-blue-600/10 border-blue-500/30 shadow-[0_40px_80px_-20px_rgba(59,130,246,0.2)]' : 'bg-white/[0.03] border-white/10 shadow-xl'}`}
+                    >
+                      {pkg.glow && (
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-500/90 backdrop-blur-md py-1.5 px-5 rounded-full text-[10px] font-bold text-white shadow-xl">
+                          most popular
+                        </div>
+                      )}
+                      <div>
+                        <div className="text-[10px] font-bold text-blue-500 tracking-widest mb-10">{pkg.staff}</div>
+                        <h4 className="text-4xl md:text-5xl font-light text-white tracking-tighter leading-[0.9] mb-4">
+                          {pkg.line1}<br />
+                          <span className="font-medium text-blue-100">{pkg.line2}</span>
+                        </h4>
+                      </div>
+                      <div className="mt-auto">
+                        <div className="text-3xl font-medium text-white mb-8 tracking-tighter">{pkg.price}</div>
+                        <div className="text-sm text-slate-500 font-light border-t border-white/10 pt-8 leading-relaxed italic">
+                          {pkg.best}
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="w-full p-16 md:p-24 rounded-[4rem] bg-gradient-to-b from-white/5 to-transparent border border-white/5 mt-0 shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
+                <h4 className="text-2xl md:text-3xl font-medium text-slate-300 tracking-tighter mb-16 text-center">Implementation & support</h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24">
+                  <div className="text-center md:text-left flex flex-col items-center md:items-start group">
+                    <h5 className="text-white font-medium text-lg mb-4 tracking-tight group-hover:text-blue-400 transition-colors">delivery to your door step</h5>
+                    <p className="text-slate-500 text-sm leading-relaxed font-light">Safe, secure, and prompt physical logistics to your business location.</p>
+                  </div>
+                  <div className="text-center md:text-left flex flex-col items-center md:items-start group">
+                    <h5 className="text-white font-medium text-lg mb-4 tracking-tight group-hover:text-blue-400 transition-colors">white glove setup and technology support experience</h5>
+                    <p className="text-slate-500 text-sm leading-relaxed font-light">End-to-engineering deployment and strategic onboarding tailored to your workflow.</p>
+                  </div>
+                  <div className="text-center md:text-left flex flex-col items-center md:items-start group">
+                    <h5 className="text-white font-medium text-lg mb-4 tracking-tight group-hover:text-blue-400 transition-colors">transparent ongoing support costs</h5>
+                    <p className="text-slate-500 text-sm leading-relaxed font-light">No hidden fees. Absolute clarity on every future engagement with our technical team.</p>
+                  </div>
+                </div>
+                <div className="mt-20 pt-12 border-t border-white/5 text-center">
+                  <p className="text-slate-400 text-sm font-medium tracking-wide">
+                    Sovereign intelligence backed by local engineering excellence. We showcase real business value through every installation.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
         {/* Section 5: Resource Download - Minimalist */}
         <div className="w-full relative bg-neutral-900 py-20 px-8 flex flex-col items-center justify-center text-center border-t border-white/5 overflow-hidden group/download">
           {/* Amazing Sliding Graphic */}
@@ -144,49 +264,72 @@ export default function SOLUTIONSProAI() {
           />
 
           <div className="relative z-10 flex flex-col items-center w-full max-w-4xl mx-auto">
-            <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase mb-2 group-hover/download:text-blue-500 transition-colors duration-700">
-              Access intelligence.
-            </h3>
-            <p className="text-[10px] font-black text-blue-500/60 uppercase tracking-[0.5em] mb-12">
-              Pro AI Technical Specifications & Insights
-            </p>
-            
-            <div className="flex flex-wrap items-center justify-center gap-6 w-full">
-              {/* ARC Engine Card */}
-              <a 
-                href="https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_a2476c1ee7e54b939da6d181780c27d7.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/card relative w-48 h-48 md:w-56 md:h-56 bg-white/[0.02] border border-white/5 rounded-3xl md:rounded-[2.5rem] flex flex-col items-center justify-center p-8 transition-all duration-500 hover:bg-white/[0.05] hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(59,130,246,0.3)]"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 border border-blue-500/20 group-hover/card:scale-110 transition-transform duration-500">
-                   <Download className="w-6 h-6 text-blue-400" />
-                </div>
-                <span className="text-sm md:text-base text-white text-center leading-tight">
-                  The ARC Engine
-                </span>
-                
-                {/* Decorative corner */}
-                <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-blue-500/20 group-hover/card:bg-blue-500 transition-colors" />
-              </a>
+            <div className="flex flex-col items-center gap-16 w-full">
+              {/* Row 1: PDF Resources */}
+              <div className="flex flex-wrap items-center justify-center gap-8 w-full">
+                {/* ARC Engine Card */}
+                <a 
+                  href="https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_a2476c1ee7e54b939da6d181780c27d7.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/card relative w-48 h-48 md:w-56 md:h-56 bg-white/[0.02] border border-white/5 rounded-3xl md:rounded-[2.5rem] flex flex-col items-center justify-center p-8 transition-all duration-500 hover:bg-white/[0.05] hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(59,130,246,0.3)]"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 border border-blue-500/20 group-hover/card:scale-110 transition-transform duration-500">
+                     <Download className="w-6 h-6 text-blue-400" />
+                   </div>
+                  <span className="text-sm md:text-base text-white text-center leading-tight">
+                    the arc engine
+                  </span>
+                  
+                  {/* Decorative corner */}
+                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-blue-500/20 group-hover/card:bg-blue-500 transition-colors" />
+                </a>
 
-              {/* Insights Layer Card */}
-              <a 
-                href="https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_08b3abfeb9a84a018ed00777ca7e1495.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/card relative w-48 h-48 md:w-56 md:h-56 bg-white/[0.02] border border-white/5 rounded-3xl md:rounded-[2.5rem] flex flex-col items-center justify-center p-8 transition-all duration-500 hover:bg-white/[0.05] hover:border-indigo-500/50 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(99,102,241,0.3)]"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 flex items-center justify-center mb-6 border border-indigo-500/20 group-hover/card:scale-110 transition-transform duration-500">
-                   <Download className="w-6 h-6 text-indigo-400" />
-                </div>
-                <span className="text-sm md:text-base text-white text-center leading-tight">
-                  The Insights Layer
-                </span>
+                {/* Insights Layer Card */}
+                <a 
+                  href="https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_08b3abfeb9a84a018ed00777ca7e1495.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/card relative w-48 h-48 md:w-56 md:h-56 bg-white/[0.02] border border-white/5 rounded-3xl md:rounded-[2.5rem] flex flex-col items-center justify-center p-8 transition-all duration-500 hover:bg-white/[0.05] hover:border-indigo-500/50 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(99,102,241,0.3)]"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 flex items-center justify-center mb-6 border border-indigo-500/20 group-hover/card:scale-110 transition-transform duration-500">
+                     <Download className="w-6 h-6 text-indigo-400" />
+                   </div>
+                  <span className="text-sm md:text-base text-white text-center leading-tight">
+                    the insights layer
+                  </span>
 
-                {/* Decorative corner */}
-                <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-indigo-500/20 group-hover/card:bg-indigo-500 transition-colors" />
-              </a>
+                  {/* Decorative corner */}
+                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-indigo-500/20 group-hover/card:bg-indigo-500 transition-colors" />
+                </a>
+              </div>
+
+              {/* Row 2: Support Credits */}
+              <div className="flex flex-wrap items-center justify-center gap-8 w-full">
+                {/* Single Ticket - Integration */}
+                <div className="group/card relative w-48 h-48 md:w-56 md:h-56 bg-white/[0.02] border border-white/5 rounded-3xl md:rounded-[2.5rem] flex flex-col items-center justify-center p-8 transition-all duration-500 hover:bg-white/[0.05] hover:border-slate-500/50 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(200,200,200,0.1)]">
+                  <div className="text-2xl font-bold text-white mb-2 leading-none tracking-tighter">AED 5,000</div>
+                  <span className="text-xs text-slate-400 tracking-widest font-bold mb-4">single credit</span>
+                  <p className="text-[10px] text-slate-500 text-center leading-tight">individual software task or upgrade</p>
+                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-slate-500/20 group-hover/card:bg-slate-400 transition-colors" />
+                </div>
+
+                {/* Ticket Bundle - Integration */}
+                <div className="group/card relative w-48 h-48 md:w-56 md:h-56 bg-white/[0.02] border border-white/5 rounded-3xl md:rounded-[2.5rem] flex flex-col items-center justify-center p-8 transition-all duration-500 hover:bg-white/[0.05] hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(59,130,246,0.3)]">
+                  <div className="text-2xl font-bold text-white mb-2 leading-none tracking-tighter">AED 22,500</div>
+                  <span className="text-xs text-blue-400 tracking-widest font-bold mb-4">5 credits bundle</span>
+                  <p className="text-[10px] text-slate-500 text-center leading-tight">software upgrades, tasks & connections</p>
+                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-blue-500/20 group-hover/card:bg-blue-500 transition-colors" />
+                </div>
+
+                {/* Ticket Enterprise - Integration */}
+                <div className="group/card relative w-48 h-48 md:w-56 md:h-56 bg-white/[0.02] border border-white/5 rounded-3xl md:rounded-[2.5rem] flex flex-col items-center justify-center p-8 transition-all duration-500 hover:bg-white/[0.05] hover:border-indigo-500/50 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(99,102,241,0.3)]">
+                  <div className="text-2xl font-bold text-white mb-2 leading-none tracking-tighter">AED 40,000</div>
+                  <span className="text-xs text-indigo-400 tracking-widest font-bold mb-4">10 credits bundle</span>
+                  <p className="text-[10px] text-slate-500 text-center leading-tight">strategic on-demand engineering</p>
+                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-indigo-500/20 group-hover/card:bg-indigo-500 transition-colors" />
+                </div>
+              </div>
             </div>
           </div>
 
