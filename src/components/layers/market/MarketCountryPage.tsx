@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Globe2 } from "lucide-react";
+import { ArrowLeft, Globe2, Download } from "lucide-react";
 import { motion } from "motion/react";
 
 interface MarketCountryPageProps {
@@ -64,7 +64,134 @@ export default function MarketCountryPage({ countryName, flag }: MarketCountryPa
                 ALRigs | Intelligence | Humanely
              </p>
           </div>
+
+          {countryName === "Middle East" && (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="mt-12"
+            >
+               <a 
+                 href="https://b2006858-57c1-480a-9730-8e9f2057acb9.usrfiles.com/ugd/b20068_74fd473fedf14ed2aadf5b11b97bc308.pdf"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="group inline-flex items-center gap-3 px-8 py-4 bg-white/10 border border-white/20 rounded-full hover:bg-blue-600 hover:border-blue-500 hover:text-white transition-all duration-500 shadow-xl backdrop-blur-md"
+               >
+                 <Download className="w-4 h-4 text-blue-400 group-hover:text-white transition-colors" />
+                 <span className="text-[10px] font-black uppercase tracking-[0.25em]">Pro AI Pricing Details</span>
+               </a>
+            </motion.div>
+          )}
         </motion.div>
+
+        {/* Middle East Specific Content: Big Idea, Pricing, Implementation */}
+        {countryName === "Middle East" && (
+          <div className="w-full max-w-6xl mx-auto mb-24 px-6">
+            <div className="grid grid-cols-1 gap-24 w-full">
+              
+              {/* Section 1: The big idea */}
+              <div className="max-w-4xl mx-auto w-full text-left">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-xl md:text-2xl font-medium text-white tracking-tight mb-8">
+                    The big idea: stop renting, start owning
+                  </h3>
+                  <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
+                    <p>
+                      <strong className="text-white">Most business software never stops charging you.</strong>
+                    </p>
+                    <p>
+                      Every month, another bill lands. Then another. It adds up fast, and you never actually own anything.
+                    </p>
+                    <p className="text-white font-medium">
+                      Pro AI is different. You buy it once, and it is yours forever.
+                    </p>
+                    <ul className="space-y-6 pt-4">
+                      <li className="flex gap-4">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-3 shrink-0" />
+                        <span><strong className="text-white font-semibold">You own it.</strong> One payment and the system belongs to your business permanently. No monthly fees, no per-employee charges, no contracts to renegotiate.</span>
+                      </li>
+                      <li className="flex gap-4">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-3 shrink-0" />
+                        <span><strong className="text-white font-semibold">Your whole team moves faster.</strong> Tasks that used to take hours get done in minutes. Your people stop wasting time on repetitive work and start focusing on things that actually grow your business.</span>
+                      </li>
+                      <li className="flex gap-4">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-3 shrink-0" />
+                        <span><strong className="text-white font-semibold">No bill surprises, ever.</strong> One predictable cost covers everything — updates, new tools, fixes, and improvements. No shock when you hire someone new, and no price hikes when the vendor feels like it.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Section 2: Pricing Cards */}
+              <div className="w-full">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {[
+                    { line1: "Pro AI", line2: "Nano", staff: "up to 100 employees", price: "AED 49,999", best: "Small offices and local retail businesses" },
+                    { line1: "Pro AI", line2: "Standard", staff: "up to 300 employees", price: "AED 99,999", best: "Growing businesses automating daily tasks", glow: true },
+                    { line1: "Pro AI", line2: "Platinum", staff: "up to 500 employees", price: "AED 199,999", best: "Larger companies handling heavy workloads" }
+                  ].map((pkg, i) => (
+                    <motion.div 
+                      key={i}
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      className={`relative p-10 rounded-[2.5rem] border flex flex-col justify-between h-[500px] transition-all duration-700 ${pkg.glow ? 'bg-blue-600/10 border-blue-500/30 shadow-[0_40px_80px_-20px_rgba(59,130,246,0.2)]' : 'bg-white/[0.03] border-white/10 shadow-xl'}`}
+                    >
+                      {pkg.glow && (
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-500/90 backdrop-blur-md py-1.5 px-5 rounded-full text-[10px] font-bold text-white shadow-xl">
+                          most popular
+                        </div>
+                      )}
+                      <div>
+                        <div className="text-[10px] font-bold text-blue-500 tracking-widest mb-10 text-left">{pkg.staff}</div>
+                        <h4 className="text-4xl md:text-5xl font-light text-white tracking-tighter leading-[0.9] mb-4 text-left font-serif">
+                          {pkg.line1}<br />
+                          <span className="font-medium text-blue-100">{pkg.line2}</span>
+                        </h4>
+                      </div>
+                      <div className="mt-auto text-left">
+                        <div className="text-3xl font-medium text-white mb-8 tracking-tighter">{pkg.price}</div>
+                        <div className="text-sm text-slate-500 font-light border-t border-white/10 pt-8 leading-relaxed italic">
+                          {pkg.best}
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Section 3: Implementation */}
+              <div className="w-full p-12 md:p-16 rounded-[3rem] bg-gradient-to-b from-white/5 to-transparent border border-white/5 shadow-2xl relative overflow-hidden text-left">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
+                <h4 className="text-xl md:text-2xl font-medium text-slate-300 tracking-tighter mb-12 text-center">Implementation and support</h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                  <div className="flex flex-col items-start group">
+                    <h5 className="text-white font-medium text-lg mb-3 tracking-tight group-hover:text-blue-400 transition-colors">Delivery to your doorstep</h5>
+                    <p className="text-slate-500 text-sm leading-relaxed font-light">Safe, secure, and prompt physical logistics to your business location.</p>
+                  </div>
+                  <div className="flex flex-col items-start group">
+                    <h5 className="text-white font-medium text-lg mb-3 tracking-tight group-hover:text-blue-400 transition-colors">White glove setup and technology support</h5>
+                    <p className="text-slate-500 text-sm leading-relaxed font-light">End-to-engineering deployment and strategic onboarding tailored to your workflow.</p>
+                  </div>
+                  <div className="flex flex-col items-start group">
+                    <h5 className="text-white font-medium text-lg mb-3 tracking-tight group-hover:text-blue-400 transition-colors">Transparent ongoing support costs</h5>
+                    <p className="text-slate-500 text-sm leading-relaxed font-light">No hidden fees. Absolute clarity on every future engagement with our technical team.</p>
+                  </div>
+                </div>
+                <div className="mt-12 pt-10 border-t border-white/5 text-center">
+                  <p className="text-slate-400 text-xs font-medium tracking-wide">
+                    Sovereign intelligence backed by local engineering excellence. We showcase real business value through every installation.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        )}
 
         {/* 3D Perspective Global Map */}
         <motion.div 
@@ -194,6 +321,46 @@ export default function MarketCountryPage({ countryName, flag }: MarketCountryPa
           <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[90%] h-32 bg-blue-500/10 blur-[100px] rounded-full mix-blend-screen pointer-events-none opacity-50" />
         </motion.div>
 
+        {/* Global Support Credits Section - Only for Middle East */}
+        {countryName === "Middle East" && (
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="w-full mt-32 mb-20"
+          >
+            <div className="text-center mb-16">
+              <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase mb-2">Pro AI Support Integration</h3>
+              <p className="text-[10px] font-black text-blue-500/60 uppercase tracking-[0.4em]">Strategic Credits for Regional Growth</p>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-8 w-full">
+              {/* Single Ticket - Integration */}
+              <div className="group/card relative w-48 h-48 md:w-56 md:h-56 bg-white/[0.02] border border-white/5 rounded-3xl md:rounded-[2.5rem] flex flex-col items-center justify-center p-8 transition-all duration-500 hover:bg-white/[0.05] hover:border-slate-500/50 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(200,200,200,0.1)]">
+                <div className="text-2xl font-bold text-white mb-2 leading-none tracking-tighter">AED 5,000</div>
+                <span className="text-xs text-slate-400 tracking-widest font-bold mb-4 uppercase">single credit</span>
+                <p className="text-[10px] text-slate-500 text-center leading-tight">individual software task or upgrade</p>
+                <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-slate-500/20 group-hover/card:bg-slate-400 transition-colors" />
+              </div>
+
+              {/* Ticket Bundle - Integration */}
+              <div className="group/card relative w-48 h-48 md:w-56 md:h-56 bg-white/[0.02] border border-white/5 rounded-3xl md:rounded-[2.5rem] flex flex-col items-center justify-center p-8 transition-all duration-500 hover:bg-white/[0.05] hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(59,130,246,0.3)]">
+                <div className="text-2xl font-bold text-white mb-2 leading-none tracking-tighter">AED 22,500</div>
+                <span className="text-xs text-blue-400 tracking-widest font-bold mb-4 uppercase">5 credits bundle</span>
+                <p className="text-[10px] text-slate-500 text-center leading-tight">software upgrades, tasks & connections</p>
+                <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-blue-500/20 group-hover/card:bg-blue-500 transition-colors" />
+              </div>
+
+              {/* Ticket Enterprise - Integration */}
+              <div className="group/card relative w-48 h-48 md:w-56 md:h-56 bg-white/[0.02] border border-white/5 rounded-3xl md:rounded-[2.5rem] flex flex-col items-center justify-center p-8 transition-all duration-500 hover:bg-white/[0.05] hover:border-indigo-500/50 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(99,102,241,0.3)]">
+                <div className="text-2xl font-bold text-white mb-2 leading-none tracking-tighter">AED 40,000</div>
+                <span className="text-xs text-indigo-400 tracking-widest font-bold mb-4 uppercase">10 credits bundle</span>
+                <p className="text-[10px] text-slate-500 text-center leading-tight">strategic on-demand engineering</p>
+                <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-indigo-500/20 group-hover/card:bg-indigo-500 transition-colors" />
+              </div>
+            </div>
+          </motion.div>
+        )}
       </div>
     </div>
   );
