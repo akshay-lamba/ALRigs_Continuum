@@ -19,7 +19,18 @@ export default function TRUSTLayer() {
       {/* Background glow */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[40vh] bg-blue-900/10 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6 pt-24">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6 pt-12 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-[10px] font-black uppercase tracking-[0.4em] mb-0"
+        >
+          <ShieldCheck className="w-4 h-4" /> Compliance by Transparency
+        </motion.div>
+      </div>
+
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6 pt-12">
         
         {/* Header */}
         <motion.div 
@@ -28,9 +39,6 @@ export default function TRUSTLayer() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-[10px] font-black uppercase tracking-[0.4em] mb-8">
-            <ShieldCheck className="w-4 h-4" /> Compliance by Transparency
-          </div>
           <h1 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase mb-6 leading-none">
             Trust & Legal
           </h1>

@@ -20,13 +20,13 @@ export default function MARKETLayer() {
       isIncoming: true
     },
     {
-      name: "United Kingdom",
-      fullName: "United Kingdom",
-      path: "/market/uk",
-      image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2800&q=80",
-      desc: "Governance, compliance and tradition meeting future tech.",
-      flag: "🇬🇧",
-      color: "from-red-600/20",
+      name: "Australia",
+      fullName: "Commonwealth of Australia",
+      path: "/market/australia",
+      image: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=2800&q=80",
+      desc: "Governance, transparency and innovation meeting the Pacific frontier.",
+      flag: "🇦🇺",
+      color: "from-blue-600/20",
       isIncoming: true
     },
     {

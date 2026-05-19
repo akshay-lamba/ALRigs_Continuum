@@ -82,10 +82,10 @@ const AfricaMarket = () => (
   />
 );
 
-const UKMarket = () => (
+const AustraliaMarket = () => (
   <MarketCountryPage 
-    countryName="United Kingdom" 
-    flag="🇬🇧" 
+    countryName="Australia" 
+    flag="🇦🇺" 
   />
 );
 
@@ -175,7 +175,7 @@ export default function App() {
             <Route path="/market/india" element={<IndiaMarket />} />
             <Route path="/market/middle-east" element={<MEMarket />} />
             <Route path="/market/africa" element={<AfricaMarket />} />
-            <Route path="/market/uk" element={<UKMarket />} />
+            <Route path="/market/australia" element={<AustraliaMarket />} />
             <Route path="/market/sovereignty" element={<MARKETSovereigntyShift />} />
             <Route path="/market/industries" element={<MARKETIndustriesWeAreIn />} />
             <Route path="/market/partners" element={<MARKETStrategicPartners />} />
