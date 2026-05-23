@@ -36,6 +36,7 @@ import INTELLIGENCETheScience from './components/layers/intelligence/INTELLIGENC
 import INTELLIGENCEPerformanceData from './components/layers/intelligence/INTELLIGENCEPerformanceData';
 import MARKETLayer from './components/layers/market/MARKETLayer';
 import MarketCountryPage from './components/layers/market/MarketCountryPage';
+import MarketSectorPage from './components/layers/market/MarketSectorPage';
 import MARKETSovereigntyShift from './components/layers/market/MARKETSovereigntyShift';
 import MARKETIndustriesWeAreIn from './components/layers/market/MARKETIndustriesWeAreIn';
 import MARKETStrategicPartners from './components/layers/market/MARKETStrategicPartners';
@@ -174,6 +175,7 @@ export default function App() {
             <Route path="/market/usa" element={<USAMarket />} />
             <Route path="/market/india" element={<IndiaMarket />} />
             <Route path="/market/middle-east" element={<MEMarket />} />
+            <Route path="/market/middle-east/:sectorId" element={<MarketSectorPage />} />
             <Route path="/market/africa" element={<AfricaMarket />} />
             <Route path="/market/australia" element={<AustraliaMarket />} />
             <Route path="/market/sovereignty" element={<MARKETSovereigntyShift />} />

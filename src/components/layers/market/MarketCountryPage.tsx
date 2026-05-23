@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Globe2, Download } from "lucide-react";
+import { ArrowLeft, Globe2, Download, Shield, GraduationCap, ShoppingBag, Wrench, Truck, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 
 interface MarketCountryPageProps {
@@ -125,6 +125,152 @@ export default function MarketCountryPage({ countryName, flag }: MarketCountryPa
                       </li>
                     </ul>
                   </div>
+                </motion.div>
+              </div>
+
+              {/* Section 1.5: The Evergreen Economy - 5 Sector Cards */}
+              <div className="w-full text-left">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="mb-12">
+                     <span className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-3 block">
+                        Core Sector Anchors
+                     </span>
+                     <h3 className="text-2xl md:text-3xl font-medium text-white tracking-tight mb-6">
+                        Targeting the "Evergreen Economy"
+                     </h3>
+                     <div className="space-y-6 text-slate-400 text-lg leading-relaxed max-w-4xl">
+                        <p>
+                          You are making a brilliant strategic pivot. Chasing crisis sectors is great for immediate, desperate sales, but if you want to build an unshakable foundation for ALRigs Pro AI, you need to anchor into the <strong className="text-white">"Evergreen Economy."</strong> These are the businesses that provide non-discretionary services. No matter if there is a war, inflation, or a market crash, people in Dubai still get sick, children still need schooling, families still need groceries, and buildings still need AC.
+                        </p>
+                        <p>
+                          These sectors have steady revenue, but they are suffocated by administrative bloat, strict government regulations, and rising operational costs. Here are the top 5 evergreen, recession-proof sectors to target, and exactly how Pro AI solves their permanent pain points:
+                        </p>
+                     </div>
+                  </div>
+
+                  {/* 5 Sector Cards */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+                     {[
+                       { 
+                         id: "healthcare", 
+                         title: "Private Healthcare, Clinics & Pharmacies", 
+                         desc: "Patient privacy under DHA microscope.", 
+                         icon: Shield,
+                         color: "group-hover:border-blue-500/50 group-hover:bg-blue-500/[0.02]" 
+                       },
+                       { 
+                         id: "education", 
+                         title: "Education (Schools & Training)", 
+                         desc: "Fixed annual budgets under subscription creep.", 
+                         icon: GraduationCap,
+                         color: "group-hover:border-indigo-500/50 group-hover:bg-indigo-500/[0.02]" 
+                       },
+                       { 
+                         id: "groceries", 
+                         title: "Essential Groceries & FMCG Distribution", 
+                         desc: "Razor-thin margins leaking physical inventory.", 
+                         icon: ShoppingBag,
+                         color: "group-hover:border-emerald-500/50 group-hover:bg-emerald-500/[0.02]" 
+                       },
+                       { 
+                         id: "facilities", 
+                         title: "Facilities Management", 
+                         desc: "Operational firefighting and blue-collar coordination.", 
+                         icon: Wrench,
+                         color: "group-hover:border-amber-500/50 group-hover:bg-amber-500/[0.02]" 
+                       },
+                       { 
+                         id: "logistics", 
+                         title: "Essential Logistics (Cold Chain)", 
+                         desc: "Delays ruining temperature-sensitive supplies.", 
+                         icon: Truck,
+                         color: "group-hover:border-purple-500/50 group-hover:bg-purple-500/[0.02]" 
+                       }
+                     ].map((sector) => {
+                       const IconComp = sector.icon;
+                       return (
+                         <div 
+                           key={sector.id}
+                           onClick={() => navigate(`/market/middle-east/${sector.id}`)}
+                           className={`group cursor-pointer p-8 rounded-[2rem] border border-white/5 bg-white/[0.01] transition-all duration-500 flex flex-col justify-between h-[300px] hover:-translate-y-2 hover:shadow-2xl ${sector.color}`}
+                         >
+                           <div>
+                             <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 group-hover:text-white transition-colors mb-6">
+                               <IconComp className="w-5 h-5" />
+                             </div>
+                             <h4 className="text-base font-bold text-white tracking-tight mb-2 group-hover:text-blue-400 transition-colors leading-snug">
+                               {sector.title}
+                             </h4>
+                             <p className="text-xs text-slate-500 font-light leading-relaxed">
+                               {sector.desc}
+                             </p>
+                           </div>
+                           <div className="flex items-center gap-1.5 text-[10px] text-blue-500 font-bold uppercase tracking-wider mt-4">
+                             <span>Explore Profile</span>
+                             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                           </div>
+                         </div>
+                       );
+                     })}
+                  </div>
+
+                  {/* Sector Summary Comparison Table */}
+                  <div className="mb-20">
+                     <h4 className="text-lg font-bold text-white tracking-tight mb-6">The Evergreen Strategy Summary</h4>
+                     <div className="overflow-x-auto w-full border border-white/5 rounded-3xl bg-white/[0.01] backdrop-blur-xl">
+                        <table className="min-w-full text-left border-collapse">
+                          <thead>
+                            <tr className="border-b border-white/10 bg-white/[0.02]">
+                              <th className="p-6 text-xs font-black uppercase tracking-wider text-slate-400">Essential Sector</th>
+                              <th className="p-6 text-xs font-black uppercase tracking-wider text-slate-400">The Unyielding Market Need</th>
+                              <th className="p-6 text-xs font-black uppercase tracking-wider text-slate-400">Why They Will Buy Pro AI</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-white/5">
+                            <tr>
+                              <td className="p-6 text-sm font-semibold text-white whitespace-nowrap">Healthcare & Clinics</td>
+                              <td className="p-6 text-sm text-slate-400">Medical Care & Privacy</td>
+                              <td className="p-6 text-sm text-slate-300 font-light">
+                                <strong className="text-blue-400 font-medium">Data Sovereignty:</strong> Private hardware ensures patient data never goes to the cloud.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td className="p-6 text-sm font-semibold text-white whitespace-nowrap font-sans">Education & Schools</td>
+                              <td className="p-6 text-sm text-slate-400">Mandatory Learning</td>
+                              <td className="p-6 text-sm text-slate-300 font-light">
+                                <strong className="text-blue-400 font-medium">AED 0 Monthly Fees:</strong> Saves fixed school budgets by eliminating SaaS subscriptions.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td className="p-6 text-sm font-semibold text-white whitespace-nowrap">Groceries & FMCG</td>
+                              <td className="p-6 text-sm text-slate-400">Daily Food Supply</td>
+                              <td className="p-6 text-sm text-slate-300 font-light">
+                                <strong className="text-blue-400 font-medium">Margin Protection:</strong> Plugs invisible leaks (wasted stock/labor) before they hit the bank.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td className="p-6 text-sm font-semibold text-white whitespace-nowrap font-sans font-sans">Facilities Management</td>
+                              <td className="p-6 text-sm text-slate-400 font-sans">Building Upkeep (AC/Water)</td>
+                              <td className="p-6 text-sm text-slate-300 font-light">
+                                <strong className="text-blue-400 font-medium font-sans">Automated Backend:</strong> Task tracking runs itself; invoices prep automatically when physical work is done.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td className="p-6 text-sm font-semibold text-white whitespace-nowrap">Essential Logistics</td>
+                              <td className="p-6 text-sm text-slate-400">Moving Food & Medicine</td>
+                              <td className="p-6 text-sm text-slate-300 font-light">
+                                <strong className="text-blue-400 font-medium">6th Sense Alerts:</strong> Predictive warnings stop minor delays from ruining critical shipments.
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                     </div>
+                  </div>
+
                 </motion.div>
               </div>
 
