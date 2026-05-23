@@ -113,7 +113,7 @@ export default function MarketSectorPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className={`relative p-12 md:p-16 rounded-[3rem] bg-gradient-to-b ${sector.themeColor} border border-white/5 shadow-2xl overflow-hidden`}
+          className={`relative p-6 sm:p-12 md:p-16 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-b ${sector.themeColor} border border-white/5 shadow-2xl overflow-hidden`}
         >
           {/* Subtle upper glow bar */}
           <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />

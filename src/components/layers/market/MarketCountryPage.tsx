@@ -143,7 +143,7 @@ export default function MarketCountryPage({ countryName, flag }: MarketCountryPa
                          <div 
                            key={sector.id}
                            onClick={() => navigate(`/market/middle-east/${sector.id}`)}
-                           className={`group cursor-pointer p-8 rounded-[2rem] border border-white/5 bg-white/[0.01] transition-all duration-500 flex flex-col justify-between h-[300px] hover:-translate-y-2 hover:shadow-2xl ${sector.color}`}
+                           className={`group cursor-pointer p-6 sm:p-8 rounded-[2rem] border border-white/5 bg-white/[0.01] transition-all duration-500 flex flex-col justify-between min-h-[295px] h-auto hover:-translate-y-2 hover:shadow-2xl ${sector.color}`}
                          >
                            <div>
                              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 group-hover:text-white transition-colors mb-6">

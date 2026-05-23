@@ -114,7 +114,7 @@ export default function App() {
   const location = useLocation();
 
   useEffect(() => {
-    document.title = "ALRigs Continuum | Intelligence Exclusively Owned By You";
+    document.title = "ALRigs Continuum";
   }, [location.pathname]);
 
   return (
