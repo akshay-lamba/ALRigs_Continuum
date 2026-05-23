@@ -90,43 +90,7 @@ export default function MarketCountryPage({ countryName, flag }: MarketCountryPa
           <div className="w-full max-w-6xl mx-auto mb-24 px-6">
             <div className="grid grid-cols-1 gap-24 w-full">
               
-              {/* Section 1: The big idea */}
-              <div className="max-w-4xl mx-auto w-full text-left">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                >
-                  <h3 className="text-xl md:text-2xl font-medium text-white tracking-tight mb-8">
-                    The big idea: stop renting, start owning
-                  </h3>
-                  <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
-                    <p>
-                      <strong className="text-white">Most business software never stops charging you.</strong>
-                    </p>
-                    <p>
-                      Every month, another bill lands. Then another. It adds up fast, and you never actually own anything.
-                    </p>
-                    <p className="text-white font-medium">
-                      Pro AI is different. You buy it once, and it is yours forever.
-                    </p>
-                    <ul className="space-y-6 pt-4">
-                      <li className="flex gap-4">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-3 shrink-0" />
-                        <span><strong className="text-white font-semibold">You own it.</strong> One payment and the system belongs to your business permanently. No monthly fees, no per-employee charges, no contracts to renegotiate.</span>
-                      </li>
-                      <li className="flex gap-4">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-3 shrink-0" />
-                        <span><strong className="text-white font-semibold">Your whole team moves faster.</strong> Tasks that used to take hours get done in minutes. Your people stop wasting time on repetitive work and start focusing on things that actually grow your business.</span>
-                      </li>
-                      <li className="flex gap-4">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-3 shrink-0" />
-                        <span><strong className="text-white font-semibold">No bill surprises, ever.</strong> One predictable cost covers everything — updates, new tools, fixes, and improvements. No shock when you hire someone new, and no price hikes when the vendor feels like it.</span>
-                      </li>
-                    </ul>
-                  </div>
-                </motion.div>
-              </div>
+
 
               {/* Section 1.5: The Evergreen Economy - 5 Sector Cards */}
               <div className="w-full text-left">
@@ -135,23 +99,6 @@ export default function MarketCountryPage({ countryName, flag }: MarketCountryPa
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                 >
-                  <div className="mb-12">
-                     <span className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-3 block">
-                        Core Sector Anchors
-                     </span>
-                     <h3 className="text-2xl md:text-3xl font-medium text-white tracking-tight mb-6">
-                        Targeting the "Evergreen Economy"
-                     </h3>
-                     <div className="space-y-6 text-slate-400 text-lg leading-relaxed max-w-4xl">
-                        <p>
-                          You are making a brilliant strategic pivot. Chasing crisis sectors is great for immediate, desperate sales, but if you want to build an unshakable foundation for ALRigs Pro AI, you need to anchor into the <strong className="text-white">"Evergreen Economy."</strong> These are the businesses that provide non-discretionary services. No matter if there is a war, inflation, or a market crash, people in Dubai still get sick, children still need schooling, families still need groceries, and buildings still need AC.
-                        </p>
-                        <p>
-                          These sectors have steady revenue, but they are suffocated by administrative bloat, strict government regulations, and rising operational costs. Here are the top 5 evergreen, recession-proof sectors to target, and exactly how Pro AI solves their permanent pain points:
-                        </p>
-                     </div>
-                  </div>
-
                   {/* 5 Sector Cards */}
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
                      {[
@@ -220,14 +167,13 @@ export default function MarketCountryPage({ countryName, flag }: MarketCountryPa
 
                   {/* Sector Summary Comparison Table */}
                   <div className="mb-20">
-                     <h4 className="text-lg font-bold text-white tracking-tight mb-6">The Evergreen Strategy Summary</h4>
                      <div className="overflow-x-auto w-full border border-white/5 rounded-3xl bg-white/[0.01] backdrop-blur-xl">
                         <table className="min-w-full text-left border-collapse">
                           <thead>
                             <tr className="border-b border-white/10 bg-white/[0.02]">
                               <th className="p-6 text-xs font-black uppercase tracking-wider text-slate-400">Essential Sector</th>
-                              <th className="p-6 text-xs font-black uppercase tracking-wider text-slate-400">The Unyielding Market Need</th>
-                              <th className="p-6 text-xs font-black uppercase tracking-wider text-slate-400">Why They Will Buy Pro AI</th>
+                              <th className="p-6 text-xs font-black uppercase tracking-wider text-slate-400">Focus</th>
+                              <th className="p-6 text-xs font-black uppercase tracking-wider text-slate-400">Key Feature</th>
                             </tr>
                           </thead>
                           <tbody className="divide-y divide-white/5">
