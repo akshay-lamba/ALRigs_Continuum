@@ -1,6 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Download } from "lucide-react";
+import { ArrowLeft, Download, LayoutDashboard } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function SOLUTIONSProAI() {
@@ -291,6 +291,22 @@ export default function SOLUTIONSProAI() {
                   {/* Decorative corner */}
                   <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-indigo-500/20 group-hover/card:bg-indigo-500 transition-colors" />
                 </a>
+
+                {/* Business Dashboard Card */}
+                <button
+                  onClick={() => navigate('/proaidash')}
+                  className="group/card relative w-48 h-48 md:w-56 md:h-56 bg-white/[0.02] border border-white/5 rounded-3xl md:rounded-[2.5rem] flex flex-col items-center justify-center p-8 transition-all duration-500 hover:bg-white/[0.05] hover:border-emerald-500/50 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(16,185,129,0.3)] text-center cursor-pointer"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6 border border-emerald-500/20 group-hover/card:scale-110 transition-transform duration-500">
+                     <LayoutDashboard className="w-6 h-6 text-emerald-400" />
+                   </div>
+                  <span className="text-sm md:text-base text-white text-center leading-tight">
+                    the business dashboard
+                  </span>
+
+                  {/* Decorative corner */}
+                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-emerald-500/20 group-hover/card:bg-emerald-500 transition-colors" />
+                </button>
               </div>
 
               {/* Row 2: Support Credits */}

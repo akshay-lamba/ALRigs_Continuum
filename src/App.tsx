@@ -47,6 +47,7 @@ import TeamPage from './components/TeamPage';
 import ContactPage from './components/ContactPage';
 import ProductsPage from './components/ProductsPage';
 import ProductsHubPage from './components/ProductsHubPage';
+import ProAIDashPage from './components/ProAIDashPage';
 import { useParams } from "react-router-dom";
 
 function ProductRouteWrapper() {
@@ -159,6 +160,7 @@ export default function App() {
             <Route path="/people/tech" element={<PEOPLETechLeader />} />
             <Route path="/solutions" element={<SOLUTIONSLayer />} />
             <Route path="/solutions/proai" element={<SOLUTIONSProAI />} />
+            <Route path="/proaidash" element={<ProAIDashPage />} />
             <Route path="/solutions/businessai" element={<SOLUTIONSBusinessAI />} />
             <Route path="/solutions/transparencyai" element={<SOLUTIONSTransparencyAI />} />
             <Route path="/solutions/help" element={<SOLUTIONSHelpMeChoose />} />
