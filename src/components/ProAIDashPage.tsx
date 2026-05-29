@@ -127,11 +127,11 @@ const DOMAINS: Record<string, DomainData> = {
   }
 };
 
-// 120 Deep Leak Check-Points mapped in 5 categories (each category runs 24 unique checks in back-end)
+// 120 Business Insights mapped in 5 categories (each category has 24 unique points)
 const CHECKPOINT_CATEGORIES = [
   {
     id: "finance",
-    title: "Money & Invoices Leak-Checks",
+    title: "Money & Invoices Indicators",
     count: 24,
     points: [
       "Spotting slow-paying clients early",
@@ -144,7 +144,7 @@ const CHECKPOINT_CATEGORIES = [
   },
   {
     id: "operations",
-    title: "Operations & Delivery Leak-Checks",
+    title: "Operations & Delivery Indicators",
     count: 24,
     points: [
       "Late cargo arrival & dispatch delays",
@@ -157,7 +157,7 @@ const CHECKPOINT_CATEGORIES = [
   },
   {
     id: "hr",
-    title: "Staff & Schedule Leak-Checks",
+    title: "Staff & Schedule Indicators",
     count: 24,
     points: [
       "Driver overtime manual rounding leaks",
@@ -170,7 +170,7 @@ const CHECKPOINT_CATEGORIES = [
   },
   {
     id: "assets",
-    title: "Warehouse & Space Leak-Checks",
+    title: "Warehouse & Space Indicators",
     count: 24,
     points: [
       "Utility cooling motor spikes during peak charges",
@@ -183,7 +183,7 @@ const CHECKPOINT_CATEGORIES = [
   },
   {
     id: "analytics",
-    title: "Simple Reports Leak-Checks",
+    title: "Simple Reports Indicators",
     count: 24,
     points: [
       "Driver payroll sheets vs invoicing speed cross-matches",
@@ -648,9 +648,9 @@ export default function ProAIDashPage() {
             ======================================================= */}
         <div className="mb-24">
           <div className="text-left mb-12">
-            <h2 className="text-2xl md:text-4xl font-sans font-black text-white tracking-tight uppercase">Department Connection Finder</h2>
-            <p className="text-slate-500 text-sm mt-2 max-w-xl font-normal">
-              See how different departments affect your pockets. Click any of the boxes below to see simple tips our desktop system can auto-check for you.
+            <h2 className="text-2xl md:text-4xl font-sans font-black text-white tracking-tight uppercase">ALRigs Pro AI Insights</h2>
+            <p className="text-slate-500 text-sm mt-2 max-w-2xl font-normal leading-relaxed">
+              See how the system works with you to enhance your insights and lends itself to proactive action as a business owner minimizing risks and enhancing growth.
             </p>
           </div>
 
@@ -728,8 +728,8 @@ export default function ProAIDashPage() {
                 {/* Visual indicator of the 120 points */}
                 <div className="bg-sky-500/[0.02] border border-sky-450/10 rounded-2xl p-4 space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Dynamic Leak Detectors Loaded</span>
-                    <span className="text-[11px] font-mono text-sky-400 font-bold">{selectedDomains.length * 24} / 120 Online</span>
+                    <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Business Indicators Connected</span>
+                    <span className="text-[11px] font-mono text-sky-400 font-bold">{selectedDomains.length * 24} / 120 Active</span>
                   </div>
                   
                   {/* Custom progress light indicator */}
@@ -741,7 +741,7 @@ export default function ProAIDashPage() {
                   </div>
                   
                   <p className="text-[10px] text-slate-500 leading-normal">
-                    Each toggle above instantly connects 24 check-points on our offline box, totaling 120 target diagnostics continuously running inside your building.
+                    Each toggle above instantly connects 24 check-points, totaling 120 indicators running together to simplify your business checks.
                   </p>
                 </div>
               </div>
@@ -789,18 +789,18 @@ export default function ProAIDashPage() {
             {/* Divider */}
             <div className="border-t border-white/5 my-10" />
 
-            {/* Showcase of the 120 Leak-Check Points */}
+            {/* Showcase of the 120 Business Insights */}
             <div className="space-y-6">
               <div className="text-left">
                 <div className="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-400/20 text-sky-400 text-[9px] font-mono uppercase tracking-widest px-3 py-1 rounded-full mb-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
-                  {selectedDomains.length * 24} / 120 Interactive Indicators Online
+                  {selectedDomains.length * 24} / 120 Private Insights Active
                 </div>
                 <h3 className="text-lg md:text-xl font-sans font-black text-white uppercase tracking-tight">
-                  Status of 120 Private Audit Checks
+                  120 Private Business Insights
                 </h3>
                 <p className="text-slate-400 text-xs max-w-2xl font-normal mt-1 leading-relaxed">
-                  See what happens under the hood when your business areas link. Standard computer programs leave these data slots isolated. Selecting a system below turns on 24 targeted audit diagnostics immediately checking for simple leakages.
+                  Business insights that a business owner was missing that leads to controlled and confident growth.
                 </p>
               </div>
 
@@ -839,7 +839,7 @@ export default function ProAIDashPage() {
                         </h4>
                         
                         <p className={`text-[8px] font-mono leading-none tracking-wider ${isActive ? 'text-sky-400/80' : 'text-slate-500'}`}>
-                          {isActive ? '24 OF 24 TESTS ONLINE' : '0 OF 24 TESTS OFFLINE'}
+                          {isActive ? '24 OF 24 INDICATORS ACTIVE' : '0 OF 24 INDICATORS MUTED'}
                         </p>
                         
                         {/* Layman list elements */}
@@ -851,11 +851,6 @@ export default function ProAIDashPage() {
                             </li>
                           ))}
                         </ul>
-                      </div>
-                      
-                      <div className="mt-5 pt-3 border-t border-white/5 text-[8px] font-mono text-slate-500 uppercase tracking-widest flex items-center justify-between">
-                        <span>Background Tests</span>
-                        <span>{isActive ? "+18 checks" : "--"}</span>
                       </div>
                     </div>
                   );
