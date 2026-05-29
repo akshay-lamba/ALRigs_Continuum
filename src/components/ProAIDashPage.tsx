@@ -435,8 +435,8 @@ export default function ProAIDashPage() {
               Private | Pro AI | Humanely
             </span>
           </div>
-          <p className="text-base md:text-lg text-slate-400 font-normal max-w-2xl mx-auto leading-relaxed">
-            Pro AI brings all areas of your business together. By connecting daily tasks and money tracks, we spot hidden gaps to help you run your business with total confidence.
+          <p className="text-base md:text-lg text-slate-400 font-normal max-w-2xl mx-auto leading-relaxed text-balance">
+            Pro AI brings all areas of your business together. By connecting critical domains of the business, the system helps you manage and automate your business enabling you to structurally manage your margins through insights and velocity of actions.
           </p>
         </motion.div>
 
