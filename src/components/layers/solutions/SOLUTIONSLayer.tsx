@@ -2,6 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Download } from "lucide-react";
 import { motion } from "motion/react";
+import AIProductsShowcase from "../../AIProductsShowcase";
 
 export default function SOLUTIONSLayer() {
   const navigate = useNavigate();
@@ -83,6 +84,9 @@ export default function SOLUTIONSLayer() {
           </motion.div>
         ))}
       </div>
+
+      {/* Dynamic Immersive Showcase of Three Distinct AI Products */}
+      <AIProductsShowcase />
 
       {/* Global Resource Download Section */}
       <motion.div 
