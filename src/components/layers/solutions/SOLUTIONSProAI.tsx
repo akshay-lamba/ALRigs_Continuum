@@ -43,13 +43,26 @@ export default function SOLUTIONSProAI() {
       {/* Seamless Image Sections */}
       <div className="w-full flex flex-col rounded-[2rem] overflow-hidden border border-blue-900/30 shadow-2xl bg-black">
         {/* Section 1: Hero */}
-        <div className="w-full relative">
+        <div className="w-full relative group">
           <img 
             src="https://static.wixstatic.com/media/b20068_d7a489c1e3114463a9214241ca83d14e~mv2.jpeg" 
             alt="Pro AI Section 1"
             className="w-full h-auto block"
             referrerPolicy="no-referrer"
           />
+          {/* Overlay CTA */}
+          <div className="absolute inset-x-0 bottom-6 md:bottom-12 flex justify-center z-10">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => navigate('/proaidash')}
+              className="bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs md:text-sm font-black tracking-[0.2em] px-8 py-3.5 rounded-full uppercase shadow-[0_10px_30px_rgba(59,130,246,0.35)] hover:shadow-[0_15px_45px_rgba(59,130,246,0.5)] border border-blue-400/20 active:scale-95 transition-all duration-300 flex items-center gap-2 cursor-pointer"
+              id="hero_view_dashboard_cta"
+            >
+              <LayoutDashboard className="w-4 h-4" />
+              View your Pro AI dashboard
+            </motion.button>
+          </div>
         </div>
 
         {/* Video Embedding Section */}
